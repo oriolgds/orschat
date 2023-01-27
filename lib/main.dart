@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
                 ],
               ),
             ),
-            body: Text("Hello world"),
+            body: const Text("Hello world"),
           ),
         ),
       )
