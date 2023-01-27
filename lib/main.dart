@@ -5,45 +5,51 @@ void main() {
       statusBarColor: Colors.transparent,
       statusBarBrightness: Brightness.dark
   ));
-  runApp(const MyApp());
+  runApp(const HomePage());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  // This widget is the root of your application.
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      title: 'Ors Chat',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
+        brightness: Brightness.light,
         primarySwatch: Colors.blue,
       ),
-      home: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: DefaultTabController(
-          length: 3,
-          child: Scaffold(
-            appBar: AppBar(
-              title: const Text('Ors Chat'),
-              bottom: const TabBar(
-                tabs: [
-                  Text("Chats"),
-                  Text("Llamadas"),
-                  Text("Configuración"),
-                ],
-              ),
+      darkTheme: ThemeData(
+        primarySwatch: Colors.orange,
+        brightness: Brightness.dark,
+      ),
+      themeMode: ThemeMode.system,
+      home: DefaultTabController(
+        length: 2, //3
+        child: Scaffold(
+          appBar: AppBar(
+            title: const Text('Ors Chat'),
+            bottom: const TabBar(
+              indicatorWeight: 5,
+              tabs: [
+                Padding(padding: EdgeInsets.only(bottom: 5, top: 10),child: Text("Chats", style: TextStyle(fontSize: 16), maxLines: 1, overflow: TextOverflow.ellipsis),),
+                Padding(padding: EdgeInsets.only(bottom: 5, top: 10),child: Text("Llamadas", style: TextStyle(fontSize: 16), maxLines: 1, overflow: TextOverflow.ellipsis),),
+                //Padding(padding: EdgeInsets.only(bottom: 5, top: 10),child: Text("Configuración", style: TextStyle(fontSize: 16), maxLines: 1, overflow: TextOverflow.ellipsis,),),
+              ],
             ),
-            body: const Text("Hello world"),
+          ),
+          body: TabBarView(
+              children: [
+                Container(
+                  child: Text("Chats"),
+                ),
+                Container(
+                  child: Text("Llamadas"),
+                ),
+                Container(
+                  child: Text("Configuración"),
+                ),
+              ],
           ),
         ),
       )
