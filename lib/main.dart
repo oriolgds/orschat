@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
+import 'homePageWidgets.dart';
+
 void main() {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
@@ -23,36 +26,51 @@ class HomePage extends StatelessWidget {
         primarySwatch: Colors.orange,
         brightness: Brightness.dark,
       ),
+      scrollBehavior: const ScrollBehavior(
+        androidOverscrollIndicator: AndroidOverscrollIndicator.stretch
+      ),
       themeMode: ThemeMode.system,
       home: DefaultTabController(
-        length: 2, //3
+        length: 5,
         child: Scaffold(
-          appBar: AppBar(
-            title: const Text('Ors Chat'),
-            bottom: const TabBar(
-              indicatorWeight: 5,
-              tabs: [
-                Padding(padding: EdgeInsets.only(bottom: 5, top: 10),child: Text("Chats", style: TextStyle(fontSize: 16), maxLines: 1, overflow: TextOverflow.ellipsis),),
-                Padding(padding: EdgeInsets.only(bottom: 5, top: 10),child: Text("Llamadas", style: TextStyle(fontSize: 16), maxLines: 1, overflow: TextOverflow.ellipsis),),
-                //Padding(padding: EdgeInsets.only(bottom: 5, top: 10),child: Text("Configuración", style: TextStyle(fontSize: 16), maxLines: 1, overflow: TextOverflow.ellipsis,),),
-              ],
-            ),
-          ),
-          body: TabBarView(
-              children: [
-                Container(
-                  child: Text("Chats"),
-                ),
-                Container(
-                  child: Text("Llamadas"),
-                ),
-                Container(
-                  child: Text("Configuración"),
-                ),
-              ],
-          ),
-        ),
-      )
+            body: NestedScrollView(
+              headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+                return <Widget>[
+                  const SliverAppBar(
+                    title: Text('Ors Chat'),
+                    pinned: true,
+                    floating: true,
+                    bottom: TabBar(
+                      tabs: [
+                        Tab(child: Text('Chats')),
+                        Tab(child: Text('Llamadas')),
+                      ],
+                    ),
+                  ),
+                ];
+              },
+              body: TabBarView(
+                children: <Widget>[
+                  ListView(
+                    scrollDirection: Axis.vertical,
+                    children: const <Widget>[
+                      ChatContactListItem(),
+                      ChatContactListItem(),
+                      ChatContactListItem(),
+                      ChatContactListItem(),
+                      ChatContactListItem(),
+                    ],
+                  ),
+                  ListView(
+                    scrollDirection: Axis.vertical,
+                    children: const <Widget>[
+                      ChatContactListItem(),
+                    ],
+                  ),
+                ],
+              ),
+            )),
+      ),
     );
   }
 }
