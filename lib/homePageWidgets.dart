@@ -16,12 +16,20 @@ class ChatContactListItem extends StatelessWidget {
               Positioned(
                 top: 25,
                 left: 0,
-                child: Image.asset("lib/assets/withoutProfilePhoto.png", width: 50, height: 50,)
+                child: GestureDetector(
+                    onTap: (){
+                      showProfilePhotoModal(context, "lib/assets/withoutProfilePhoto.png");
+                    },
+                    child: Image.asset("lib/assets/withoutProfilePhoto.png", width: 50, height: 50,)
+                )
               ),
-              const Positioned(
+              Positioned(
                 top: 30,
                 left: 60,
-                child: SizedBox(width: 325,child: Text("Luk Echeverria Quirante, Instituto, Biel Ortega Cobos", style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16), maxLines: 1, overflow: TextOverflow.ellipsis,))
+                child: SizedBox(
+                    width: MediaQuery.of(context).size.width - 70,
+                    child: const Text("Luk Echeverria Quirante, Instituto, Biel Ortega Cobos", style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16), maxLines: 1, overflow: TextOverflow.ellipsis,)
+                )
               ),
               const Positioned(
                 right: 0,
@@ -34,4 +42,36 @@ class ChatContactListItem extends StatelessWidget {
       ),
     );
   }
+}
+Future<void> showProfilePhotoModal(BuildContext context,String pathToImg) async {
+  return showDialog(
+      context: context,
+      builder: (BuildContext context){
+        return AlertDialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
+          ),
+          content: Image.asset(pathToImg),
+          actions: <Widget>[
+            SizedBox(
+              width: 64,
+              height: 64,
+              child: TextButton(
+                style: ButtonStyle(
+                  shape: MaterialStateProperty.all(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(50)
+                    )
+                  )
+                ),
+                onPressed: (){
+                  Navigator.of(context).pop();
+                },
+                child: const Icon(Icons.close, size: 40,)
+              ),
+            )
+          ],
+        );
+      }
+  );
 }
