@@ -21,7 +21,7 @@ class ChatContactListItem extends StatelessWidget {
               const Positioned(
                 top: 30,
                 left: 60,
-                child: Text("Luk Echeverria Quirante, Instituto, Biel Ortega Cobos", style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16), maxLines: 1, overflow: TextOverflow.ellipsis,)
+                child: SizedBox(width: 325,child: Text("Luk Echeverria Quirante, Instituto, Biel Ortega Cobos", style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16), maxLines: 1, overflow: TextOverflow.ellipsis,))
               ),
               const Positioned(
                 right: 0,
