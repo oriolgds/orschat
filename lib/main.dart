@@ -23,7 +23,7 @@ class HomePage extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       darkTheme: ThemeData(
-        primarySwatch: Colors.orange,
+        primarySwatch: Colors.blue,
         brightness: Brightness.dark,
       ),
       scrollBehavior: const ScrollBehavior(

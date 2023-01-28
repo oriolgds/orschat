@@ -14,7 +14,7 @@ class ChatContactListItem extends StatelessWidget {
           child: Stack(
             children: [
               Positioned(
-                top: 25,
+                top: 20,
                 left: 0,
                 child: TextButton(
                   style: ButtonStyle(
@@ -35,6 +35,14 @@ class ChatContactListItem extends StatelessWidget {
                     width: MediaQuery.of(context).size.width - 70,
                     child: const Text("Luk Echeverria Quirante, Instituto, Biel Ortega Cobos", style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16), maxLines: 1, overflow: TextOverflow.ellipsis,)
                 )
+              ),
+              Positioned(
+                  bottom: 30,
+                  left: 70,
+                  child: SizedBox(
+                      width: MediaQuery.of(context).size.width - 170,
+                      child: const Text("Luk Echeverria Quirante, Instituto, Biel Ortega Cobos", style: TextStyle(fontWeight: FontWeight.w400, fontSize: 15), maxLines: 1, overflow: TextOverflow.ellipsis,)
+                  )
               ),
               const Positioned(
                 right: 0,
@@ -72,7 +80,7 @@ Future<void> showProfilePhotoModal(BuildContext context,String pathToImg) async 
                 onPressed: (){
                   Navigator.of(context).pop();
                 },
-                child: const Icon(Icons.close, size: 40,)
+                child: const Icon(Icons.close, size: 40)
               ),
             )
           ],
