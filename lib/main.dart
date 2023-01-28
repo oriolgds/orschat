@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
 import 'homePageWidgets.dart';
-
+import 'chat.dart';
 void main() {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
@@ -54,22 +53,22 @@ class HomePage extends StatelessWidget {
                   ListView(
                     scrollDirection: Axis.vertical,
                     children: const <Widget>[
-                      ChatContactListItem(),
-                      ChatContactListItem(),
-                      ChatContactListItem(),
-                      ChatContactListItem(),
-                      ChatContactListItem(),
+                      ChatContactListItem("Luk", "lib/assets/withoutProfilePhoto.png", "¡Hola! ¿Qué tal?", "Ayer"),
+                      ChatContactListItem("Biel", "lib/assets/withoutProfilePhoto.png", "¡Hola! ¿Qué tal?", "Ayer"),
+                      ChatContactListItem("Alex", "lib/assets/withoutProfilePhoto.png", "¡Hola! ¿Qué tal?", "Ayer"),
+                      ChatContactListItem("Cálvaro", "lib/assets/withoutProfilePhoto.png", "¡Hola! ¿Qué tal?", "Ayer"),
+
                     ],
                   ),
                   ListView(
                     scrollDirection: Axis.vertical,
                     children: const <Widget>[
-                      ChatContactListItem(),
                     ],
                   ),
                 ],
               ),
-            )),
+            )
+        ),
       ),
     );
   }
