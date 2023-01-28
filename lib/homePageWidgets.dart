@@ -10,22 +10,27 @@ class ChatContactListItem extends StatelessWidget {
 
         },
         child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 10),
           child: Stack(
             children: [
               Positioned(
                 top: 25,
                 left: 0,
-                child: GestureDetector(
-                    onTap: (){
-                      showProfilePhotoModal(context, "lib/assets/withoutProfilePhoto.png");
-                    },
-                    child: Image.asset("lib/assets/withoutProfilePhoto.png", width: 50, height: 50,)
+                child: TextButton(
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all(
+                      RoundedRectangleBorder(borderRadius: BorderRadius.circular(50))
+                    )
+                  ),
+                  onPressed: (){
+                    showProfilePhotoModal(context, "lib/assets/withoutProfilePhoto.png");
+                  },
+                  child: Image.asset("lib/assets/withoutProfilePhoto.png", width: 50, height: 50,)
                 )
               ),
               Positioned(
                 top: 30,
-                left: 60,
+                left: 70,
                 child: SizedBox(
                     width: MediaQuery.of(context).size.width - 70,
                     child: const Text("Luk Echeverria Quirante, Instituto, Biel Ortega Cobos", style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16), maxLines: 1, overflow: TextOverflow.ellipsis,)
@@ -34,7 +39,7 @@ class ChatContactListItem extends StatelessWidget {
               const Positioned(
                 right: 0,
                 bottom: 30,
-                child: Text('23/01/2023')
+                child: Text('23/01/2023', maxLines: 1, textAlign: TextAlign.end, overflow: TextOverflow.ellipsis,)
               )
             ],
           ),

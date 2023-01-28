@@ -31,7 +31,7 @@ class HomePage extends StatelessWidget {
       ),
       themeMode: ThemeMode.system,
       home: DefaultTabController(
-        length: 5,
+        length: 2,
         child: Scaffold(
             body: NestedScrollView(
               headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
