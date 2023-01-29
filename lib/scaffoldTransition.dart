@@ -10,7 +10,7 @@ Route scaffoldTransition(route, Offset begin) {
 
       return SlideTransition(
         position: animation.drive(tween),
-        child: child,
+        child: FadeTransition(opacity: animation, child: child,),
       );
     },
   );

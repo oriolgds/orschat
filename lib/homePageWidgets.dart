@@ -19,7 +19,7 @@ class _ChatContactListItemState extends State<ChatContactListItem> {
       height: 100,
       child: InkWell(
         onTap: (){
-          Navigator.of(context).push(scaffoldTransition(const Chatting(), const Offset(0.0, 1.0)));
+          Navigator.of(context).push(scaffoldTransition(Chatting(widget.name, widget.pathToImg), const Offset(0.0, 0.1)));
         },
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 10),
