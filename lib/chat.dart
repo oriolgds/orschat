@@ -40,6 +40,49 @@ class _ChattingState extends State<Chatting> {
             ),
           ),
         ),
+        actions: <Widget>[
+          IconButton(
+            splashRadius: 24,
+            tooltip: "Videollamada",
+            onPressed: (){
+
+            },
+            icon: const Icon(Icons.video_call_rounded),
+          ),
+          IconButton(
+            splashRadius: 24,
+            tooltip: "Llamada",
+            onPressed: (){
+
+            },
+            icon: const Icon(Icons.call),
+          ),
+          PopupMenuButton(
+            splashRadius: 24,
+            icon: const Icon(Icons.more_vert),
+            tooltip: "Más opciones",
+            itemBuilder: (BuildContext context) => <PopupMenuEntry>[
+              const PopupMenuItem(
+                child: Text('Ver contacto'),
+              ),
+                const PopupMenuItem(
+                  child: Text('Silenciar notificaciones'),
+                ),
+              const PopupMenuItem(
+                child: Text('Fondo de pantalla'),
+              ),
+              const PopupMenuItem(
+                child: Text('Exportar'),
+              ),
+              const PopupMenuItem(
+                child: Text('Vaciar chat', style: TextStyle(color: Colors.red),),
+              ),
+              const PopupMenuItem(
+                child: Text('Denunciar', style: TextStyle(color: Colors.red),),
+              ),
+            ],
+          ),
+        ],
       ),
       body: Text(widget.name),
     );
