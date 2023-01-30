@@ -10,81 +10,85 @@ class Chatting extends StatefulWidget {
 class _ChattingState extends State<Chatting> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          splashRadius: 24,
-          tooltip: "Atras",
-          icon: const Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-        ),
-        titleSpacing: 0,
-        title: SizedBox(
-          height: 60,
-          child: InkWell(
-            onTap: (){},
-            child: Container(
-              alignment: Alignment.centerLeft,
-              child: Wrap(
-                crossAxisAlignment: WrapCrossAlignment.center,
-                children: <Widget>[
-                  Container(
-                    margin: const EdgeInsets.only(right: 5),
-                    child: Image.asset(widget.pathToImg, width: 40, height: 40,)
+    return Stack(
+      children: [
+        Scaffold(
+          appBar: AppBar(
+            leading: IconButton(
+              splashRadius: 24,
+              tooltip: "Atras",
+              icon: const Icon(Icons.arrow_back),
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+            ),
+            titleSpacing: 0,
+            title: SizedBox(
+              height: 60,
+              child: InkWell(
+                onTap: (){},
+                child: Container(
+                  alignment: Alignment.centerLeft,
+                  child: Wrap(
+                    crossAxisAlignment: WrapCrossAlignment.center,
+                    children: <Widget>[
+                      Container(
+                        margin: const EdgeInsets.only(right: 5),
+                        child: Image.asset(widget.pathToImg, width: 40, height: 40,)
+                      ),
+                      Text(widget.name, maxLines: 1, overflow: TextOverflow.ellipsis, textAlign: TextAlign.start,)
+                    ],
                   ),
-                  Text(widget.name, maxLines: 1, overflow: TextOverflow.ellipsis, textAlign: TextAlign.start,)
-                ],
+                ),
               ),
             ),
-          ),
-        ),
-        actions: <Widget>[
-          IconButton(
-            splashRadius: 24,
-            tooltip: "Videollamada",
-            onPressed: (){
+            actions: <Widget>[
+              IconButton(
+                splashRadius: 24,
+                tooltip: "Videollamada",
+                onPressed: (){
 
-            },
-            icon: const Icon(Icons.video_call_rounded),
-          ),
-          IconButton(
-            splashRadius: 24,
-            tooltip: "Llamada",
-            onPressed: (){
+                },
+                icon: const Icon(Icons.video_call_rounded),
+              ),
+              IconButton(
+                splashRadius: 24,
+                tooltip: "Llamada",
+                onPressed: (){
 
-            },
-            icon: const Icon(Icons.call),
-          ),
-          PopupMenuButton(
-            splashRadius: 24,
-            icon: const Icon(Icons.more_vert),
-            tooltip: "Más opciones",
-            itemBuilder: (BuildContext context) => <PopupMenuEntry>[
-              const PopupMenuItem(
-                child: Text('Ver contacto'),
+                },
+                icon: const Icon(Icons.call),
               ),
-                const PopupMenuItem(
-                  child: Text('Silenciar notificaciones'),
-                ),
-              const PopupMenuItem(
-                child: Text('Fondo de pantalla'),
-              ),
-              const PopupMenuItem(
-                child: Text('Exportar'),
-              ),
-              const PopupMenuItem(
-                child: Text('Vaciar chat', style: TextStyle(color: Colors.red),),
-              ),
-              const PopupMenuItem(
-                child: Text('Denunciar', style: TextStyle(color: Colors.red),),
+              PopupMenuButton(
+                splashRadius: 24,
+                icon: const Icon(Icons.more_vert),
+                tooltip: "Más opciones",
+                itemBuilder: (BuildContext context) => <PopupMenuEntry>[
+                  const PopupMenuItem(
+                    child: Text('Ver contacto'),
+                  ),
+                    const PopupMenuItem(
+                      child: Text('Silenciar notificaciones'),
+                    ),
+                  const PopupMenuItem(
+                    child: Text('Fondo de pantalla'),
+                  ),
+                  const PopupMenuItem(
+                    child: Text('Exportar'),
+                  ),
+                  const PopupMenuItem(
+                    child: Text('Vaciar chat', style: TextStyle(color: Colors.red),),
+                  ),
+                  const PopupMenuItem(
+                    child: Text('Denunciar', style: TextStyle(color: Colors.red),),
+                  ),
+                ],
               ),
             ],
           ),
-        ],
-      ),
-      body: Text(widget.name),
+          body: Text(widget.name),
+        ),
+      ],
     );
   }
 }
