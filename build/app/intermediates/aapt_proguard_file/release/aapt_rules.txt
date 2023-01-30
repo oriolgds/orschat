@@ -1,3 +1,0 @@
--keep class android.app.Application { <init>(); }
--keep class androidx.core.app.CoreComponentFactory { <init>(); }
--keep class orschat.talk4fun.net.orschat.MainActivity { <init>(); }
