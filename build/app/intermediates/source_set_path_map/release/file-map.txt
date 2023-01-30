@@ -1,0 +1,12 @@
+orschat.talk4fun.net.orschat.app-jetified-window-java-1.0.0-beta04-0 C:\Users\Ori\.gradle\caches\transforms-3\006d93cd422dbc43e89591147c2de572\transformed\jetified-window-java-1.0.0-beta04\res
+orschat.talk4fun.net.orschat.app-core-1.6.0-1 C:\Users\Ori\.gradle\caches\transforms-3\4ca28c4a71705f8a687c69dda140a277\transformed\core-1.6.0\res
+orschat.talk4fun.net.orschat.app-jetified-annotation-experimental-1.1.0-2 C:\Users\Ori\.gradle\caches\transforms-3\8965c941cf4bee4d72541b965c7c9d39\transformed\jetified-annotation-experimental-1.1.0\res
+orschat.talk4fun.net.orschat.app-jetified-window-1.0.0-beta04-3 C:\Users\Ori\.gradle\caches\transforms-3\dee59bb480020f42d53c2ea15e4501f7\transformed\jetified-window-1.0.0-beta04\res
+orschat.talk4fun.net.orschat.app-main-4 C:\Users\Ori\AndroidStudioProjects\orschat\android\app\src\main\res
+orschat.talk4fun.net.orschat.app-release-5 C:\Users\Ori\AndroidStudioProjects\orschat\android\app\src\release\res
+orschat.talk4fun.net.orschat.app-pngs-6 C:\Users\Ori\AndroidStudioProjects\orschat\build\app\generated\res\pngs\release
+orschat.talk4fun.net.orschat.app-resValues-7 C:\Users\Ori\AndroidStudioProjects\orschat\build\app\generated\res\resValues\release
+orschat.talk4fun.net.orschat.app-rs-8 C:\Users\Ori\AndroidStudioProjects\orschat\build\app\generated\res\rs\release
+orschat.talk4fun.net.orschat.app-mergeReleaseResources-9 C:\Users\Ori\AndroidStudioProjects\orschat\build\app\intermediates\incremental\release\mergeReleaseResources\merged.dir
+orschat.talk4fun.net.orschat.app-mergeReleaseResources-10 C:\Users\Ori\AndroidStudioProjects\orschat\build\app\intermediates\incremental\release\mergeReleaseResources\stripped.dir
+orschat.talk4fun.net.orschat.app-merged_res-11 C:\Users\Ori\AndroidStudioProjects\orschat\build\app\intermediates\merged_res\release
