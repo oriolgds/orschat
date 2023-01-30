@@ -13,7 +13,7 @@ class _ChattingState extends State<Chatting> {
     return Stack(
       children: [
         Image.asset(
-          "lib/assets/wallpapers/Wallpaper 21.jpg",
+          "lib/assets/wallpapers/webp/Wallpaper 21.jpg",
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
           fit: BoxFit.cover,
