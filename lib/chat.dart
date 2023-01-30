@@ -12,7 +12,14 @@ class _ChattingState extends State<Chatting> {
   Widget build(BuildContext context) {
     return Stack(
       children: [
+        Image.asset(
+          "lib/assets/wallpapers/Wallpaper 21.jpg",
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
+          fit: BoxFit.cover,
+        ),
         Scaffold(
+          backgroundColor: Colors.transparent,
           appBar: AppBar(
             leading: IconButton(
               splashRadius: 24,
