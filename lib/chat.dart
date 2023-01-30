@@ -93,19 +93,26 @@ class _ChattingState extends State<Chatting> {
               ),
             ],
           ),
-          body: Stack(
-            children: <Widget>[
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: Row(
-                  children: <Widget>[
-                    Container(
-                      width: MediaQuery.of(context).size.width - 50,
-                    )
-                  ],
-                ),
-              )
-            ],
+          body: Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+            child: Stack(
+              children: <Widget>[
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Row(
+                    children: <Widget>[
+                      Container(
+                        width: MediaQuery.of(context).size.width - 50,
+                        child: TextField(
+                          controller: TextEditingController(),
+                        ),
+                      )
+                    ],
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ],
