@@ -92,6 +92,7 @@ Future<void> showProfilePhotoModal(BuildContext context, String pathToImg, Strin
                   ),
                   onPressed: (){
                     Navigator.of(context).pop();
+                    Navigator.of(context).push(scaffoldTransition(Chatting(name, pathToImg), const Offset(0.0, 0.1)));
                   },
                   child: const Icon(Icons.message, size: 40)
               ),
