@@ -17,12 +17,25 @@ class HomePage extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Ors Chat',
       theme: ThemeData(
+        useMaterial3: true,
         brightness: Brightness.light,
         primarySwatch: Colors.blue,
+        appBarTheme: const AppBarTheme(
+          color: Colors.blue,
+        ),
+        tabBarTheme: const TabBarTheme(
+          indicatorColor: Colors.black87,
+          labelColor: Colors.black87
+        ),
       ),
       darkTheme: ThemeData(
+        useMaterial3: true,
         primarySwatch: Colors.blue,
         brightness: Brightness.dark,
+        tabBarTheme: const TabBarTheme(
+          indicatorColor: Colors.blue,
+          labelColor: Colors.blue,
+        )
       ),
       scrollBehavior: const ScrollBehavior(
         androidOverscrollIndicator: AndroidOverscrollIndicator.stretch

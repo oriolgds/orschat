@@ -98,14 +98,21 @@ class _ChattingState extends State<Chatting> {
             height: MediaQuery.of(context).size.height,
             child: Stack(
               children: <Widget>[
-                Align(
-                  alignment: Alignment.bottomCenter,
+                Positioned(
+                  bottom: 0,
+                  left: 0,
                   child: Row(
                     children: <Widget>[
                       Container(
                         width: MediaQuery.of(context).size.width - 50,
                         child: TextField(
+                          autofocus: false,
+                          autocorrect: true,
                           controller: TextEditingController(),
+                          decoration: const InputDecoration(
+                            border: OutlineInputBorder(),
+                            hintText: "Mensaje"
+                          ),
                         ),
                       )
                     ],
