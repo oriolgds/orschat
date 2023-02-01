@@ -23,15 +23,31 @@ class HomePage extends StatelessWidget {
         appBarTheme: const AppBarTheme(
           color: Colors.blue,
         ),
+        popupMenuTheme: const PopupMenuThemeData(
+          color: Color(0xFFFAFAFA)
+        ),
         tabBarTheme: const TabBarTheme(
           indicatorColor: Colors.black87,
           labelColor: Colors.black87
+        ),
+        iconTheme: const IconThemeData(
+          color: Colors.black
+        ),
+        iconButtonTheme: IconButtonThemeData(
+          style: ButtonStyle(
+            iconColor: MaterialStateProperty.all(
+              const Color(0xFF212529)
+            )
+          )
         ),
       ),
       darkTheme: ThemeData(
         useMaterial3: true,
         primarySwatch: Colors.blue,
         brightness: Brightness.dark,
+        popupMenuTheme: const PopupMenuThemeData(
+          color: Color(0xFF1C1B1F)
+        ),
         tabBarTheme: const TabBarTheme(
           indicatorColor: Colors.blue,
           labelColor: Colors.blue,
