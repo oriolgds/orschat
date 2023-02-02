@@ -101,21 +101,29 @@ class _ChattingState extends State<Chatting> {
                 Positioned(
                   bottom: 0,
                   left: 0,
-                  child: Row(
-                    children: <Widget>[
-                      Container(
-                        width: MediaQuery.of(context).size.width - 50,
-                        child: TextField(
-                          autofocus: false,
-                          autocorrect: true,
-                          controller: TextEditingController(),
-                          decoration: const InputDecoration(
-                            border: OutlineInputBorder(),
-                            hintText: "Mensaje"
+                  child: Container(
+                    width: MediaQuery.of(context).size.width,
+                    padding: EdgeInsets.symmetric(vertical: 10, horizontal: 5),
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).colorScheme.secondaryContainer,
+                    ),
+                    child: Row(
+                      children: <Widget>[
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width - 50,
+                          height: 50,
+                          child: TextField(
+                            autofocus: false,
+                            autocorrect: true,
+                            controller: TextEditingController(),
+                            decoration: const InputDecoration(
+                              border: OutlineInputBorder(),
+                              hintText: "Mensaje"
+                            ),
                           ),
-                        ),
-                      )
-                    ],
+                        )
+                      ],
+                    ),
                   ),
                 )
               ],
