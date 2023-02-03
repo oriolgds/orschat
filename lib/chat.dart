@@ -114,12 +114,13 @@ class _ChattingState extends State<Chatting> {
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      crossAxisAlignment: CrossAxisAlignment.end,
                       children: <Widget>[
                         SizedBox(
                           width: MediaQuery.of(context).size.width - 140,
                           child: TextField(
                             maxLines: null,
-                            textAlignVertical: TextAlignVertical.bottom,
+                            textAlignVertical: TextAlignVertical.top,
                             textAlign: TextAlign.start,
                             autofocus: false,
                             autocorrect: true,
@@ -134,7 +135,7 @@ class _ChattingState extends State<Chatting> {
                               ),
                               filled: false,
                               hintText: "Mensaje",
-                              contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20)
+                              contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10)
                             ),
                           ),
                         ),
