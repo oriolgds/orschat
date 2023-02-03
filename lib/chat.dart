@@ -104,25 +104,58 @@ class _ChattingState extends State<Chatting> {
                   child: Container(
                     margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                     width: MediaQuery.of(context).size.width - 20,
-                    padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
+                    padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
                     decoration: BoxDecoration(
                       color: Theme.of(context).colorScheme.secondaryContainer,
+                      borderRadius: BorderRadius.circular(50)
+                    ),
+                    constraints: const BoxConstraints(
+                      maxHeight: 150
                     ),
                     child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: <Widget>[
                         SizedBox(
-                          width: MediaQuery.of(context).size.width - 50,
-                          height: 50,
+                          width: MediaQuery.of(context).size.width - 140,
                           child: TextField(
+                            maxLines: null,
+                            textAlignVertical: TextAlignVertical.bottom,
+                            textAlign: TextAlign.start,
                             autofocus: false,
                             autocorrect: true,
                             controller: TextEditingController(),
-                            decoration: const InputDecoration(
-                              border: OutlineInputBorder(),
+                            decoration: InputDecoration(
+                              border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(50),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(50),
+                                borderSide: const BorderSide(color: Colors.blue, width: 2)
+                              ),
+                              filled: false,
                               hintText: "Mensaje",
+                              contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20)
                             ),
                           ),
-                        )
+                        ),
+                        SizedBox(
+                          child: IconButton(
+                            onPressed: (){
+
+                            },
+                            icon: const Icon(Icons.mic),
+                            iconSize: 30,
+                          ),
+                        ),
+                        SizedBox(
+                          child: IconButton(
+                            onPressed: (){
+
+                            },
+                            icon: const Icon(Icons.file_present),
+                            iconSize: 30,
+                          ),
+                        ),
                       ],
                     ),
                   ),
