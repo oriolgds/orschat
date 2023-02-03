@@ -39,6 +39,7 @@ ThemeData themeDataLight(){
         onBackground: Colors.white,
         surface: Colors.transparent,
         onSurface: Colors.black,
+        onSurfaceVariant: Colors.white,
       )
   );
 }

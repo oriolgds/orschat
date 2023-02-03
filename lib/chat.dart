@@ -13,7 +13,7 @@ class _ChattingState extends State<Chatting> {
     return Stack(
       children: [
         Image.asset(
-          "lib/assets/wallpapers/webp/Wallpaper 1.webp",
+          "lib/assets/wallpapers/webp/Wallpaper 19.webp",
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
           fit: BoxFit.cover,
@@ -93,7 +93,7 @@ class _ChattingState extends State<Chatting> {
               ),
             ],
           ),
-          body: Container(
+          body: SizedBox(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
             child: Stack(
@@ -102,8 +102,9 @@ class _ChattingState extends State<Chatting> {
                   bottom: 0,
                   left: 0,
                   child: Container(
-                    width: MediaQuery.of(context).size.width,
-                    padding: EdgeInsets.symmetric(vertical: 10, horizontal: 5),
+                    margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                    width: MediaQuery.of(context).size.width - 20,
+                    padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
                     decoration: BoxDecoration(
                       color: Theme.of(context).colorScheme.secondaryContainer,
                     ),
@@ -118,7 +119,7 @@ class _ChattingState extends State<Chatting> {
                             controller: TextEditingController(),
                             decoration: const InputDecoration(
                               border: OutlineInputBorder(),
-                              hintText: "Mensaje"
+                              hintText: "Mensaje",
                             ),
                           ),
                         )

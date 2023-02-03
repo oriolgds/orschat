@@ -1,4 +1,4 @@
-#Wed Feb 01 15:30:34 CET 2023
+#Fri Feb 03 15:20:06 CET 2023
 base.0=C\:\\Users\\Ori\\AndroidStudioProjects\\orschat\\build\\app\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
 renamed.0=classes.dex
 path.0=classes.dex
