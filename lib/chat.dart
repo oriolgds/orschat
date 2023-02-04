@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:emoji_picker_flutter/emoji_picker_flutter.dart';
+import 'package:emoji_dialog_picker/emoji_dialog_picker.dart';
 class Chatting extends StatefulWidget {
   const Chatting(this.name, this.pathToImg, {Key? key}) : super(key: key);
   final String name;
@@ -9,6 +9,7 @@ class Chatting extends StatefulWidget {
 }
 
 class _ChattingState extends State<Chatting> {
+  final TextEditingController messageTextController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -119,21 +120,41 @@ class _ChattingState extends State<Chatting> {
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         crossAxisAlignment: CrossAxisAlignment.end,
                         children: <Widget>[
-                          IconButton(
+                          /*IconButton(
                             onPressed: (){
 
                             },
                             icon: const Icon(Icons.emoji_emotions)
+                          ),*/
+                          const SizedBox(
+                            width: 10,
                           ),
                           SizedBox(
-                            width: MediaQuery.of(context).size.width - 179,
+                            height: 47,
+                            width: 40,
+                            child: InkWell(
+                              child: EmojiButton(
+                                padding: EdgeInsets.zero,
+                                emojiPickerView: EmojiPickerView(
+                                  hintText: "Busca emojis",
+                                  onEmojiSelected: (String emoji){
+                                    messageTextController.text += emoji;
+                                    debugPrint('Emoji Selected: $emoji');
+                                  },
+                                ),
+                                child: const Icon(Icons.emoji_emotions)
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            width: MediaQuery.of(context).size.width - 181,
                             child: TextField(
                               maxLines: null,
                               textAlignVertical: TextAlignVertical.top,
                               textAlign: TextAlign.start,
                               autofocus: false,
                               autocorrect: true,
-                              controller: TextEditingController(),
+                              controller: messageTextController,
                               decoration: InputDecoration(
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(30),
