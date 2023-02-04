@@ -33,6 +33,7 @@ class HomePage extends StatelessWidget {
                     title: Text('Ors Chat'),
                     pinned: true,
                     floating: true,
+                    shadowColor: Colors.black,
                     bottom: TabBar(
                       tabs: [
                         Tab(child: Text('Chats')),
@@ -45,6 +46,7 @@ class HomePage extends StatelessWidget {
               body: TabBarView(
                 children: <Widget>[
                   ListView(
+                    padding: EdgeInsets.zero,
                     scrollDirection: Axis.vertical,
                     children: const <Widget>[
                       ChatContactListItem("Luk", "lib/assets/withoutProfilePhoto.png", "¡Hola! ¿Qué tal?", "Ayer"),
