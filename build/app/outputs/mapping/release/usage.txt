@@ -436,11 +436,7 @@ androidx.core.graphics.BlendModeUtils$1
 androidx.core.graphics.BlendModeUtils
 androidx.core.graphics.ColorUtils
 androidx.core.graphics.Insets
-androidx.core.graphics.PaintCompat:
-    private static final java.lang.String EM_STRING
-    private static final java.lang.String TOFU_STRING
-    private void <init>()
-    public static boolean setBlendMode(android.graphics.Paint,androidx.core.graphics.BlendModeCompat)
+androidx.core.graphics.PaintCompat
 androidx.core.graphics.PathParser$ExtractFloatResult
 androidx.core.graphics.PathParser$PathDataNode
 androidx.core.graphics.PathParser
@@ -671,15 +667,8 @@ androidx.core.text.util.LinkifyCompat
 androidx.core.util.AtomicFile
 androidx.core.util.DebugUtils
 androidx.core.util.LogWriter
-androidx.core.util.ObjectsCompat:
-    private void <init>()
-    public static varargs int hash(java.lang.Object[])
-    public static int hashCode(java.lang.Object)
-    public static java.lang.Object requireNonNull(java.lang.Object)
-    public static java.lang.Object requireNonNull(java.lang.Object,java.lang.String)
-    public static java.lang.String toString(java.lang.Object,java.lang.String)
-androidx.core.util.Pair:
-    public static androidx.core.util.Pair create(java.lang.Object,java.lang.Object)
+androidx.core.util.ObjectsCompat
+androidx.core.util.Pair
 androidx.core.util.PatternsCompat
 androidx.core.util.Pools$Pool
 androidx.core.util.Pools$SimplePool
@@ -1653,20 +1642,6 @@ androidx.viewpager.widget.ViewPager$SavedState
 androidx.viewpager.widget.ViewPager$SimpleOnPageChangeListener
 androidx.viewpager.widget.ViewPager$ViewPositionComparator
 androidx.viewpager.widget.ViewPager
-com.fintasys.emoji_picker_flutter.BuildConfig
-com.fintasys.emoji_picker_flutter.EmojiPickerFlutterPlugin:
-    public final android.graphics.Paint getPaint()
-com.fintasys.emoji_picker_flutter.R$attr
-com.fintasys.emoji_picker_flutter.R$color
-com.fintasys.emoji_picker_flutter.R$dimen
-com.fintasys.emoji_picker_flutter.R$drawable
-com.fintasys.emoji_picker_flutter.R$id
-com.fintasys.emoji_picker_flutter.R$integer
-com.fintasys.emoji_picker_flutter.R$layout
-com.fintasys.emoji_picker_flutter.R$string
-com.fintasys.emoji_picker_flutter.R$style
-com.fintasys.emoji_picker_flutter.R$styleable
-com.fintasys.emoji_picker_flutter.R
 io.flutter.BuildConfig
 io.flutter.FlutterInjector$Builder:
     public io.flutter.FlutterInjector$Builder setDeferredComponentManager(io.flutter.embedding.engine.deferredcomponents.DeferredComponentManager)
@@ -1796,6 +1771,7 @@ io.flutter.embedding.engine.FlutterEngine:
     public io.flutter.embedding.engine.plugins.contentprovider.ContentProviderControlSurface getContentProviderControlSurface()
     public io.flutter.embedding.engine.systemchannels.DeferredComponentChannel getDeferredComponentChannel()
     public io.flutter.embedding.engine.systemchannels.LocalizationChannel getLocalizationChannel()
+    public io.flutter.embedding.engine.plugins.PluginRegistry getPlugins()
     public io.flutter.embedding.engine.plugins.service.ServiceControlSurface getServiceControlSurface()
     public void removeEngineLifecycleListener(io.flutter.embedding.engine.FlutterEngine$EngineLifecycleListener)
     io.flutter.embedding.engine.FlutterEngine spawn(android.content.Context,io.flutter.embedding.engine.dart.DartExecutor$DartEntrypoint,java.lang.String,java.util.List,io.flutter.plugin.platform.PlatformViewsController,boolean,boolean)
@@ -1820,14 +1796,8 @@ io.flutter.embedding.engine.FlutterEngineConnectionRegistry$FlutterEngineActivit
     public void removeOnSaveStateListener(io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding$OnSaveInstanceStateListener)
     public void removeOnUserLeaveHintListener(io.flutter.plugin.common.PluginRegistry$UserLeaveHintListener)
     public void removeRequestPermissionsResultListener(io.flutter.plugin.common.PluginRegistry$RequestPermissionsResultListener)
-io.flutter.embedding.engine.FlutterEngineConnectionRegistry$FlutterEngineBroadcastReceiverPluginBinding:
-    private final android.content.BroadcastReceiver broadcastReceiver
-    void <init>(android.content.BroadcastReceiver)
-    public android.content.BroadcastReceiver getBroadcastReceiver()
-io.flutter.embedding.engine.FlutterEngineConnectionRegistry$FlutterEngineContentProviderPluginBinding:
-    private final android.content.ContentProvider contentProvider
-    void <init>(android.content.ContentProvider)
-    public android.content.ContentProvider getContentProvider()
+io.flutter.embedding.engine.FlutterEngineConnectionRegistry$FlutterEngineBroadcastReceiverPluginBinding
+io.flutter.embedding.engine.FlutterEngineConnectionRegistry$FlutterEngineContentProviderPluginBinding
 io.flutter.embedding.engine.FlutterEngineConnectionRegistry$FlutterEngineServicePluginBinding:
     private final io.flutter.embedding.engine.plugins.lifecycle.HiddenLifecycleReference hiddenLifecycleReference
     private final java.util.Set onModeChangeListeners
@@ -1841,12 +1811,16 @@ io.flutter.embedding.engine.FlutterEngineConnectionRegistry$FlutterEngineService
     public void removeOnModeChangeListener(io.flutter.embedding.engine.plugins.service.ServiceAware$OnModeChangeListener)
 io.flutter.embedding.engine.FlutterEngineConnectionRegistry:
     private static final java.lang.String TAG
+    private io.flutter.embedding.engine.FlutterEngineConnectionRegistry$FlutterEngineBroadcastReceiverPluginBinding broadcastReceiverPluginBinding
+    private io.flutter.embedding.engine.FlutterEngineConnectionRegistry$FlutterEngineContentProviderPluginBinding contentProviderPluginBinding
+    public void add(io.flutter.embedding.engine.plugins.FlutterPlugin)
     public void add(java.util.Set)
     public void attachToBroadcastReceiver(android.content.BroadcastReceiver,androidx.lifecycle.Lifecycle)
     public void attachToContentProvider(android.content.ContentProvider,androidx.lifecycle.Lifecycle)
     public void attachToService(android.app.Service,androidx.lifecycle.Lifecycle,boolean)
     private android.app.Activity attachedActivity()
     public io.flutter.embedding.engine.plugins.FlutterPlugin get(java.lang.Class)
+    public boolean has(java.lang.Class)
     public void onMoveToBackground()
     public void onMoveToForeground()
 io.flutter.embedding.engine.FlutterEngineGroup$1
@@ -2010,17 +1984,15 @@ io.flutter.embedding.engine.plugins.FlutterPlugin$FlutterAssets:
     public abstract java.lang.String getAssetFilePathBySubpath(java.lang.String)
     public abstract java.lang.String getAssetFilePathBySubpath(java.lang.String,java.lang.String)
 io.flutter.embedding.engine.plugins.FlutterPlugin$FlutterPluginBinding:
+    public android.content.Context getApplicationContext()
+    public io.flutter.plugin.common.BinaryMessenger getBinaryMessenger()
     public io.flutter.embedding.engine.plugins.FlutterPlugin$FlutterAssets getFlutterAssets()
     public io.flutter.embedding.engine.FlutterEngine getFlutterEngine()
     public io.flutter.plugin.platform.PlatformViewRegistry getPlatformViewRegistry()
     public io.flutter.view.TextureRegistry getTextureRegistry()
-io.flutter.embedding.engine.plugins.PluginRegistry:
-    public abstract void add(java.util.Set)
-    public abstract io.flutter.embedding.engine.plugins.FlutterPlugin get(java.lang.Class)
-    public abstract boolean has(java.lang.Class)
-    public abstract void remove(java.lang.Class)
-    public abstract void remove(java.util.Set)
-    public abstract void removeAll()
+io.flutter.embedding.engine.plugins.FlutterPlugin:
+    public abstract void onAttachedToEngine(io.flutter.embedding.engine.plugins.FlutterPlugin$FlutterPluginBinding)
+io.flutter.embedding.engine.plugins.PluginRegistry
 io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding:
     public abstract void addActivityResultListener(io.flutter.plugin.common.PluginRegistry$ActivityResultListener)
     public abstract void addOnNewIntentListener(io.flutter.plugin.common.PluginRegistry$NewIntentListener)
@@ -2034,19 +2006,19 @@ io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding:
     public abstract void removeOnSaveStateListener(io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding$OnSaveInstanceStateListener)
     public abstract void removeOnUserLeaveHintListener(io.flutter.plugin.common.PluginRegistry$UserLeaveHintListener)
     public abstract void removeRequestPermissionsResultListener(io.flutter.plugin.common.PluginRegistry$RequestPermissionsResultListener)
+io.flutter.embedding.engine.plugins.broadcastreceiver.BroadcastReceiverAware:
+    public abstract void onAttachedToBroadcastReceiver(io.flutter.embedding.engine.plugins.broadcastreceiver.BroadcastReceiverPluginBinding)
 io.flutter.embedding.engine.plugins.broadcastreceiver.BroadcastReceiverControlSurface
-io.flutter.embedding.engine.plugins.broadcastreceiver.BroadcastReceiverPluginBinding:
-    public abstract android.content.BroadcastReceiver getBroadcastReceiver()
+io.flutter.embedding.engine.plugins.broadcastreceiver.BroadcastReceiverPluginBinding
+io.flutter.embedding.engine.plugins.contentprovider.ContentProviderAware:
+    public abstract void onAttachedToContentProvider(io.flutter.embedding.engine.plugins.contentprovider.ContentProviderPluginBinding)
 io.flutter.embedding.engine.plugins.contentprovider.ContentProviderControlSurface
-io.flutter.embedding.engine.plugins.contentprovider.ContentProviderPluginBinding:
-    public abstract android.content.ContentProvider getContentProvider()
+io.flutter.embedding.engine.plugins.contentprovider.ContentProviderPluginBinding
 io.flutter.embedding.engine.plugins.service.ServiceAware$OnModeChangeListener
+io.flutter.embedding.engine.plugins.service.ServiceAware:
+    public abstract void onAttachedToService(io.flutter.embedding.engine.plugins.service.ServicePluginBinding)
 io.flutter.embedding.engine.plugins.service.ServiceControlSurface
-io.flutter.embedding.engine.plugins.service.ServicePluginBinding:
-    public abstract void addOnModeChangeListener(io.flutter.embedding.engine.plugins.service.ServiceAware$OnModeChangeListener)
-    public abstract java.lang.Object getLifecycle()
-    public abstract android.app.Service getService()
-    public abstract void removeOnModeChangeListener(io.flutter.embedding.engine.plugins.service.ServiceAware$OnModeChangeListener)
+io.flutter.embedding.engine.plugins.service.ServicePluginBinding
 io.flutter.embedding.engine.plugins.shim.ShimPluginRegistry$1
 io.flutter.embedding.engine.plugins.shim.ShimPluginRegistry$ShimRegistrarAggregate
 io.flutter.embedding.engine.plugins.shim.ShimPluginRegistry
@@ -2143,9 +2115,11 @@ io.flutter.plugin.common.JSONUtil:
     private void <init>()
     public static java.lang.Object unwrap(java.lang.Object)
 io.flutter.plugin.common.MethodCall:
+    public java.lang.Object argument(java.lang.String)
     public boolean hasArgument(java.lang.String)
 io.flutter.plugin.common.MethodChannel:
     private static final java.lang.String TAG
+    public void <init>(io.flutter.plugin.common.BinaryMessenger,java.lang.String)
     public void resizeChannelBuffer(int)
 io.flutter.plugin.common.PluginRegistry$PluginRegistrantCallback
 io.flutter.plugin.common.PluginRegistry$Registrar
@@ -2224,26 +2198,6 @@ io.flutter.plugin.platform.SingleViewPresentation$WindowManagerHandler:
 io.flutter.plugin.platform.VirtualDisplayController:
     public void dispose()
     void onFlutterViewDetached()
-io.flutter.plugins.sharedpreferences.BuildConfig
-io.flutter.plugins.sharedpreferences.MethodCallHandlerImpl:
-    private static final java.lang.String BIG_INTEGER_PREFIX
-    private static final java.lang.String DOUBLE_PREFIX
-    private static final java.lang.String LIST_IDENTIFIER
-    private static final java.lang.String SHARED_PREFERENCES_NAME
-io.flutter.plugins.sharedpreferences.R$attr
-io.flutter.plugins.sharedpreferences.R$color
-io.flutter.plugins.sharedpreferences.R$dimen
-io.flutter.plugins.sharedpreferences.R$drawable
-io.flutter.plugins.sharedpreferences.R$id
-io.flutter.plugins.sharedpreferences.R$integer
-io.flutter.plugins.sharedpreferences.R$layout
-io.flutter.plugins.sharedpreferences.R$string
-io.flutter.plugins.sharedpreferences.R$style
-io.flutter.plugins.sharedpreferences.R$styleable
-io.flutter.plugins.sharedpreferences.R
-io.flutter.plugins.sharedpreferences.SharedPreferencesPlugin:
-    private static final java.lang.String CHANNEL_NAME
-    public static void registerWith(io.flutter.plugin.common.PluginRegistry$Registrar)
 io.flutter.util.HandlerCompat:
     public void <init>()
 io.flutter.util.PathUtils:
@@ -8656,12 +8610,8 @@ io.flutter.Log:
     public static int VERBOSE
     public static int WARN
     private static int logLevel
-io.flutter.embedding.engine.FlutterEngineConnectionRegistry$FlutterEngineBroadcastReceiverPluginBinding
-io.flutter.embedding.engine.FlutterEngineConnectionRegistry$FlutterEngineContentProviderPluginBinding
 io.flutter.embedding.engine.FlutterEngineConnectionRegistry$FlutterEngineServicePluginBinding
 io.flutter.embedding.engine.FlutterEngineConnectionRegistry:
-    private io.flutter.embedding.engine.FlutterEngineConnectionRegistry$FlutterEngineBroadcastReceiverPluginBinding broadcastReceiverPluginBinding
-    private io.flutter.embedding.engine.FlutterEngineConnectionRegistry$FlutterEngineContentProviderPluginBinding contentProviderPluginBinding
     private io.flutter.embedding.engine.FlutterEngineConnectionRegistry$FlutterEngineServicePluginBinding servicePluginBinding
 io.flutter.embedding.engine.loader.ResourceExtractor:
     void waitForCompletion()

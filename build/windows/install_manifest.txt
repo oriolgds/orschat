@@ -58,5 +58,15 @@ C:/Users/Ori/AndroidStudioProjects/orschat/build/windows/runner/Release/data/flu
 C:/Users/Ori/AndroidStudioProjects/orschat/build/windows/runner/Release/data/flutter_assets/lib/assets/withoutProfilePhoto.png
 C:/Users/Ori/AndroidStudioProjects/orschat/build/windows/runner/Release/data/flutter_assets/NOTICES.Z
 C:/Users/Ori/AndroidStudioProjects/orschat/build/windows/runner/Release/data/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf
+C:/Users/Ori/AndroidStudioProjects/orschat/build/windows/runner/Release/data/flutter_assets/packages/emoji_dialog_picker/assets/emojis/activity.json
+C:/Users/Ori/AndroidStudioProjects/orschat/build/windows/runner/Release/data/flutter_assets/packages/emoji_dialog_picker/assets/emojis/animals_and_nature.json
+C:/Users/Ori/AndroidStudioProjects/orschat/build/windows/runner/Release/data/flutter_assets/packages/emoji_dialog_picker/assets/emojis/emojis.json
+C:/Users/Ori/AndroidStudioProjects/orschat/build/windows/runner/Release/data/flutter_assets/packages/emoji_dialog_picker/assets/emojis/flags.json
+C:/Users/Ori/AndroidStudioProjects/orschat/build/windows/runner/Release/data/flutter_assets/packages/emoji_dialog_picker/assets/emojis/food_and_drink.json
+C:/Users/Ori/AndroidStudioProjects/orschat/build/windows/runner/Release/data/flutter_assets/packages/emoji_dialog_picker/assets/emojis/objects.json
+C:/Users/Ori/AndroidStudioProjects/orschat/build/windows/runner/Release/data/flutter_assets/packages/emoji_dialog_picker/assets/emojis/people.json
+C:/Users/Ori/AndroidStudioProjects/orschat/build/windows/runner/Release/data/flutter_assets/packages/emoji_dialog_picker/assets/emojis/symbols.json
+C:/Users/Ori/AndroidStudioProjects/orschat/build/windows/runner/Release/data/flutter_assets/packages/emoji_dialog_picker/assets/emojis/travel_and_places.json
+C:/Users/Ori/AndroidStudioProjects/orschat/build/windows/runner/Release/data/flutter_assets/packages/eva_icons_flutter/lib/fonts/Eva-Icons.ttf
 C:/Users/Ori/AndroidStudioProjects/orschat/build/windows/runner/Release/data/flutter_assets/shaders/ink_sparkle.frag
 C:/Users/Ori/AndroidStudioProjects/orschat/build/windows/runner/Release/data/app.so

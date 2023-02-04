@@ -1,15 +1,9 @@
 <dependencies>
   <compile
-      roots="__local_aars__:C:\Users\Ori\AndroidStudioProjects\orschat\build\app\intermediates\flutter\release\libs.jar:unspecified@jar,C:\Users\Ori\AndroidStudioProjects\orschat\android@@:shared_preferences_android::release,C:\Users\Ori\AndroidStudioProjects\orschat\android@@:emoji_picker_flutter::release,io.flutter:flutter_embedding_release:1.0.0-800594f1f4a6674010a6f1603c07a919b4d7ebd7@jar,androidx.window:window-java:1.0.0-beta04@aar,androidx.window:window:1.0.0-beta04@aar,org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2@jar,org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.5.2@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.10@jar,io.flutter:armeabi_v7a_release:1.0.0-800594f1f4a6674010a6f1603c07a919b4d7ebd7@jar,io.flutter:arm64_v8a_release:1.0.0-800594f1f4a6674010a6f1603c07a919b4d7ebd7@jar,io.flutter:x86_64_release:1.0.0-800594f1f4a6674010a6f1603c07a919b4d7ebd7@jar,androidx.lifecycle:lifecycle-common-java8:2.2.0@jar,androidx.fragment:fragment:1.1.0@aar,androidx.viewpager:viewpager:1.0.0@aar,androidx.loader:loader:1.0.0@aar,androidx.activity:activity:1.0.0@aar,androidx.customview:customview:1.0.0@aar,androidx.core:core:1.6.0@aar,androidx.core:core:1.6.0@aar,androidx.lifecycle:lifecycle-runtime:2.2.0@aar,androidx.savedstate:savedstate:1.0.0@aar,androidx.lifecycle:lifecycle-livedata:2.0.0@aar,androidx.lifecycle:lifecycle-livedata-core:2.0.0@aar,androidx.lifecycle:lifecycle-common:2.2.0@jar,androidx.arch.core:core-runtime:2.0.0@aar,androidx.arch.core:core-common:2.1.0@jar,androidx.versionedparcelable:versionedparcelable:1.1.1@aar,androidx.collection:collection:1.1.0@jar,androidx.lifecycle:lifecycle-viewmodel:2.1.0@aar,androidx.annotation:annotation:1.2.0@jar,androidx.annotation:annotation-experimental:1.1.0@aar,androidx.tracing:tracing:1.0.0@aar,org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.7.10@jar,org.jetbrains.kotlin:kotlin-stdlib:1.7.10@jar,org.jetbrains.kotlin:kotlin-stdlib-common:1.7.10@jar,org.jetbrains:annotations:13.0@jar">
+      roots="__local_aars__:C:\Users\Ori\AndroidStudioProjects\orschat\build\app\intermediates\flutter\release\libs.jar:unspecified@jar,io.flutter:flutter_embedding_release:1.0.0-800594f1f4a6674010a6f1603c07a919b4d7ebd7@jar,androidx.window:window-java:1.0.0-beta04@aar,androidx.window:window:1.0.0-beta04@aar,org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2@jar,org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.5.2@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.10@jar,io.flutter:armeabi_v7a_release:1.0.0-800594f1f4a6674010a6f1603c07a919b4d7ebd7@jar,io.flutter:arm64_v8a_release:1.0.0-800594f1f4a6674010a6f1603c07a919b4d7ebd7@jar,io.flutter:x86_64_release:1.0.0-800594f1f4a6674010a6f1603c07a919b4d7ebd7@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.7.10@jar,org.jetbrains.kotlin:kotlin-stdlib:1.7.10@jar,org.jetbrains.kotlin:kotlin-stdlib-common:1.7.10@jar,org.jetbrains:annotations:13.0@jar,androidx.lifecycle:lifecycle-common-java8:2.2.0@jar,androidx.fragment:fragment:1.1.0@aar,androidx.viewpager:viewpager:1.0.0@aar,androidx.loader:loader:1.0.0@aar,androidx.activity:activity:1.0.0@aar,androidx.customview:customview:1.0.0@aar,androidx.core:core:1.6.0@aar,androidx.core:core:1.6.0@aar,androidx.lifecycle:lifecycle-runtime:2.2.0@aar,androidx.savedstate:savedstate:1.0.0@aar,androidx.lifecycle:lifecycle-livedata:2.0.0@aar,androidx.lifecycle:lifecycle-livedata-core:2.0.0@aar,androidx.lifecycle:lifecycle-common:2.2.0@jar,androidx.arch.core:core-runtime:2.0.0@aar,androidx.arch.core:core-common:2.1.0@jar,androidx.versionedparcelable:versionedparcelable:1.1.1@aar,androidx.collection:collection:1.1.0@jar,androidx.lifecycle:lifecycle-viewmodel:2.1.0@aar,androidx.annotation:annotation:1.2.0@jar,androidx.annotation:annotation-experimental:1.1.0@aar,androidx.tracing:tracing:1.0.0@aar">
     <dependency
         name="__local_aars__:C:\Users\Ori\AndroidStudioProjects\orschat\build\app\intermediates\flutter\release\libs.jar:unspecified@jar"
         simpleName="__local_aars__:C:\Users\Ori\AndroidStudioProjects\orschat\build\app\intermediates\flutter\release\libs.jar"/>
-    <dependency
-        name="C:\Users\Ori\AndroidStudioProjects\orschat\android@@:shared_preferences_android::release"
-        simpleName="io.flutter.plugins.sharedpreferences:shared_preferences_android"/>
-    <dependency
-        name="C:\Users\Ori\AndroidStudioProjects\orschat\android@@:emoji_picker_flutter::release"
-        simpleName="com.fintasys.emoji_picker_flutter:emoji_picker_flutter"/>
     <dependency
         name="io.flutter:flutter_embedding_release:1.0.0-800594f1f4a6674010a6f1603c07a919b4d7ebd7@jar"
         simpleName="io.flutter:flutter_embedding_release"/>
@@ -37,6 +31,18 @@
     <dependency
         name="io.flutter:x86_64_release:1.0.0-800594f1f4a6674010a6f1603c07a919b4d7ebd7@jar"
         simpleName="io.flutter:x86_64_release"/>
+    <dependency
+        name="org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.7.10@jar"
+        simpleName="org.jetbrains.kotlin:kotlin-stdlib-jdk7"/>
+    <dependency
+        name="org.jetbrains.kotlin:kotlin-stdlib:1.7.10@jar"
+        simpleName="org.jetbrains.kotlin:kotlin-stdlib"/>
+    <dependency
+        name="org.jetbrains.kotlin:kotlin-stdlib-common:1.7.10@jar"
+        simpleName="org.jetbrains.kotlin:kotlin-stdlib-common"/>
+    <dependency
+        name="org.jetbrains:annotations:13.0@jar"
+        simpleName="org.jetbrains:annotations"/>
     <dependency
         name="androidx.lifecycle:lifecycle-common-java8:2.2.0@jar"
         simpleName="androidx.lifecycle:lifecycle-common-java8"/>
@@ -97,30 +103,12 @@
     <dependency
         name="androidx.tracing:tracing:1.0.0@aar"
         simpleName="androidx.tracing:tracing"/>
-    <dependency
-        name="org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.7.10@jar"
-        simpleName="org.jetbrains.kotlin:kotlin-stdlib-jdk7"/>
-    <dependency
-        name="org.jetbrains.kotlin:kotlin-stdlib:1.7.10@jar"
-        simpleName="org.jetbrains.kotlin:kotlin-stdlib"/>
-    <dependency
-        name="org.jetbrains.kotlin:kotlin-stdlib-common:1.7.10@jar"
-        simpleName="org.jetbrains.kotlin:kotlin-stdlib-common"/>
-    <dependency
-        name="org.jetbrains:annotations:13.0@jar"
-        simpleName="org.jetbrains:annotations"/>
   </compile>
   <package
-      roots="__local_aars__:C:\Users\Ori\AndroidStudioProjects\orschat\build\app\intermediates\flutter\release\libs.jar:unspecified@jar,C:\Users\Ori\AndroidStudioProjects\orschat\android@@:shared_preferences_android::release,C:\Users\Ori\AndroidStudioProjects\orschat\android@@:emoji_picker_flutter::release,io.flutter:flutter_embedding_release:1.0.0-800594f1f4a6674010a6f1603c07a919b4d7ebd7@jar,androidx.window:window-java:1.0.0-beta04@aar,androidx.window:window:1.0.0-beta04@aar,org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2@jar,org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.5.2@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.10@jar,io.flutter:armeabi_v7a_release:1.0.0-800594f1f4a6674010a6f1603c07a919b4d7ebd7@jar,io.flutter:arm64_v8a_release:1.0.0-800594f1f4a6674010a6f1603c07a919b4d7ebd7@jar,io.flutter:x86_64_release:1.0.0-800594f1f4a6674010a6f1603c07a919b4d7ebd7@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.7.10@jar,org.jetbrains.kotlin:kotlin-stdlib:1.7.10@jar,androidx.lifecycle:lifecycle-common-java8:2.2.0@jar,androidx.fragment:fragment:1.1.0@aar,androidx.viewpager:viewpager:1.0.0@aar,androidx.loader:loader:1.0.0@aar,androidx.activity:activity:1.0.0@aar,androidx.customview:customview:1.0.0@aar,androidx.core:core:1.6.0@aar,androidx.core:core:1.6.0@aar,androidx.lifecycle:lifecycle-runtime:2.2.0@aar,androidx.savedstate:savedstate:1.0.0@aar,androidx.lifecycle:lifecycle-livedata:2.0.0@aar,androidx.lifecycle:lifecycle-livedata-core:2.0.0@aar,androidx.lifecycle:lifecycle-common:2.2.0@jar,androidx.tracing:tracing:1.0.0@aar,androidx.arch.core:core-runtime:2.0.0@aar,androidx.arch.core:core-common:2.1.0@jar,androidx.versionedparcelable:versionedparcelable:1.1.1@aar,androidx.collection:collection:1.1.0@jar,androidx.lifecycle:lifecycle-viewmodel:2.1.0@aar,androidx.annotation:annotation:1.2.0@jar,org.jetbrains.kotlin:kotlin-stdlib-common:1.7.10@jar,org.jetbrains:annotations:13.0@jar,androidx.annotation:annotation-experimental:1.1.0@aar">
+      roots="__local_aars__:C:\Users\Ori\AndroidStudioProjects\orschat\build\app\intermediates\flutter\release\libs.jar:unspecified@jar,io.flutter:flutter_embedding_release:1.0.0-800594f1f4a6674010a6f1603c07a919b4d7ebd7@jar,androidx.window:window-java:1.0.0-beta04@aar,androidx.window:window:1.0.0-beta04@aar,org.jetbrains.kotlinx:kotlinx-coroutines-android:1.5.2@jar,org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.5.2@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.7.10@jar,io.flutter:armeabi_v7a_release:1.0.0-800594f1f4a6674010a6f1603c07a919b4d7ebd7@jar,io.flutter:arm64_v8a_release:1.0.0-800594f1f4a6674010a6f1603c07a919b4d7ebd7@jar,io.flutter:x86_64_release:1.0.0-800594f1f4a6674010a6f1603c07a919b4d7ebd7@jar,org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.7.10@jar,org.jetbrains.kotlin:kotlin-stdlib:1.7.10@jar,androidx.lifecycle:lifecycle-common-java8:2.2.0@jar,androidx.fragment:fragment:1.1.0@aar,androidx.viewpager:viewpager:1.0.0@aar,androidx.loader:loader:1.0.0@aar,androidx.activity:activity:1.0.0@aar,androidx.customview:customview:1.0.0@aar,androidx.core:core:1.6.0@aar,androidx.core:core:1.6.0@aar,androidx.lifecycle:lifecycle-runtime:2.2.0@aar,androidx.savedstate:savedstate:1.0.0@aar,androidx.lifecycle:lifecycle-livedata:2.0.0@aar,androidx.lifecycle:lifecycle-livedata-core:2.0.0@aar,androidx.lifecycle:lifecycle-common:2.2.0@jar,androidx.tracing:tracing:1.0.0@aar,androidx.arch.core:core-runtime:2.0.0@aar,androidx.arch.core:core-common:2.1.0@jar,androidx.versionedparcelable:versionedparcelable:1.1.1@aar,androidx.collection:collection:1.1.0@jar,androidx.lifecycle:lifecycle-viewmodel:2.1.0@aar,androidx.annotation:annotation:1.2.0@jar,org.jetbrains.kotlin:kotlin-stdlib-common:1.7.10@jar,org.jetbrains:annotations:13.0@jar,androidx.annotation:annotation-experimental:1.1.0@aar">
     <dependency
         name="__local_aars__:C:\Users\Ori\AndroidStudioProjects\orschat\build\app\intermediates\flutter\release\libs.jar:unspecified@jar"
         simpleName="__local_aars__:C:\Users\Ori\AndroidStudioProjects\orschat\build\app\intermediates\flutter\release\libs.jar"/>
-    <dependency
-        name="C:\Users\Ori\AndroidStudioProjects\orschat\android@@:shared_preferences_android::release"
-        simpleName="io.flutter.plugins.sharedpreferences:shared_preferences_android"/>
-    <dependency
-        name="C:\Users\Ori\AndroidStudioProjects\orschat\android@@:emoji_picker_flutter::release"
-        simpleName="com.fintasys.emoji_picker_flutter:emoji_picker_flutter"/>
     <dependency
         name="io.flutter:flutter_embedding_release:1.0.0-800594f1f4a6674010a6f1603c07a919b4d7ebd7@jar"
         simpleName="io.flutter:flutter_embedding_release"/>
