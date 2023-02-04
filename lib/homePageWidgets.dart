@@ -15,7 +15,15 @@ class ChatContactListItem extends StatefulWidget {
 class _ChatContactListItemState extends State<ChatContactListItem> {
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
+      decoration: const BoxDecoration(
+        border: Border(
+          top: BorderSide(
+              width: 1,
+              color: Color(0xFFcccccc)
+          ),
+        )
+      ),
       height: 100,
       child: InkWell(
         onTap: (){

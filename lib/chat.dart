@@ -123,7 +123,7 @@ class _ChattingState extends State<Chatting> {
                             onPressed: (){
 
                             },
-                            icon: Icon(Icons.emoji_emotions)
+                            icon: const Icon(Icons.emoji_emotions)
                           ),
                           SizedBox(
                             width: MediaQuery.of(context).size.width - 179,
