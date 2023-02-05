@@ -17,10 +17,11 @@ class SettingsInkWell extends StatelessWidget {
       height: 100,
       child: InkWell(
         onTap: (){
-          Navigator.of(context).push(scaffoldTransition(Chatting(widget.name, widget.pathToImg), const Offset(0.0, 0.1)));
+          //Navigator.of(context).push(scaffoldTransition(Chatting(widget.name, widget.pathToImg), const Offset(0.0, 0.1)));
         },
         child: Row(
           children: <Widget>[
+            Icon(Icons.brush_outlined)
 
           ],
         )
