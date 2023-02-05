@@ -525,6 +525,7 @@ kotlin.jvm.internal.StringCompanionOb...
 viewType
 editingValue
 OFFER_FAILED
+getPlatformVersion
 invokeSuspend
 SidecarCompat
 DROP_LATEST
@@ -751,6 +752,7 @@ CUT
 BOTTOM_OVERLAYS
 _decision
 kotlinx.coroutines.flow.AbstractFlow
+flutter_native_splash
 input_method
 oldText
 Clipboard.hasStrings
@@ -1053,6 +1055,7 @@ Marking id:accessibility_custom_action_9:2131034144 used because it matches stri
 Marking attr:primaryActivityName:2130771988 used because it matches string pool constant primaryActivityName
 Marking color:androidx_core_ripple_material_light:2130837504 used because it matches string pool constant android
 Marking color:androidx_core_secondary_text_default_material_light:2130837505 used because it matches string pool constant android
+Marking drawable:android12splash:2130968576 used because it matches string pool constant android
 Marking id:androidx_window_activity_scope:2131034150 used because it matches string pool constant android
 Marking attr:shortcutMatchRequired:2130771992 used because it matches string pool constant short
 Marking attr:secondaryActivityName:2130771991 used because it matches string pool constant secondaryActivityName
@@ -1067,6 +1070,7 @@ Marking id:action_text:2131034148 used because it matches string pool constant a
 Marking id:actions:2131034149 used because it matches string pool constant action
 Marking id:text:2131034184 used because it matches string pool constant text
 Marking id:text2:2131034185 used because it matches string pool constant text
+Marking drawable:background:2130968577 used because it matches string pool constant background
 Marking attr:activityAction:2130771968 used because it matches string pool constant activity
 Marking attr:activityName:2130771969 used because it matches string pool constant activity
 Marking id:line1:2131034160 used because it matches string pool constant line
@@ -1129,7 +1133,10 @@ Marking id:line3:2131034161 used because it matches string pool constant line
 @orschat.talk4fun.net.orschat:dimen/notification_subtext_size : reachable=false
 @orschat.talk4fun.net.orschat:dimen/notification_top_pad : reachable=false
 @orschat.talk4fun.net.orschat:dimen/notification_top_pad_large_text : reachable=false
+@orschat.talk4fun.net.orschat:drawable/android12splash : reachable=true
+@orschat.talk4fun.net.orschat:drawable/background : reachable=true
 @orschat.talk4fun.net.orschat:drawable/launch_background : reachable=false
+    @orschat.talk4fun.net.orschat:drawable/background
 @orschat.talk4fun.net.orschat:drawable/notification_action_background : reachable=false
     @orschat.talk4fun.net.orschat:color/androidx_core_ripple_material_light
     @orschat.talk4fun.net.orschat:dimen/compat_button_inset_horizontal_material
@@ -1263,6 +1270,7 @@ Marking id:line3:2131034161 used because it matches string pool constant line
 @orschat.talk4fun.net.orschat:string/status_bar_notification_info_overflow : reachable=false
 @orschat.talk4fun.net.orschat:style/LaunchTheme : reachable=true
     @orschat.talk4fun.net.orschat:drawable/launch_background
+    @orschat.talk4fun.net.orschat:drawable/android12splash
 @orschat.talk4fun.net.orschat:style/NormalTheme : reachable=true
 @orschat.talk4fun.net.orschat:style/TextAppearance_Compat_Notification : reachable=false
 @orschat.talk4fun.net.orschat:style/TextAppearance_Compat_Notification_Info : reachable=false
@@ -1287,6 +1295,8 @@ The root reachable resources are:
  attr:shortcutMatchRequired:2130771992
  color:androidx_core_ripple_material_light:2130837504
  color:androidx_core_secondary_text_default_material_light:2130837505
+ drawable:android12splash:2130968576
+ drawable:background:2130968577
  id:accessibility_action_clickable_span:2131034112
  id:accessibility_custom_action_0:2131034113
  id:accessibility_custom_action_1:2131034114

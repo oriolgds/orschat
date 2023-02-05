@@ -3,8 +3,8 @@
 # min_api: 16
 # common_typos_disable
 # {"id":"com.android.tools.r8.mapping","version":"2.0"}
-# pg_map_id: d6bf621
-# pg_map_hash: SHA-256 d6bf621c44b5b71bab002910c3c8d23b56d01561419744600c86f6777f517902
+# pg_map_id: 88681df
+# pg_map_hash: SHA-256 88681dffd3eb982e75d1b269cf1e59f0d7053579d8b97dbadd6960e1be32a425
 androidx.activity.Cancellable -> androidx.activity.a:
 androidx.activity.ComponentActivity$2 -> androidx.activity.ComponentActivity$2:
     void onStateChanged(androidx.lifecycle.LifecycleOwner,androidx.lifecycle.Lifecycle$Event) -> g
@@ -1133,13 +1133,14 @@ io.flutter.embedding.engine.FlutterEngine -> io.flutter.embedding.engine.a:
     io.flutter.embedding.engine.systemchannels.NavigationChannel getNavigationChannel() -> l
     io.flutter.embedding.engine.systemchannels.PlatformChannel getPlatformChannel() -> m
     io.flutter.plugin.platform.PlatformViewsController getPlatformViewsController() -> n
-    io.flutter.embedding.engine.renderer.FlutterRenderer getRenderer() -> o
-    io.flutter.embedding.engine.systemchannels.RestorationChannel getRestorationChannel() -> p
-    io.flutter.embedding.engine.systemchannels.SettingsChannel getSettingsChannel() -> q
-    io.flutter.embedding.engine.systemchannels.SpellCheckChannel getSpellCheckChannel() -> r
-    io.flutter.embedding.engine.systemchannels.SystemChannel getSystemChannel() -> s
-    io.flutter.embedding.engine.systemchannels.TextInputChannel getTextInputChannel() -> t
-    boolean isAttachedToJni() -> u
+    io.flutter.embedding.engine.plugins.PluginRegistry getPlugins() -> o
+    io.flutter.embedding.engine.renderer.FlutterRenderer getRenderer() -> p
+    io.flutter.embedding.engine.systemchannels.RestorationChannel getRestorationChannel() -> q
+    io.flutter.embedding.engine.systemchannels.SettingsChannel getSettingsChannel() -> r
+    io.flutter.embedding.engine.systemchannels.SpellCheckChannel getSpellCheckChannel() -> s
+    io.flutter.embedding.engine.systemchannels.SystemChannel getSystemChannel() -> t
+    io.flutter.embedding.engine.systemchannels.TextInputChannel getTextInputChannel() -> u
+    boolean isAttachedToJni() -> v
 io.flutter.embedding.engine.FlutterEngine$1 -> io.flutter.embedding.engine.a$a:
     io.flutter.embedding.engine.FlutterEngine this$0 -> a
     void onPreEngineRestart() -> a
@@ -1176,21 +1177,23 @@ io.flutter.embedding.engine.FlutterEngineConnectionRegistry -> io.flutter.embedd
     void onUserLeaveHint() -> f
     void attachToActivity(io.flutter.embedding.android.ExclusiveAppComponent,androidx.lifecycle.Lifecycle) -> g
     void detachFromActivity() -> h
-    void detachFromActivityForConfigChanges() -> i
-    void attachToActivityInternal(android.app.Activity,androidx.lifecycle.Lifecycle) -> j
-    void destroy() -> k
-    void detachFromActivityInternal() -> l
-    void detachFromAppComponent() -> m
-    void detachFromBroadcastReceiver() -> n
-    void detachFromContentProvider() -> o
-    void detachFromService() -> p
-    boolean isAttachedToActivity() -> q
-    boolean isAttachedToBroadcastReceiver() -> r
-    boolean isAttachedToContentProvider() -> s
-    boolean isAttachedToService() -> t
-    void remove(java.lang.Class) -> u
-    void remove(java.util.Set) -> v
-    void removeAll() -> w
+    void add(io.flutter.embedding.engine.plugins.FlutterPlugin) -> i
+    void detachFromActivityForConfigChanges() -> j
+    void attachToActivityInternal(android.app.Activity,androidx.lifecycle.Lifecycle) -> k
+    void destroy() -> l
+    void detachFromActivityInternal() -> m
+    void detachFromAppComponent() -> n
+    void detachFromBroadcastReceiver() -> o
+    void detachFromContentProvider() -> p
+    void detachFromService() -> q
+    boolean has(java.lang.Class) -> r
+    boolean isAttachedToActivity() -> s
+    boolean isAttachedToBroadcastReceiver() -> t
+    boolean isAttachedToContentProvider() -> u
+    boolean isAttachedToService() -> v
+    void remove(java.lang.Class) -> w
+    void remove(java.util.Set) -> x
+    void removeAll() -> y
 io.flutter.embedding.engine.FlutterEngineConnectionRegistry$1 -> io.flutter.embedding.engine.c$a:
 io.flutter.embedding.engine.FlutterEngineConnectionRegistry$DefaultFlutterAssets -> io.flutter.embedding.engine.c$b:
     io.flutter.embedding.engine.loader.FlutterLoader flutterLoader -> a
@@ -1401,7 +1404,8 @@ io.flutter.embedding.engine.mutatorsstack.FlutterMutatorsStack$FlutterMutatorTyp
     io.flutter.embedding.engine.mutatorsstack.FlutterMutatorsStack$FlutterMutatorType CLIP_PATH -> f
     io.flutter.embedding.engine.mutatorsstack.FlutterMutatorsStack$FlutterMutatorType TRANSFORM -> g
 io.flutter.embedding.engine.plugins.FlutterPlugin -> o.a:
-    void onDetachedFromEngine(io.flutter.embedding.engine.plugins.FlutterPlugin$FlutterPluginBinding) -> a
+    void onAttachedToEngine(io.flutter.embedding.engine.plugins.FlutterPlugin$FlutterPluginBinding) -> b
+    void onDetachedFromEngine(io.flutter.embedding.engine.plugins.FlutterPlugin$FlutterPluginBinding) -> c
 io.flutter.embedding.engine.plugins.FlutterPlugin$FlutterAssets -> o.a$a:
 io.flutter.embedding.engine.plugins.FlutterPlugin$FlutterPluginBinding -> o.a$b:
     android.content.Context applicationContext -> a
@@ -1410,6 +1414,9 @@ io.flutter.embedding.engine.plugins.FlutterPlugin$FlutterPluginBinding -> o.a$b:
     io.flutter.embedding.engine.FlutterEngine flutterEngine -> b
     io.flutter.embedding.engine.plugins.FlutterPlugin$FlutterAssets flutterAssets -> f
     io.flutter.plugin.common.BinaryMessenger binaryMessenger -> c
+    io.flutter.plugin.common.BinaryMessenger getBinaryMessenger() -> a
+io.flutter.embedding.engine.plugins.PluginRegistry -> o.b:
+    void add(io.flutter.embedding.engine.plugins.FlutterPlugin) -> i
 io.flutter.embedding.engine.plugins.activity.ActivityAware -> p.a:
     void onDetachedFromActivity() -> a
     void onReattachedToActivityForConfigChanges(io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding) -> b
@@ -1424,17 +1431,23 @@ io.flutter.embedding.engine.plugins.activity.ActivityControlSurface -> p.b:
     void onUserLeaveHint() -> f
     void attachToActivity(io.flutter.embedding.android.ExclusiveAppComponent,androidx.lifecycle.Lifecycle) -> g
     void detachFromActivity() -> h
-    void detachFromActivityForConfigChanges() -> i
+    void detachFromActivityForConfigChanges() -> j
 io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding -> p.c:
 io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding$OnSaveInstanceStateListener -> p.c$a:
     void onRestoreInstanceState(android.os.Bundle) -> a
     void onSaveInstanceState(android.os.Bundle) -> e
 io.flutter.embedding.engine.plugins.broadcastreceiver.BroadcastReceiverAware -> q.a:
     void onDetachedFromBroadcastReceiver() -> a
+    void onAttachedToBroadcastReceiver(io.flutter.embedding.engine.plugins.broadcastreceiver.BroadcastReceiverPluginBinding) -> b
+io.flutter.embedding.engine.plugins.broadcastreceiver.BroadcastReceiverPluginBinding -> q.b:
 io.flutter.embedding.engine.plugins.contentprovider.ContentProviderAware -> r.a:
-    void onDetachedFromContentProvider() -> a
+    void onAttachedToContentProvider(io.flutter.embedding.engine.plugins.contentprovider.ContentProviderPluginBinding) -> a
+    void onDetachedFromContentProvider() -> b
+io.flutter.embedding.engine.plugins.contentprovider.ContentProviderPluginBinding -> r.b:
 io.flutter.embedding.engine.plugins.service.ServiceAware -> s.a:
-    void onDetachedFromService() -> a
+    void onAttachedToService(io.flutter.embedding.engine.plugins.service.ServicePluginBinding) -> a
+    void onDetachedFromService() -> b
+io.flutter.embedding.engine.plugins.service.ServicePluginBinding -> s.b:
 io.flutter.embedding.engine.plugins.util.GeneratedPluginRegister -> t.a:
     void registerGeneratedPlugins(io.flutter.embedding.engine.FlutterEngine) -> a
 io.flutter.embedding.engine.renderer.FlutterRenderer -> u.a:
@@ -4901,6 +4914,11 @@ m.FlutterLoader$1$$ExternalSyntheticLambda0 -> m.c:
       # {"id":"com.android.tools.r8.synthesized"}
     void io.flutter.embedding.engine.loader.FlutterLoader$1$$InternalSyntheticLambda$0$4c58083b2370a8fcdf0f833c7e06d30029e23fa1df6021353fa19987ec472ed7$0.run() -> run
       # {"id":"com.android.tools.r8.synthesized"}
+net.jonhanson.flutter_native_splash.FlutterNativeSplashPlugin -> w0.a:
+    io.flutter.plugin.common.MethodChannel channel -> a
+    void onMethodCall(io.flutter.plugin.common.MethodCall,io.flutter.plugin.common.MethodChannel$Result) -> a
+    void onAttachedToEngine(io.flutter.embedding.engine.plugins.FlutterPlugin$FlutterPluginBinding) -> b
+    void onDetachedFromEngine(io.flutter.embedding.engine.plugins.FlutterPlugin$FlutterPluginBinding) -> c
 q0.CommonPool$$ExternalSyntheticLambda0 -> q0.t:
 # {"id":"sourceFile","fileName":"R8$$SyntheticClass"}
 # {"id":"com.android.tools.r8.synthesized"}

@@ -10,3 +10,4 @@ orschat.talk4fun.net.orschat.app-rs-8 C:\Users\Ori\AndroidStudioProjects\orschat
 orschat.talk4fun.net.orschat.app-mergeReleaseResources-9 C:\Users\Ori\AndroidStudioProjects\orschat\build\app\intermediates\incremental\release\mergeReleaseResources\merged.dir
 orschat.talk4fun.net.orschat.app-mergeReleaseResources-10 C:\Users\Ori\AndroidStudioProjects\orschat\build\app\intermediates\incremental\release\mergeReleaseResources\stripped.dir
 orschat.talk4fun.net.orschat.app-merged_res-11 C:\Users\Ori\AndroidStudioProjects\orschat\build\app\intermediates\merged_res\release
+orschat.talk4fun.net.orschat.app-packaged_res-12 C:\Users\Ori\AndroidStudioProjects\orschat\build\flutter_native_splash\intermediates\packaged_res\release

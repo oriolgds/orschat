@@ -19,8 +19,8 @@ class _ChatContactListItemState extends State<ChatContactListItem> {
       decoration: const BoxDecoration(
         border: Border(
           top: BorderSide(
-              width: 1,
-              color: Color(0xFFcccccc)
+              width: 0.5,
+              color: Color(0xAAcccccc)
           ),
         )
       ),

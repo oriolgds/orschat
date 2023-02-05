@@ -3,9 +3,11 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "assets/AssetManifest.json": "7e16ff24f6f7f830246a5ca6359ebfaf",
+  "assets/AssetManifest.json": "f60c8db081b9530d6d6e8636fdc49760",
 "assets/FontManifest.json": "760cc3770462a4d4092771fcdf1361d4",
 "assets/fonts/MaterialIcons-Regular.otf": "e7069dfd19b331be16bed984668fe080",
+"assets/lib/assets/splashScreens/splashScreen.png": "2150da5543cd44bc38aa65e57a4b1454",
+"assets/lib/assets/splashScreens/splashScreenAndroid12.png": "0e6ddf2d0c7cdec9a11c1ae1fcb44710",
 "assets/lib/assets/wallpapers/jpg/Wallpaper%25201.jpg": "a2e62ace27b24b0d8fb8db95477d1c68",
 "assets/lib/assets/wallpapers/jpg/Wallpaper%252010.jpg": "2be043d56d15e32e8d8e73116e345b98",
 "assets/lib/assets/wallpapers/jpg/Wallpaper%252011.jpg": "2f91013b1f8f568cbe205eec97aeb896",
@@ -59,7 +61,7 @@ const RESOURCES = {
 "assets/lib/assets/wallpapers/webp/Wallpaper%25208.webp": "e682232793aa6492d360bea38a2a5c51",
 "assets/lib/assets/wallpapers/webp/Wallpaper%25209.webp": "44ec1415c8fef2a015a470b4615ee28a",
 "assets/lib/assets/withoutProfilePhoto.png": "6d2f50de8b5868660a08973ccbe0f981",
-"assets/NOTICES": "f7018881dfb71707b7c53f6d60d81bff",
+"assets/NOTICES": "bffe1d256530dd26a0a7dc02d3c4fdbe",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
 "assets/packages/emoji_dialog_picker/assets/emojis/activity.json": "5896827134d7d5ed7f9e94aa009a1387",
 "assets/packages/emoji_dialog_picker/assets/emojis/animals_and_nature.json": "ca5243da7ef7fbba624e54cffe959c38",
@@ -81,10 +83,13 @@ const RESOURCES = {
 "icons/Icon-512.png": "ba182cb3b036402aaafe67a5ea5ccccb",
 "icons/Icon-maskable-192.png": "ba182cb3b036402aaafe67a5ea5ccccb",
 "icons/Icon-maskable-512.png": "ba182cb3b036402aaafe67a5ea5ccccb",
-"index.html": "74f7b9213b462ec2bb39e717eaad74a0",
-"/": "74f7b9213b462ec2bb39e717eaad74a0",
-"main.dart.js": "ed6a6d444cf18e978c22568eed7f9bb6",
+"index.html": "f12cac385fcf09aa96a2934ebfa7980a",
+"/": "f12cac385fcf09aa96a2934ebfa7980a",
+"main.dart.js": "89614e30392d2eed206f6d07e745889f",
 "manifest.json": "f790db674aea2908a27ee83ea24bfc5a",
+"splash/img/light-background.png": "2150da5543cd44bc38aa65e57a4b1454",
+"splash/splash.js": "123c400b58bea74c1305ca3ac966748d",
+"splash/style.css": "d427ebd72d2bad5b78875c0824c1b0e6",
 "version.json": "796e605bbf9f9cb3d2da7f7c5377d1d5"
 };
 
