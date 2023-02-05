@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:orschat/scaffoldTransition.dart';
 import 'homePageWidgets.dart';
 import 'themeData/data.dart';
-import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'settings/settingsScaffold.dart';
 void main() {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
@@ -30,12 +31,21 @@ class HomePage extends StatelessWidget {
             body: NestedScrollView(
               headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
                 return <Widget>[
-                  const SliverAppBar(
-                    title: Text('Ors Chat'),
+                  SliverAppBar(
+                    title: const Text('Ors Chat'),
+                    actions: <Widget>[
+                      IconButton(
+                        onPressed: (){
+                          Navigator.of(context).push(scaffoldTransition(const SettingsScaffold(), const Offset(0.0, 0.1)));
+                        },
+                        icon: const Icon(Icons.settings),
+                        tooltip: "Configuración",
+                      ),
+                    ],
                     pinned: true,
                     floating: true,
                     shadowColor: Colors.black,
-                    bottom: TabBar(
+                    bottom: const TabBar(
                       tabs: [
                         Tab(child: Text('Chats')),
                         Tab(child: Text('Llamadas')),
