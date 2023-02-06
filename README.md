@@ -1,3 +1,3 @@
 # Ors Chat
 
-El nuevo sistema de mensajería que gira la tortilla
+El nuevo sistema de mensajería escrito nativamente en castellano que gira la tortilla
