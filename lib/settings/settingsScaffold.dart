@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:orschat/settings/chatWallpaperScaffold.dart';
 import '../scaffoldTransition.dart';
 import '../main.dart';
+import 'settingModalInkWell.dart';
 class SettingsScaffold extends StatefulWidget {
   const SettingsScaffold({Key? key}) : super(key: key);
 
@@ -31,6 +32,8 @@ class _SettingsScaffoldState extends State<SettingsScaffold> {
     );
   }
 }
+
+
 // Modal dialogs
 Future<void> showProfilePhotoModal(BuildContext context) async {
   return showDialog(
@@ -40,9 +43,15 @@ Future<void> showProfilePhotoModal(BuildContext context) async {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
           ),
+          scrollable: true,
           content: Container(
-            child: Text("Hello")
-          ),
+            padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 0),
+            child: Column(
+              children: <Widget>[
+                InkWellModal(icon, text, route),
+              ],
+            ),
+          )
         );
       }
   );

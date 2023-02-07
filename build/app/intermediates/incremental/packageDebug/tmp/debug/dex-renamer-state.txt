@@ -1,0 +1,4 @@
+#Tue Feb 07 19:08:47 CET 2023
+base.0=C\:\\Users\\Ori\\AndroidStudioProjects\\orschat\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
