@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:orschat/settings/chatWallpaperScaffold.dart';
-import '../scaffoldTransition.dart';
-import '../main.dart';
 import 'settingModalInkWell.dart';
 class SettingsScaffold extends StatefulWidget {
   const SettingsScaffold({Key? key}) : super(key: key);
@@ -43,12 +41,20 @@ Future<void> showProfilePhotoModal(BuildContext context) async {
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
           ),
+          actions: <Widget>[
+            TextButton(
+              onPressed: (){
+                Navigator.of(context).pop();
+              },
+              child: const Text("Cerrar")
+            )
+          ],
           scrollable: true,
           content: Container(
             padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 0),
             child: Column(
-              children: <Widget>[
-                InkWellModal(icon, text, route),
+              children: const <Widget>[
+                InkWellModal(Icons.wallpaper, 'Fondo de pantalla', ChatWallpaperScaffold()),
               ],
             ),
           )

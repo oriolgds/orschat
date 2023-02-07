@@ -18,7 +18,7 @@ class _ChatWallpaperScaffoldState extends State<ChatWallpaperScaffold> {
           icon: const Icon(Icons.arrow_back),
           tooltip: "Atrás",
         ),
-        title: const Text("Chats"),
+        title: const Text("Fondos"),
       ),
     );
   }

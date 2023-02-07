@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../scaffoldTransition.dart';
 class InkWellModal extends StatelessWidget {
   const InkWellModal(this.icon, this.text, this.route,{Key? key}) : super(key: key);
   final IconData icon;
@@ -14,7 +15,7 @@ class InkWellModal extends StatelessWidget {
             borderRadius: BorderRadius.circular(20)
         ),
         onTap: (){
-
+          Navigator.push(context, scaffoldTransition(route, const Offset(0.0, 0.1)));
         },
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
