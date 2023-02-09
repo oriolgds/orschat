@@ -11,7 +11,6 @@ void main() {
   ));
   runApp(const HomePage());
 }
-// First comit from linux
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
   @override
