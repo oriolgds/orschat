@@ -11,6 +11,7 @@ void main() {
   ));
   runApp(const HomePage());
 }
+// /home/kali/Documentos/flutter/bin/flutter
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
   @override
