@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 class PreparingForFirstTime extends StatefulWidget {
   const PreparingForFirstTime({Key? key}) : super(key: key);
@@ -7,7 +9,51 @@ class PreparingForFirstTime extends StatefulWidget {
 }
 
 class _PreparingForFirstTimeState extends State<PreparingForFirstTime> {
-  String loadingText = "Configurando Ors Chat";
+  Widget dynamicWidget = Container();
+  void loading(){
+    setState(() {
+      dynamicWidget = Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: const <Widget>[
+          Text('Configurando Ors Chat'),
+          SizedBox(
+            height: 10,
+          ),
+          CircularProgressIndicator(
+            color: Colors.blue,
+          )
+        ],
+      );
+    });
+  }
+  void signInUp(){
+    setState(() {
+      dynamicWidget = Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Card(
+            child: InkWell(
+              onTap: (){
+
+              },
+              child: Column(
+                children: const <Widget>[
+                  Text('Iniciar sesión')
+                ],
+              ),
+            ),
+          ),
+        ],
+      );
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    loading();
+    signInUp();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,18 +67,16 @@ class _PreparingForFirstTimeState extends State<PreparingForFirstTime> {
               top: 0,
               right: 0,
               child: SizedBox(
-                width: MediaQuery.of(context).size.width - 50,
+                width: MediaQuery.of(context).size.width,
                 height: 10,
-                child: const LinearProgressIndicator(
-                  backgroundColor: Colors.transparent,
+                child: LinearProgressIndicator(
+                  backgroundColor: Colors.blue.shade100,
                   color: Colors.amber,
                 ),
               ),
             ),
-            Text(loadingText),
-            CircularProgressIndicator(
+            dynamicWidget,
 
-            )
           ],
         ),
       ),
