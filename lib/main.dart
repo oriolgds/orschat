@@ -26,7 +26,7 @@ class HomePage extends StatelessWidget {
       scrollBehavior: const ScrollBehavior(
         androidOverscrollIndicator: AndroidOverscrollIndicator.stretch
       ),
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.system,
       home: DefaultTabController(
         length: 2,
         child: Scaffold(

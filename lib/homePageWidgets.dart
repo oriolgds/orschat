@@ -36,16 +36,20 @@ class _ChatContactListItemState extends State<ChatContactListItem> {
               Positioned(
                 top: 20,
                 left: 0,
-                child: TextButton(
-                  style: ButtonStyle(
-                    shape: MaterialStateProperty.all(
-                      RoundedRectangleBorder(borderRadius: BorderRadius.circular(50))
-                    )
+                child: SizedBox(
+                  width: 60,
+                  height: 60,
+                  child: TextButton(
+                    style: ButtonStyle(
+                      shape: MaterialStateProperty.all(
+                        RoundedRectangleBorder(borderRadius: BorderRadius.circular(50))
+                      )
+                    ),
+                    onPressed: (){
+                      showProfilePhotoModal(context, "lib/assets/withoutProfilePhoto.png", widget.name);
+                    },
+                    child: Image.asset(widget.pathToImg, width: 50, height: 50,)
                   ),
-                  onPressed: (){
-                    showProfilePhotoModal(context, "lib/assets/withoutProfilePhoto.png", widget.name);
-                  },
-                  child: Image.asset(widget.pathToImg, width: 50, height: 50,)
                 )
               ),
               Positioned(

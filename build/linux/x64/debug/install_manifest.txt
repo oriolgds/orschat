@@ -46,4 +46,5 @@
 /home/kali/Documentos/GitHub/orschat/build/linux/x64/debug/bundle/data/flutter_assets/lib/assets/withoutProfilePhoto.png
 /home/kali/Documentos/GitHub/orschat/build/linux/x64/debug/bundle/data/flutter_assets/version.json
 /home/kali/Documentos/GitHub/orschat/build/linux/x64/debug/bundle/data/flutter_assets/kernel_blob.bin
+/home/kali/Documentos/GitHub/orschat/build/linux/x64/debug/bundle/data/flutter_assets/NOTICES
 /home/kali/Documentos/GitHub/orschat/build/linux/x64/debug/bundle/data/flutter_assets/FontManifest.json
