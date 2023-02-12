@@ -20,6 +20,21 @@ class _ChatWallpaperScaffoldState extends State<ChatWallpaperScaffold> {
         ),
         title: const Text("Fondos"),
       ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: <Widget>[
+            Wrap(
+              children: <Widget>[
+                InkWell(
+                  onTap: (){
+
+                  },
+                )
+              ],
+            )
+          ],
+        ),
+      ),
     );
   }
 }

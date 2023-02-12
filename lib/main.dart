@@ -4,6 +4,8 @@ import 'package:orschat/scaffoldTransition.dart';
 import 'homePageWidgets.dart';
 import 'themeData/data.dart';
 import 'settings/settingsScaffold.dart';
+
+import 'settings/preparingForFirstTime.dart';
 void main() {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
@@ -24,7 +26,7 @@ class HomePage extends StatelessWidget {
       scrollBehavior: const ScrollBehavior(
         androidOverscrollIndicator: AndroidOverscrollIndicator.stretch
       ),
-      themeMode: ThemeMode.system,
+      themeMode: ThemeMode.light,
       home: DefaultTabController(
         length: 2,
         child: Scaffold(
@@ -36,7 +38,7 @@ class HomePage extends StatelessWidget {
                     actions: <Widget>[
                       IconButton(
                         onPressed: (){
-                          Navigator.of(context).push(scaffoldTransition(const SettingsScaffold(), const Offset(0.0, 0.1)));
+                          Navigator.of(context).push(scaffoldTransition(const PreparingForFirstTime(), const Offset(0.0, 0.1)));
                         },
                         icon: const Icon(Icons.settings),
                         tooltip: "Configuración",
