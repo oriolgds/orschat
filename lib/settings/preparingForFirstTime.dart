@@ -30,16 +30,28 @@ class _PreparingForFirstTimeState extends State<PreparingForFirstTime> {
     setState(() {
       dynamicWidget = Row(
         mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          Card(
-            child: InkWell(
-              onTap: (){
+          SizedBox(
+            width: 200,
+            height: 300,
+            child: Card(
+              child: InkWell(
+                customBorder: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20)
+                ),
+                onTap: (){
 
-              },
-              child: Column(
-                children: const <Widget>[
-                  Text('Iniciar sesión')
-                ],
+                },
+                child: Container(
+                  padding: const EdgeInsets.all(20),
+                  child: Column(
+                    children: const <Widget>[
+                      Text('Iniciar sesión', style: TextStyle(fontSize: 20, fontFamily: 'Raleway', fontWeight: FontWeight.w900),),
+                      Text('Si ya tienes una cuenta, podrás recuperar tus conversaciones si hiciste una copia de seguridad.', textAlign: TextAlign.justify,),
+                    ],
+                  ),
+                ),
               ),
             ),
           ),

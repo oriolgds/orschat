@@ -4,6 +4,7 @@
 /home/kali/Documentos/GitHub/orschat/build/linux/x64/debug/bundle/data/flutter_assets/shaders/ink_sparkle.frag
 /home/kali/Documentos/GitHub/orschat/build/linux/x64/debug/bundle/data/flutter_assets/AssetManifest.json
 /home/kali/Documentos/GitHub/orschat/build/linux/x64/debug/bundle/data/flutter_assets/NOTICES.Z
+/home/kali/Documentos/GitHub/orschat/build/linux/x64/debug/bundle/data/flutter_assets/fonts/Raleway.ttf
 /home/kali/Documentos/GitHub/orschat/build/linux/x64/debug/bundle/data/flutter_assets/fonts/MaterialIcons-Regular.otf
 /home/kali/Documentos/GitHub/orschat/build/linux/x64/debug/bundle/data/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf
 /home/kali/Documentos/GitHub/orschat/build/linux/x64/debug/bundle/data/flutter_assets/packages/eva_icons_flutter/lib/fonts/Eva-Icons.ttf
