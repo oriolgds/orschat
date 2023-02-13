@@ -11,7 +11,7 @@ class PreparingForFirstTime extends StatefulWidget {
 class _PreparingForFirstTimeState extends State<PreparingForFirstTime> {
   double linearIndicatorHeight = 10;
   Widget dynamicWidget = Container();
-  void loading(){
+  void loading(BuildContext context){
     setState(() {
       linearIndicatorHeight = 10;
     });
@@ -29,40 +29,60 @@ class _PreparingForFirstTimeState extends State<PreparingForFirstTime> {
         ],
       );
     });
+    signInUp(context);
+  }
+  Future<void> signInModal(BuildContext context) async {
+    return showDialog(
+        context: context,
+        builder: (BuildContext context){
+          return AlertDialog(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
+            ),
+            content: Text('fds'),
+            actionsAlignment: MainAxisAlignment.spaceAround,
+            actions: <Widget>[
+              SizedBox(
+                width: 64,
+                height: 64,
+                child: TextButton(
+                    style: ButtonStyle(
+                        shape: MaterialStateProperty.all(
+                            RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(50)
+                            )
+                        )
+                    ),
+                    onPressed: (){
+                      Navigator.of(context).pop();
+                    },
+                    child: const Icon(Icons.message, size: 40)
+                ),
+              ),
+              SizedBox(
+                width: 64,
+                height: 64,
+                child: TextButton(
+                    style: ButtonStyle(
+                        shape: MaterialStateProperty.all(
+                            RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(50)
+                            )
+                        )
+                    ),
+                    onPressed: (){
+                      Navigator.of(context).pop();
+                    },
+                    child: const Icon(Icons.close, size: 40)
+                ),
+              ),
+            ],
+          );
+        }
+    );
   }
   double cardHeight = 240;
-  void signInUp(){
-    Widget card(String title, String content, IconData icon, var func){
-      return AnimatedContainer(
-        duration: const Duration(milliseconds: 700),
-        width: 200,
-        height: cardHeight,
-        child: Card(
-          child: InkWell(
-            customBorder: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10)
-            ),
-            onTap: (){
-              setState(() {
-                cardHeight = 0;
-              });
-              func;
-            },
-            child: Container(
-              padding: const EdgeInsets.all(20),
-              child: Column(
-                children: <Widget>[
-                  Text(title, style: const TextStyle(fontSize: 20, fontFamily: 'Raleway', fontWeight: FontWeight.w900),),
-                  Text(content, textAlign: TextAlign.justify,),
-                  const SizedBox(height: 10,),
-                  Icon(icon, size: 50,)
-                ],
-              ),
-            ),
-          ),
-        ),
-      );
-    }
+  void signInUp(BuildContext context){
     setState(() {
       linearIndicatorHeight = 0;
     });
@@ -71,8 +91,32 @@ class _PreparingForFirstTimeState extends State<PreparingForFirstTime> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          card('Iniciar sesión', 'Si ya tienes una cuenta, podrás recuperar tus conversaciones si hiciste una copia de seguridad.', Icons.login_rounded, (){}),
-          card('Crear cuenta', 'Crea una cuenta para poder usar el mejor servicio de mensajería del mundo.', Icons.account_circle_rounded, (){}),
+          AnimatedContainer(
+            duration: const Duration(milliseconds: 700),
+            width: 200,
+            height: cardHeight,
+            child: Card(
+              child: InkWell(
+                customBorder: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10)
+                ),
+                onTap: (){
+                  Navigator.pop(context);
+                },
+                child: Container(
+                  padding: const EdgeInsets.all(20),
+                  child: Column(
+                    children: const <Widget>[
+                      Text('Crear cuenta', style: TextStyle(fontSize: 20, fontFamily: 'Raleway', fontWeight: FontWeight.w900),),
+                      Text('Crea una cuenta para poder usar el mejor servicio de mensajería del mundo.', textAlign: TextAlign.justify,),
+                      SizedBox(height: 10,),
+                      Icon(Icons.account_circle_rounded, size: 50,)
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
         ],
       );
     });
@@ -80,11 +124,10 @@ class _PreparingForFirstTimeState extends State<PreparingForFirstTime> {
   @override
   void initState() {
     super.initState();
-    loading();
-    signInUp();
   }
   @override
   Widget build(BuildContext context) {
+    loading(context);
     return Scaffold(
       body: SizedBox(
         width: MediaQuery.of(context).size.width,
