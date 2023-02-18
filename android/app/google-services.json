@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "442560291726",
+    "project_id": "ors-chat-4b9a2",
+    "storage_bucket": "ors-chat-4b9a2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:442560291726:android:7b6c753564154461e2badf",
+        "android_client_info": {
+          "package_name": "orschat.talk4fun.net.orschat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "442560291726-90lpatr8menq4venn8ffpvji6hieepki.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbb22UAglFn8pXXmRS5-bL8_YIvSmZXeA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "442560291726-90lpatr8menq4venn8ffpvji6hieepki.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "442560291726-bajrn8o2bipe2h0n5a5soukfasm6u4vb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "orschat.talk4fun.net.orschat"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

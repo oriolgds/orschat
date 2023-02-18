@@ -4,13 +4,18 @@ import 'package:orschat/scaffoldTransition.dart';
 import 'homePageWidgets.dart';
 import 'themeData/data.dart';
 import 'settings/settingsScaffold.dart';
-
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 import 'settings/preparingForFirstTime.dart';
-void main() {
+import 'dart:async';
+void main() async {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
       statusBarBrightness: Brightness.dark
   ));
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const HomePage());
 }
 // /home/kali/Documentos/flutter/bin/flutter
@@ -38,7 +43,7 @@ class HomePage extends StatelessWidget {
                     actions: <Widget>[
                       IconButton(
                         onPressed: (){
-                          Navigator.of(context).push(scaffoldTransition(const PreparingForFirstTime(), const Offset(0.0, 0.1)));
+                          Navigator.of(context).push(scaffoldTransition(const FirstTimeLoading(), const Offset(0.0, 0.1)));
                         },
                         icon: const Icon(Icons.settings),
                         tooltip: "Configuración",
