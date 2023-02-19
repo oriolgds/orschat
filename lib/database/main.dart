@@ -6,7 +6,22 @@ import 'package:flutter/material.dart';
 void main() async {
   await testConnection();
 }
-Future<bool> testConnection() async {
-  var response = http.get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1'));
-  return false;
+String host = "http://localhost/android_ors_chat/";
+Future<void> testConnection() async {
+  http.get(Uri.parse('${host}users/createUser.php?username=Ori&password=1234qwer')).then((value){
+    debugPrint(value.body);
+  });
+  debugPrint("Testing Connection...");
+}
+Future<bool> userExists() async {
+  bool result = false;
+  await http.get(Uri.parse('${host}users/userExists.php?username=Ori')).then((value){
+    if(value.body == "1"){
+      result = true;
+    }
+    else {
+      result = false;
+    }
+  });
+  return result;
 }

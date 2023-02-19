@@ -13,6 +13,8 @@ void main() async {
       statusBarBrightness: Brightness.dark
   ));
   runApp(const HomePage());
+  bool result = await database.userExists();
+  debugPrint("User exists: $result");
 }
 // /home/kali/Documentos/flutter/bin/flutter
 class HomePage extends StatelessWidget {
