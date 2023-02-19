@@ -38,7 +38,7 @@ dependencies:
   emoji_dialog_picker: ^1.0.1
   flutter_native_splash: ^2.2.17
   shared_preferences: ^2.0.17
-  firebase_core: ^2.6.1
+  http: ^0.13.5
 
 
 dev_dependencies:

@@ -4,18 +4,14 @@ import 'package:orschat/scaffoldTransition.dart';
 import 'homePageWidgets.dart';
 import 'themeData/data.dart';
 import 'settings/settingsScaffold.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
 import 'settings/preparingForFirstTime.dart';
 import 'dart:async';
+import 'database/main.dart' as database;
 void main() async {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
       statusBarBrightness: Brightness.dark
   ));
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
   runApp(const HomePage());
 }
 // /home/kali/Documentos/flutter/bin/flutter
@@ -42,7 +38,7 @@ class HomePage extends StatelessWidget {
                     title: const Text('Ors Chat'),
                     actions: <Widget>[
                       IconButton(
-                        onPressed: (){
+                        onPressed: ()async {
                           Navigator.of(context).push(scaffoldTransition(const FirstTimeLoading(), const Offset(0.0, 0.1)));
                         },
                         icon: const Icon(Icons.settings),

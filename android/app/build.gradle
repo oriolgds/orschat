@@ -52,8 +52,10 @@ android {
             signingConfig signingConfigs.debug
         }
     }
+    namespace 'orschat.talk4fun.net.orschat'
 }
 
 flutter {
     source '../..'
 }
+

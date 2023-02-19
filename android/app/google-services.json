@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "442560291726",
+    "firebase_url": "https://ors-chat-4b9a2-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "ors-chat-4b9a2",
     "storage_bucket": "ors-chat-4b9a2.appspot.com"
   },
@@ -14,7 +15,7 @@
       },
       "oauth_client": [
         {
-          "client_id": "442560291726-90lpatr8menq4venn8ffpvji6hieepki.apps.googleusercontent.com",
+          "client_id": "442560291726-2g4gl017oa7p2ntl7110duh04m0c81n8.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -27,7 +28,7 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "442560291726-90lpatr8menq4venn8ffpvji6hieepki.apps.googleusercontent.com",
+              "client_id": "442560291726-2g4gl017oa7p2ntl7110duh04m0c81n8.apps.googleusercontent.com",
               "client_type": 3
             },
             {

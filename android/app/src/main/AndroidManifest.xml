@@ -1,5 +1,4 @@
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="orschat.talk4fun.net.orschat">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
    <application
         android:label="Ors Chat"
         android:name="${applicationName}"
