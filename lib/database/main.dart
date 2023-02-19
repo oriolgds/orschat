@@ -7,20 +7,21 @@ void main() async {
   await testConnection();
 }
 String host = "http://localhost/android_ors_chat/";
-Future<void> testConnection() async {
-  http.get(Uri.parse('${host}users/createUser.php?username=Ori&password=1234qwer')).then((value){
-    debugPrint(value.body);
-  });
-  debugPrint("Testing Connection...");
-}
-Future<bool> userExists() async {
+Future<bool> testConnection() async {
+  debugPrint("Testing connection...");
   bool result = false;
-  await http.get(Uri.parse('${host}users/userExists.php?username=Ori')).then((value){
-    if(value.body == "1"){
+  await http.get(Uri.parse('${host}test.php')).then((value){
+    if(value.statusCode == 200){
       result = true;
     }
-    else {
-      result = false;
+  });
+  return result;
+}
+Future<bool> userExists(String username) async {
+  bool result = false;
+  await http.get(Uri.parse('${host}users/userExists.php?username=$username')).then((value){
+    if(value.body == "1"){
+      result = true;
     }
   });
   return result;
