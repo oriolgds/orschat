@@ -26,3 +26,12 @@ Future<bool> userExists(String username) async {
   });
   return result;
 }
+Future<bool> createUser(String username) async {
+  bool result = false;
+  await http.get(Uri.parse('${host}users/createUser.php?username=$username')).then((value){
+    if(value.body == "0"){
+      result = true;
+    }
+  });
+  return result;
+}

@@ -38,6 +38,34 @@ class HomePage extends StatelessWidget {
                     title: const Text('Ors Chat'),
                     actions: <Widget>[
                       IconButton(
+                        onPressed: () {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text('Conectando con el servidor'),
+                            )
+                          );
+                          database.testConnection().then((value){
+                            ScaffoldMessenger.of(context).hideCurrentSnackBar();
+                            if(value) {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(
+                                      content: Text('Conectado correctamente al servidor')
+                                  )
+                              );
+                            }
+                            else {
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(
+                                      content: Text('Imposible conectar con el servidor')
+                                  )
+                              );
+                            }
+                          });
+                        },
+                        icon: const Icon(Icons.refresh),
+                        tooltip: "Forzar recarga",
+                      ),
+                      IconButton(
                         onPressed: ()async {
                           Navigator.of(context).push(scaffoldTransition(const FirstTimeLoading(), const Offset(0.0, 0.1)));
                         },
