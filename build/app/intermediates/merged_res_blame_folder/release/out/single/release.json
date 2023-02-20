@@ -1,13 +1,5 @@
 [
     {
-        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/layout_custom_dialog.xml.flat",
-        "source": "orschat.talk4fun.net.orschat.app-core-1.6.0-2:/layout/custom_dialog.xml"
-    },
-    {
-        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/layout-v21_notification_action.xml.flat",
-        "source": "orschat.talk4fun.net.orschat.app-core-1.6.0-2:/layout-v21/notification_action.xml"
-    },
-    {
         "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/drawable-hdpi-v4_notification_bg_normal.9.png.flat",
         "source": "orschat.talk4fun.net.orschat.app-core-1.6.0-2:/drawable-hdpi-v4/notification_bg_normal.9.png"
     },
@@ -20,16 +12,124 @@
         "source": "orschat.talk4fun.net.orschat.app-core-1.6.0-2:/drawable-xhdpi-v4/notification_bg_low_normal.9.png"
     },
     {
+        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "orschat.talk4fun.net.orschat.app-main-4:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/drawable-night-mdpi_android12splash.png.flat",
+        "source": "orschat.talk4fun.net.orschat.app-main-4:/drawable-night-mdpi/android12splash.png"
+    },
+    {
+        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/drawable-xhdpi_android12splash.png.flat",
+        "source": "orschat.talk4fun.net.orschat.app-main-4:/drawable-xhdpi/android12splash.png"
+    },
+    {
+        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/drawable-xhdpi-v4_notification_bg_normal_pressed.9.png.flat",
+        "source": "orschat.talk4fun.net.orschat.app-core-1.6.0-2:/drawable-xhdpi-v4/notification_bg_normal_pressed.9.png"
+    },
+    {
+        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/drawable-night-xxxhdpi_android12splash.png.flat",
+        "source": "orschat.talk4fun.net.orschat.app-main-4:/drawable-night-xxxhdpi/android12splash.png"
+    },
+    {
+        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/drawable-xhdpi-v4_notification_bg_low_pressed.9.png.flat",
+        "source": "orschat.talk4fun.net.orschat.app-core-1.6.0-2:/drawable-xhdpi-v4/notification_bg_low_pressed.9.png"
+    },
+    {
+        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "orschat.talk4fun.net.orschat.app-main-4:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/drawable-v21_background.png.flat",
+        "source": "orschat.talk4fun.net.orschat.app-main-4:/drawable-v21/background.png"
+    },
+    {
+        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/drawable-hdpi-v4_notification_bg_normal_pressed.9.png.flat",
+        "source": "orschat.talk4fun.net.orschat.app-core-1.6.0-2:/drawable-hdpi-v4/notification_bg_normal_pressed.9.png"
+    },
+    {
+        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/drawable-hdpi_android12splash.png.flat",
+        "source": "orschat.talk4fun.net.orschat.app-main-4:/drawable-hdpi/android12splash.png"
+    },
+    {
+        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/drawable-hdpi-v4_notification_bg_low_pressed.9.png.flat",
+        "source": "orschat.talk4fun.net.orschat.app-core-1.6.0-2:/drawable-hdpi-v4/notification_bg_low_pressed.9.png"
+    },
+    {
+        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/drawable-mdpi-v4_notification_bg_normal.9.png.flat",
+        "source": "orschat.talk4fun.net.orschat.app-core-1.6.0-2:/drawable-mdpi-v4/notification_bg_normal.9.png"
+    },
+    {
+        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/drawable-mdpi-v4_notify_panel_notification_icon_bg.png.flat",
+        "source": "orschat.talk4fun.net.orschat.app-core-1.6.0-2:/drawable-mdpi-v4/notify_panel_notification_icon_bg.png"
+    },
+    {
+        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/drawable-mdpi-v4_notification_bg_low_normal.9.png.flat",
+        "source": "orschat.talk4fun.net.orschat.app-core-1.6.0-2:/drawable-mdpi-v4/notification_bg_low_normal.9.png"
+    },
+    {
+        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/drawable_notification_bg_low.xml.flat",
+        "source": "orschat.talk4fun.net.orschat.app-core-1.6.0-2:/drawable/notification_bg_low.xml"
+    },
+    {
+        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/layout_notification_template_icon_group.xml.flat",
+        "source": "orschat.talk4fun.net.orschat.app-core-1.6.0-2:/layout/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/drawable_notification_tile_bg.xml.flat",
+        "source": "orschat.talk4fun.net.orschat.app-core-1.6.0-2:/drawable/notification_tile_bg.xml"
+    },
+    {
+        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/layout_notification_action_tombstone.xml.flat",
+        "source": "orschat.talk4fun.net.orschat.app-core-1.6.0-2:/layout/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/drawable-hdpi-v4_notification_bg_low_normal.9.png.flat",
+        "source": "orschat.talk4fun.net.orschat.app-core-1.6.0-2:/drawable-hdpi-v4/notification_bg_low_normal.9.png"
+    },
+    {
+        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/drawable-mdpi-v4_notification_bg_low_pressed.9.png.flat",
+        "source": "orschat.talk4fun.net.orschat.app-core-1.6.0-2:/drawable-mdpi-v4/notification_bg_low_pressed.9.png"
+    },
+    {
+        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/layout_notification_template_part_time.xml.flat",
+        "source": "orschat.talk4fun.net.orschat.app-core-1.6.0-2:/layout/notification_template_part_time.xml"
+    },
+    {
+        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/drawable-v21_launch_background.xml.flat",
+        "source": "orschat.talk4fun.net.orschat.app-main-4:/drawable-v21/launch_background.xml"
+    },
+    {
+        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/drawable-hdpi-v4_notify_panel_notification_icon_bg.png.flat",
+        "source": "orschat.talk4fun.net.orschat.app-core-1.6.0-2:/drawable-hdpi-v4/notify_panel_notification_icon_bg.png"
+    },
+    {
+        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/layout_custom_dialog.xml.flat",
+        "source": "orschat.talk4fun.net.orschat.app-core-1.6.0-2:/layout/custom_dialog.xml"
+    },
+    {
+        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/layout-v21_notification_action.xml.flat",
+        "source": "orschat.talk4fun.net.orschat.app-core-1.6.0-2:/layout-v21/notification_action.xml"
+    },
+    {
+        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/drawable-mdpi_android12splash.png.flat",
+        "source": "orschat.talk4fun.net.orschat.app-main-4:/drawable-mdpi/android12splash.png"
+    },
+    {
+        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/drawable-xxhdpi_android12splash.png.flat",
+        "source": "orschat.talk4fun.net.orschat.app-main-4:/drawable-xxhdpi/android12splash.png"
+    },
+    {
         "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/layout-v21_notification_action_tombstone.xml.flat",
         "source": "orschat.talk4fun.net.orschat.app-core-1.6.0-2:/layout-v21/notification_action_tombstone.xml"
     },
     {
-        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/mipmap-mdpi_ic_launcher.png.flat",
-        "source": "orschat.talk4fun.net.orschat.app-main-4:/mipmap-mdpi/ic_launcher.png"
+        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/drawable-night-hdpi_android12splash.png.flat",
+        "source": "orschat.talk4fun.net.orschat.app-main-4:/drawable-night-hdpi/android12splash.png"
     },
     {
-        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "orschat.talk4fun.net.orschat.app-main-4:/mipmap-xhdpi/ic_launcher.png"
+        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "orschat.talk4fun.net.orschat.app-main-4:/mipmap-mdpi/ic_launcher.png"
     },
     {
         "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/drawable-xhdpi-v4_notification_bg_normal.9.png.flat",
@@ -44,20 +144,8 @@
         "source": "orschat.talk4fun.net.orschat.app-core-1.6.0-2:/drawable-mdpi-v4/notification_bg_normal_pressed.9.png"
     },
     {
-        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/drawable-xhdpi-v4_notification_bg_normal_pressed.9.png.flat",
-        "source": "orschat.talk4fun.net.orschat.app-core-1.6.0-2:/drawable-xhdpi-v4/notification_bg_normal_pressed.9.png"
-    },
-    {
         "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/layout-v21_notification_template_custom_big.xml.flat",
         "source": "orschat.talk4fun.net.orschat.app-core-1.6.0-2:/layout-v21/notification_template_custom_big.xml"
-    },
-    {
-        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/drawable-xhdpi-v4_notification_bg_low_pressed.9.png.flat",
-        "source": "orschat.talk4fun.net.orschat.app-core-1.6.0-2:/drawable-xhdpi-v4/notification_bg_low_pressed.9.png"
-    },
-    {
-        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "orschat.talk4fun.net.orschat.app-main-4:/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
         "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/layout-v21_notification_template_icon_group.xml.flat",
@@ -76,79 +164,39 @@
         "source": "orschat.talk4fun.net.orschat.app-main-4:/mipmap-xxhdpi/ic_launcher.png"
     },
     {
-        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/drawable-hdpi-v4_notification_bg_normal_pressed.9.png.flat",
-        "source": "orschat.talk4fun.net.orschat.app-core-1.6.0-2:/drawable-hdpi-v4/notification_bg_normal_pressed.9.png"
-    },
-    {
-        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/drawable-hdpi-v4_notification_bg_low_pressed.9.png.flat",
-        "source": "orschat.talk4fun.net.orschat.app-core-1.6.0-2:/drawable-hdpi-v4/notification_bg_low_pressed.9.png"
-    },
-    {
         "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/drawable_notification_bg.xml.flat",
         "source": "orschat.talk4fun.net.orschat.app-core-1.6.0-2:/drawable/notification_bg.xml"
-    },
-    {
-        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/drawable-mdpi-v4_notification_bg_normal.9.png.flat",
-        "source": "orschat.talk4fun.net.orschat.app-core-1.6.0-2:/drawable-mdpi-v4/notification_bg_normal.9.png"
-    },
-    {
-        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/drawable-mdpi-v4_notify_panel_notification_icon_bg.png.flat",
-        "source": "orschat.talk4fun.net.orschat.app-core-1.6.0-2:/drawable-mdpi-v4/notify_panel_notification_icon_bg.png"
-    },
-    {
-        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/drawable-mdpi-v4_notification_bg_low_normal.9.png.flat",
-        "source": "orschat.talk4fun.net.orschat.app-core-1.6.0-2:/drawable-mdpi-v4/notification_bg_low_normal.9.png"
     },
     {
         "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/layout_notification_action.xml.flat",
         "source": "orschat.talk4fun.net.orschat.app-core-1.6.0-2:/layout/notification_action.xml"
     },
     {
-        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/drawable_notification_bg_low.xml.flat",
-        "source": "orschat.talk4fun.net.orschat.app-core-1.6.0-2:/drawable/notification_bg_low.xml"
-    },
-    {
-        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/layout_notification_template_icon_group.xml.flat",
-        "source": "orschat.talk4fun.net.orschat.app-core-1.6.0-2:/layout/notification_template_icon_group.xml"
+        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/drawable-night-xhdpi_android12splash.png.flat",
+        "source": "orschat.talk4fun.net.orschat.app-main-4:/drawable-night-xhdpi/android12splash.png"
     },
     {
         "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/mipmap-hdpi_ic_launcher.png.flat",
         "source": "orschat.talk4fun.net.orschat.app-main-4:/mipmap-hdpi/ic_launcher.png"
     },
     {
-        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/drawable_notification_tile_bg.xml.flat",
-        "source": "orschat.talk4fun.net.orschat.app-core-1.6.0-2:/drawable/notification_tile_bg.xml"
+        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/drawable-night-xxhdpi_android12splash.png.flat",
+        "source": "orschat.talk4fun.net.orschat.app-main-4:/drawable-night-xxhdpi/android12splash.png"
     },
     {
-        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/layout_notification_action_tombstone.xml.flat",
-        "source": "orschat.talk4fun.net.orschat.app-core-1.6.0-2:/layout/notification_action_tombstone.xml"
-    },
-    {
-        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/drawable-hdpi-v4_notification_bg_low_normal.9.png.flat",
-        "source": "orschat.talk4fun.net.orschat.app-core-1.6.0-2:/drawable-hdpi-v4/notification_bg_low_normal.9.png"
+        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/drawable_background.png.flat",
+        "source": "orschat.talk4fun.net.orschat.app-main-4:/drawable/background.png"
     },
     {
         "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/drawable-xhdpi-v4_notify_panel_notification_icon_bg.png.flat",
         "source": "orschat.talk4fun.net.orschat.app-core-1.6.0-2:/drawable-xhdpi-v4/notify_panel_notification_icon_bg.png"
     },
     {
-        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/drawable-mdpi-v4_notification_bg_low_pressed.9.png.flat",
-        "source": "orschat.talk4fun.net.orschat.app-core-1.6.0-2:/drawable-mdpi-v4/notification_bg_low_pressed.9.png"
-    },
-    {
-        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/layout_notification_template_part_time.xml.flat",
-        "source": "orschat.talk4fun.net.orschat.app-core-1.6.0-2:/layout/notification_template_part_time.xml"
-    },
-    {
-        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/drawable-v21_launch_background.xml.flat",
-        "source": "orschat.talk4fun.net.orschat.app-main-4:/drawable-v21/launch_background.xml"
-    },
-    {
         "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/drawable_notification_icon_background.xml.flat",
         "source": "orschat.talk4fun.net.orschat.app-core-1.6.0-2:/drawable/notification_icon_background.xml"
     },
     {
-        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/drawable-hdpi-v4_notify_panel_notification_icon_bg.png.flat",
-        "source": "orschat.talk4fun.net.orschat.app-core-1.6.0-2:/drawable-hdpi-v4/notify_panel_notification_icon_bg.png"
+        "merged": "orschat.talk4fun.net.orschat.app-merged_res-11:/drawable-xxxhdpi_android12splash.png.flat",
+        "source": "orschat.talk4fun.net.orschat.app-main-4:/drawable-xxxhdpi/android12splash.png"
     }
 ]
