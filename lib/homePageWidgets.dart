@@ -35,6 +35,7 @@ class _ChatContactListItemState extends State<ChatContactListItem> {
           closedColor: Colors.transparent,
           closedElevation: 0.0,
           openElevation: 4.0,
+          transitionDuration: const Duration(milliseconds: 500),
           closedBuilder: (BuildContext _, VoidCallback openContainer){
             return Container(
               color: Colors.transparent,

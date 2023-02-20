@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:orschat/animations/animations.dart';
 import 'package:orschat/scaffoldTransition.dart';
 import 'homePageWidgets.dart';
 import 'themeData/data.dart';
@@ -46,7 +47,7 @@ class _HomePageState extends State<HomePage> {
       scrollBehavior: const ScrollBehavior(
           androidOverscrollIndicator: AndroidOverscrollIndicator.stretch
       ),
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.system,
       home: DefaultTabController(
         length: 2,
         child: Scaffold(
@@ -91,6 +92,22 @@ class _HomePageState extends State<HomePage> {
                         icon: const Icon(Icons.settings),
                         tooltip: "Configuración",
                       ),
+                      IconButton(
+                        tooltip: "Configuración",
+                        icon: OpenContainer(
+                          transitionType: ContainerTransitionType.fadeThrough,
+                          closedElevation: 100.0,
+                          openElevation: 0.0,
+                          openColor: Colors.transparent,
+                          closedColor: Colors.transparent,
+                          transitionDuration: const Duration(milliseconds: 300),
+                          tappable: true,
+                          closedBuilder:(BuildContext _, VoidCallback openContainer) {
+                            return const Icon(Icons.settings);
+                          },
+                          openBuilder: (BuildContext context, VoidCallback _) => const settings_scaffold.SettingsScaffold(),
+                        ), onPressed: () {  },
+                      )
                     ],
                     pinned: true,
                     floating: true,
