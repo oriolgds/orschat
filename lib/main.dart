@@ -92,21 +92,8 @@ class _HomePageState extends State<HomePage> {
                         icon: const Icon(Icons.settings),
                         tooltip: "Configuración",
                       ),
-                      IconButton(
-                        tooltip: "Configuración",
-                        icon: OpenContainer(
-                          transitionType: ContainerTransitionType.fadeThrough,
-                          closedElevation: 100.0,
-                          openElevation: 0.0,
-                          openColor: Colors.transparent,
-                          closedColor: Colors.transparent,
-                          transitionDuration: const Duration(milliseconds: 300),
-                          tappable: true,
-                          closedBuilder:(BuildContext _, VoidCallback openContainer) {
-                            return const Icon(Icons.settings);
-                          },
-                          openBuilder: (BuildContext context, VoidCallback _) => const settings_scaffold.SettingsScaffold(),
-                        ), onPressed: () {  },
+                      const SizedBox(
+                        width: 5,
                       )
                     ],
                     pinned: true,
