@@ -16,10 +16,6 @@ class _FirstTimeLoadingState extends State<FirstTimeLoading> {
       Navigator.of(context).push(scaffoldTransition(const SignInUp(), const Offset(0.0, 0.1)));
 
     });
-    /*Timer(const Duration(seconds: 2), () {
-      Navigator.of(context).push(scaffoldTransition(const SignInUp(), const Offset(0.0, 0.1)));
-    });*/
-
     super.initState();
   }
   @override

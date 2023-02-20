@@ -3,10 +3,11 @@ import 'package:flutter/services.dart';
 import 'package:orschat/scaffoldTransition.dart';
 import 'homePageWidgets.dart';
 import 'themeData/data.dart';
-import 'settings/settingsScaffold.dart';
-import 'settings/preparingForFirstTime.dart';
+import 'settings/settingsScaffold.dart' as settings_scaffold;
+import 'settings/preparingForFirstTime.dart' as first_time;
 import 'dart:async';
 import 'database/main.dart' as database;
+import 'package:shared_preferences/shared_preferences.dart';
 void main() async {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
@@ -15,8 +16,26 @@ void main() async {
   runApp(const HomePage());
 }
 // /home/kali/Documentos/flutter/bin/flutter
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+class _HomePageState extends State<HomePage> {
+  void firstTimeRoute(){
+    Navigator.of(context).push(scaffoldTransition(const first_time.FirstTimeLoading(), const Offset(0.0, 0.0)));
+  }
+  void checkFirstTime() async {
+    final prefs = await SharedPreferences.getInstance();
+    if(prefs.getBool("firstTime") == null || prefs.getBool("firstTime") == false) {
+      prefs.clear();
+      firstTimeRoute();
+    }
+  }
+  @override
+  void initState() {
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -27,7 +46,7 @@ class HomePage extends StatelessWidget {
       scrollBehavior: const ScrollBehavior(
           androidOverscrollIndicator: AndroidOverscrollIndicator.stretch
       ),
-      themeMode: ThemeMode.system,
+      themeMode: ThemeMode.light,
       home: DefaultTabController(
         length: 2,
         child: Scaffold(
@@ -67,7 +86,7 @@ class HomePage extends StatelessWidget {
                       ),
                       IconButton(
                         onPressed: ()async {
-                          Navigator.of(context).push(scaffoldTransition(const FirstTimeLoading(), const Offset(0.0, 0.1)));
+                          Navigator.of(context).push(scaffoldTransition(const settings_scaffold.SettingsScaffold(), const Offset(0.0, 0.1)));
                         },
                         icon: const Icon(Icons.settings),
                         tooltip: "Configuración",

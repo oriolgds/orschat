@@ -29,7 +29,7 @@ Future<bool> userExists(String username) async {
 Future<bool> createUser(String username) async {
   bool result = false;
   await http.get(Uri.parse('${host}users/createUser.php?username=$username')).then((value){
-    if(value.body == "0"){
+    if(value.body == "0" && value.statusCode == 200){
       result = true;
     }
   });
