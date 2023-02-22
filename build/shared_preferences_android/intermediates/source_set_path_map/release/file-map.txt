@@ -8,5 +8,5 @@ io.flutter.plugins.sharedpreferences.shared_preferences_android-rs-6 C:\Users\Or
 io.flutter.plugins.sharedpreferences.shared_preferences_android-mergeReleaseResources-7 C:\Users\Ori\AndroidStudioProjects\orschat\build\shared_preferences_android\intermediates\incremental\release\mergeReleaseResources\merged.dir
 io.flutter.plugins.sharedpreferences.shared_preferences_android-mergeReleaseResources-8 C:\Users\Ori\AndroidStudioProjects\orschat\build\shared_preferences_android\intermediates\incremental\release\mergeReleaseResources\stripped.dir
 io.flutter.plugins.sharedpreferences.shared_preferences_android-merged_res-9 C:\Users\Ori\AndroidStudioProjects\orschat\build\shared_preferences_android\intermediates\merged_res\release
-io.flutter.plugins.sharedpreferences.shared_preferences_android-main-10 C:\Users\Ori\AppData\Local\Pub\Cache\hosted\pub.dev\shared_preferences_android-2.0.15\android\src\main\res
-io.flutter.plugins.sharedpreferences.shared_preferences_android-release-11 C:\Users\Ori\AppData\Local\Pub\Cache\hosted\pub.dev\shared_preferences_android-2.0.15\android\src\release\res
+io.flutter.plugins.sharedpreferences.shared_preferences_android-main-10 C:\Users\Ori\AppData\Local\Pub\Cache\hosted\pub.dev\shared_preferences_android-2.0.16\android\src\main\res
+io.flutter.plugins.sharedpreferences.shared_preferences_android-release-11 C:\Users\Ori\AppData\Local\Pub\Cache\hosted\pub.dev\shared_preferences_android-2.0.16\android\src\release\res

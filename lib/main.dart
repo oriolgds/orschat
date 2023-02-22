@@ -10,11 +10,19 @@ import 'dart:async';
 import 'database/main.dart' as database;
 import 'package:shared_preferences/shared_preferences.dart';
 void main() async {
+  final prefs = await SharedPreferences.getInstance();
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
       statusBarBrightness: Brightness.dark
   ));
-  runApp(const HomePage());
+  bool? firstTime = prefs.getBool('firstTime');
+  if(firstTime == false || firstTime == null){
+    runApp(const first_time.FirstTimeLoading());
+  }
+  else {
+    runApp(const HomePage());
+  }
+  prefs.clear();
 }
 // /home/kali/Documentos/flutter/bin/flutter
 class HomePage extends StatefulWidget {
@@ -23,20 +31,6 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 class _HomePageState extends State<HomePage> {
-  void firstTimeRoute(){
-    Navigator.of(context).push(scaffoldTransition(const first_time.FirstTimeLoading(), const Offset(0.0, 0.0)));
-  }
-  void checkFirstTime() async {
-    final prefs = await SharedPreferences.getInstance();
-    if(prefs.getBool("firstTime") == null || prefs.getBool("firstTime") == false) {
-      prefs.clear();
-      firstTimeRoute();
-    }
-  }
-  @override
-  void initState() {
-    super.initState();
-  }
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

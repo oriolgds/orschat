@@ -2,6 +2,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../scaffoldTransition.dart';
+import '../themeData/data.dart';
+import 'package:universal_io/io.dart';
 class FirstTimeLoading extends StatefulWidget {
   const FirstTimeLoading({this.text = "Configurando Ors Chat", Key? key}) : super(key: key);
   final String text;
@@ -10,19 +12,43 @@ class FirstTimeLoading extends StatefulWidget {
 }
 class _FirstTimeLoadingState extends State<FirstTimeLoading> {
   @override
+  Widget build(BuildContext context) {    
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Configurando Ors Chat',
+      theme: themeDataLight(),
+      darkTheme: themeDataDark(),
+      scrollBehavior: const ScrollBehavior(
+          androidOverscrollIndicator: AndroidOverscrollIndicator.stretch
+      ),
+      themeMode: ThemeMode.system,
+      home: const LoadingScaffold("Configurando Ors Chat"),
+    );
+  }
+}
+class LoadingScaffold extends StatefulWidget {
+  const LoadingScaffold(this.text, {Key? key}) : super(key: key);
+  final String text;
+
+  @override
+  State<LoadingScaffold> createState() => _LoadingScaffoldState();
+}
+
+class _LoadingScaffoldState extends State<LoadingScaffold> {
+  @override
   void initState() {
     // TODO: implement initState
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      Navigator.of(context).push(scaffoldTransition(const SignInUp(), const Offset(0.0, 0.1)));
-
-    });
     super.initState();
+    WidgetsFlutterBinding.ensureInitialized();
+    // TODO: implement initState
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      Timer(const Duration(seconds: 2), () {
+        Navigator.of(context).push(scaffoldTransition(const SignInUp(), const Offset(0.0, 0.1)));
+      });
+    });
   }
   @override
   Widget build(BuildContext context) {
-    Timer(const Duration(seconds: 2), () {
-
-    });
     return Scaffold(
       body: SizedBox(
         width: MediaQuery.of(context).size.width,
@@ -61,6 +87,7 @@ class _FirstTimeLoadingState extends State<FirstTimeLoading> {
     );
   }
 }
+
 class SignInUp extends StatelessWidget {
   const SignInUp({Key? key}) : super(key: key);
   @override
