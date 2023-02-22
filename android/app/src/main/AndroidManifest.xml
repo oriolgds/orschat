@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="orschat.talk4fun.net.orschat">
     <application
-        android:label="orschat"
+        android:label="Ors Chat"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

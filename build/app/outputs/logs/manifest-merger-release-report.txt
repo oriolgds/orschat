@@ -10,7 +10,7 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Or
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.6.0] C:\Users\Ori\.gradle\caches\transforms-3\7e9df2ac2213a6bd3cef0f2f27870d79\transformed\core-1.6.0\AndroidManifest.xml:24:18-86
 	android:label
-		ADDED from C:\Users\Ori\AndroidStudioProjects\orschat\android\app\src\main\AndroidManifest.xml:4:9-32
+		ADDED from C:\Users\Ori\AndroidStudioProjects\orschat\android\app\src\main\AndroidManifest.xml:4:9-33
 	android:icon
 		ADDED from C:\Users\Ori\AndroidStudioProjects\orschat\android\app\src\main\AndroidManifest.xml:6:9-43
 	android:name

@@ -17,8 +17,8 @@
 13-->[androidx.core:core:1.6.0] C:\Users\Ori\.gradle\caches\transforms-3\7e9df2ac2213a6bd3cef0f2f27870d79\transformed\core-1.6.0\AndroidManifest.xml:24:18-86
 14        android:icon="@mipmap/ic_launcher"
 14-->C:\Users\Ori\AndroidStudioProjects\orschat\android\app\src\main\AndroidManifest.xml:6:9-43
-15        android:label="orschat" >
-15-->C:\Users\Ori\AndroidStudioProjects\orschat\android\app\src\main\AndroidManifest.xml:4:9-32
+15        android:label="Ors Chat" >
+15-->C:\Users\Ori\AndroidStudioProjects\orschat\android\app\src\main\AndroidManifest.xml:4:9-33
 16        <activity
 16-->C:\Users\Ori\AndroidStudioProjects\orschat\android\app\src\main\AndroidManifest.xml:7:9-27:20
 17            android:name="orschat.talk4fun.net.orschat.MainActivity"
