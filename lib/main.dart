@@ -24,7 +24,6 @@ void main() async {
   }
   prefs.clear();
 }
-// /home/kali/Documentos/flutter/bin/flutter
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
   @override
