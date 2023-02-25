@@ -5,8 +5,7 @@ import '../scaffoldTransition.dart';
 import '../themeData/data.dart';
 import 'package:universal_io/io.dart';
 class FirstTimeLoading extends StatefulWidget {
-  const FirstTimeLoading({this.text = "Configurando Ors Chat", Key? key}) : super(key: key);
-  final String text;
+  const FirstTimeLoading({Key? key}) : super(key: key);
   @override
   State<FirstTimeLoading> createState() => _FirstTimeLoadingState();
 }
@@ -15,20 +14,19 @@ class _FirstTimeLoadingState extends State<FirstTimeLoading> {
   Widget build(BuildContext context) {    
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Configurando Ors Chat',
+      title: 'Ors Chat',
       theme: themeDataLight(),
       darkTheme: themeDataDark(),
       scrollBehavior: const ScrollBehavior(
           androidOverscrollIndicator: AndroidOverscrollIndicator.stretch
       ),
       themeMode: ThemeMode.system,
-      home: const LoadingScaffold("Configurando Ors Chat"),
+      home: const LoadingScaffold(),
     );
   }
 }
 class LoadingScaffold extends StatefulWidget {
-  const LoadingScaffold(this.text, {Key? key}) : super(key: key);
-  final String text;
+  const LoadingScaffold({Key? key}) : super(key: key);
 
   @override
   State<LoadingScaffold> createState() => _LoadingScaffoldState();
@@ -69,14 +67,14 @@ class _LoadingScaffoldState extends State<LoadingScaffold> {
                 ),
               ),
             ),
-            Column(
+            const Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Text(widget.text),
-                const SizedBox(
+                Text('Configurando Ors Chat'),
+                SizedBox(
                   height: 10,
                 ),
-                const CircularProgressIndicator(
+                CircularProgressIndicator(
                   color: Colors.blue,
                 )
               ],
@@ -109,12 +107,12 @@ class SignInUp extends StatelessWidget {
                      borderRadius: BorderRadius.circular(10)
                  ),
                  onTap: (){
-                   Navigator.push(context, scaffoldTransition(const FirstTimeLoading(text: "Creando cuenta",), const Offset(0.0, 0.0)));
+                   Navigator.push(context, scaffoldTransition(const FirstTimeLoading(), const Offset(0.0, 0.0)));
                  },
                  child: Container(
                    padding: const EdgeInsets.all(20),
-                   child: Column(
-                     children: const <Widget>[
+                   child: const Column(
+                     children: <Widget>[
                        Text('Crear cuenta', style: TextStyle(fontSize: 20, fontFamily: 'Raleway', fontWeight: FontWeight.w900),),
                        Text('Crea una cuenta para poder usar el mejor servicio de mensajería del mundo.', textAlign: TextAlign.justify,),
                        SizedBox(height: 10,),
