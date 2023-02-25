@@ -15,14 +15,15 @@ void main() async {
       statusBarColor: Colors.transparent,
       statusBarBrightness: Brightness.dark
   ));
-  bool? firstTime = prefs.getBool('firstTime');
+  runApp(const first_time.FirstTimeLoading());
+  /*bool? firstTime = prefs.getBool('firstTime');
   if(firstTime == false || firstTime == null){
     runApp(const first_time.FirstTimeLoading());
   }
   else {
     runApp(const HomePage());
   }
-  prefs.clear();
+  prefs.clear();*/
 }
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

@@ -1,0 +1,12 @@
+io.flutter.plugins.sharedpreferences.shared_preferences_android-jetified-window-1.0.0-beta04-0 C:\Users\Ori\.gradle\caches\transforms-3\25cee5f028ac2a6b79fd6278ff5b59e2\transformed\jetified-window-1.0.0-beta04\res
+io.flutter.plugins.sharedpreferences.shared_preferences_android-jetified-annotation-experimental-1.1.0-1 C:\Users\Ori\.gradle\caches\transforms-3\6c0c163cc77ae6c91f9f7dfcd179c29c\transformed\jetified-annotation-experimental-1.1.0\res
+io.flutter.plugins.sharedpreferences.shared_preferences_android-core-1.6.0-2 C:\Users\Ori\.gradle\caches\transforms-3\7e9df2ac2213a6bd3cef0f2f27870d79\transformed\core-1.6.0\res
+io.flutter.plugins.sharedpreferences.shared_preferences_android-jetified-window-java-1.0.0-beta04-3 C:\Users\Ori\.gradle\caches\transforms-3\ae81e06d24c799147c26814497a2a305\transformed\jetified-window-java-1.0.0-beta04\res
+io.flutter.plugins.sharedpreferences.shared_preferences_android-pngs-4 C:\Users\Ori\AndroidStudioProjects\orschat\build\shared_preferences_android\generated\res\pngs\profile
+io.flutter.plugins.sharedpreferences.shared_preferences_android-resValues-5 C:\Users\Ori\AndroidStudioProjects\orschat\build\shared_preferences_android\generated\res\resValues\profile
+io.flutter.plugins.sharedpreferences.shared_preferences_android-rs-6 C:\Users\Ori\AndroidStudioProjects\orschat\build\shared_preferences_android\generated\res\rs\profile
+io.flutter.plugins.sharedpreferences.shared_preferences_android-mergeProfileResources-7 C:\Users\Ori\AndroidStudioProjects\orschat\build\shared_preferences_android\intermediates\incremental\profile\mergeProfileResources\merged.dir
+io.flutter.plugins.sharedpreferences.shared_preferences_android-mergeProfileResources-8 C:\Users\Ori\AndroidStudioProjects\orschat\build\shared_preferences_android\intermediates\incremental\profile\mergeProfileResources\stripped.dir
+io.flutter.plugins.sharedpreferences.shared_preferences_android-merged_res-9 C:\Users\Ori\AndroidStudioProjects\orschat\build\shared_preferences_android\intermediates\merged_res\profile
+io.flutter.plugins.sharedpreferences.shared_preferences_android-main-10 C:\Users\Ori\AppData\Local\Pub\Cache\hosted\pub.dev\shared_preferences_android-2.0.16\android\src\main\res
+io.flutter.plugins.sharedpreferences.shared_preferences_android-profile-11 C:\Users\Ori\AppData\Local\Pub\Cache\hosted\pub.dev\shared_preferences_android-2.0.16\android\src\profile\res

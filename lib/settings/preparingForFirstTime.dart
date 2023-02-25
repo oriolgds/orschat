@@ -4,6 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../scaffoldTransition.dart';
 import '../themeData/data.dart';
 import 'package:universal_io/io.dart';
+import 'package:username_gen/username_gen.dart';
 class FirstTimeLoading extends StatefulWidget {
   const FirstTimeLoading({Key? key}) : super(key: key);
   @override
@@ -20,7 +21,7 @@ class _FirstTimeLoadingState extends State<FirstTimeLoading> {
       scrollBehavior: const ScrollBehavior(
           androidOverscrollIndicator: AndroidOverscrollIndicator.stretch
       ),
-      themeMode: ThemeMode.system,
+      themeMode: ThemeMode.light,
       home: const LoadingScaffold(),
     );
   }
@@ -31,7 +32,6 @@ class LoadingScaffold extends StatefulWidget {
   @override
   State<LoadingScaffold> createState() => _LoadingScaffoldState();
 }
-
 class _LoadingScaffoldState extends State<LoadingScaffold> {
   @override
   void initState() {
@@ -40,7 +40,7 @@ class _LoadingScaffoldState extends State<LoadingScaffold> {
     WidgetsFlutterBinding.ensureInitialized();
     // TODO: implement initState
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      Timer(const Duration(seconds: 2), () {
+      Timer(const Duration(seconds: 0), () {
         Navigator.of(context).push(scaffoldTransition(const SignInUp(), const Offset(0.0, 0.1)));
       });
     });
@@ -85,7 +85,6 @@ class _LoadingScaffoldState extends State<LoadingScaffold> {
     );
   }
 }
-
 class SignInUp extends StatelessWidget {
   const SignInUp({Key? key}) : super(key: key);
   @override
@@ -107,7 +106,7 @@ class SignInUp extends StatelessWidget {
                      borderRadius: BorderRadius.circular(10)
                  ),
                  onTap: (){
-                   Navigator.push(context, scaffoldTransition(const FirstTimeLoading(), const Offset(0.0, 0.0)));
+                   Navigator.push(context, scaffoldTransition(const CreateUsername(), const Offset(0.0, 0.0)));
                  },
                  child: Container(
                    padding: const EdgeInsets.all(20),
@@ -123,6 +122,49 @@ class SignInUp extends StatelessWidget {
                ),
               ),
             ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+class CreateUsername extends StatefulWidget {
+  const CreateUsername({Key? key}) : super(key: key);
+
+  @override
+  State<CreateUsername> createState() => _CreateUsernameState();
+}
+
+class _CreateUsernameState extends State<CreateUsername> {
+  List<String> usernameFillHints = [];
+  @override
+  void initState() {
+    super.initState();
+    for(int i = 0; i < 10; i++){
+      final username = UsernameGen().generate();
+      debugPrint(username);
+      usernameFillHints.add(username);
+    }
+  }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 10),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            TextField(
+              keyboardType: TextInputType.text,
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: "Introduce nombre de usuario"
+              ),
+              autofocus: true,
+              autocorrect: false,
+              autofillHints: usernameFillHints,
+            )
           ],
         ),
       ),
