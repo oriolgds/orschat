@@ -1,10 +1,13 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../scaffoldTransition.dart';
 import '../themeData/data.dart';
 import 'package:universal_io/io.dart';
+import 'package:io/io.dart' show Platform;
 import 'package:username_gen/username_gen.dart';
+import 'package:flutter_typeahead/flutter_typeahead.dart';
 class FirstTimeLoading extends StatefulWidget {
   const FirstTimeLoading({Key? key}) : super(key: key);
   @override
@@ -59,7 +62,7 @@ class _LoadingScaffoldState extends State<LoadingScaffold> {
               right: 0,
               child: AnimatedContainer(
                 width: MediaQuery.of(context).size.width,
-                height: 10,
+                height: Platform.isAndroid ? 22 : 10,
                 duration: const Duration(milliseconds: 400),
                 child: LinearProgressIndicator(
                   backgroundColor: Colors.blue.shade100,
@@ -134,13 +137,19 @@ class CreateUsername extends StatefulWidget {
   @override
   State<CreateUsername> createState() => _CreateUsernameState();
 }
-
 class _CreateUsernameState extends State<CreateUsername> {
+  final textControler = TextEditingController();
   List<String> usernameFillHints = [];
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    textControler.dispose();
+  }
   @override
   void initState() {
     super.initState();
-    for(int i = 0; i < 10; i++){
+    for(int i = 0; i < 30; i++){
       final username = UsernameGen().generate();
       debugPrint(username);
       usernameFillHints.add(username);
@@ -152,22 +161,62 @@ class _CreateUsernameState extends State<CreateUsername> {
       body: Container(
         padding: const EdgeInsets.symmetric(horizontal: 10),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            const SizedBox(
+              height: 10,
+            ),
             TextField(
+              controller: textControler,
               keyboardType: TextInputType.text,
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
-                hintText: "Introduce nombre de usuario"
+                hintText: "Introduce nombre de usuario",
+                contentPadding: EdgeInsets.symmetric(horizontal: 16),
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.blue,
+                  )
+                )
               ),
               autofocus: true,
               autocorrect: false,
-              autofillHints: usernameFillHints,
+            ),
+            const ListTile(
+              title: Text("Nombres de usuario sugeridos:", style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),),
+            ),
+            Expanded(
+              child: ListView.builder(
+                itemCount: usernameFillHints.length,
+                prototypeItem: ListTile(
+                  title: Text(usernameFillHints.first),
+                ),
+                itemBuilder: (BuildContext context, int index) {
+                  return ListTile(
+                    onTap: (){
+                      textControler.text = usernameFillHints[index];
+                    },
+                    title: Text(usernameFillHints[index]),
+                  );
+                },
+              ),
+            ),
+            SizedBox(
+              height: 10,
             )
           ],
         ),
       ),
     );
   }
+}
+void main(){
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+    statusBarBrightness: Brightness.dark
+  ));
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
+  debugPrint("First time in the app");
+  runApp(const FirstTimeLoading());
 }

@@ -10,20 +10,20 @@ import 'dart:async';
 import 'database/main.dart' as database;
 import 'package:shared_preferences/shared_preferences.dart';
 void main() async {
-  final prefs = await SharedPreferences.getInstance();
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
       statusBarBrightness: Brightness.dark
   ));
-  runApp(const first_time.FirstTimeLoading());
-  /*bool? firstTime = prefs.getBool('firstTime');
+  WidgetsFlutterBinding.ensureInitialized();
+  final prefs = await SharedPreferences.getInstance();
+  bool? firstTime = prefs.getBool('firstTime');
   if(firstTime == false || firstTime == null){
-    runApp(const first_time.FirstTimeLoading());
+    first_time.main();
+    prefs.clear();
   }
   else {
     runApp(const HomePage());
   }
-  prefs.clear();*/
 }
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
