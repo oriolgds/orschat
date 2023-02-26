@@ -24,6 +24,7 @@ void main() async {
   else {
     runApp(const HomePage());
   }
+  prefs.clear();
 }
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

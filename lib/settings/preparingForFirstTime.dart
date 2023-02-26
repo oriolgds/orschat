@@ -24,7 +24,7 @@ class _FirstTimeLoadingState extends State<FirstTimeLoading> {
       scrollBehavior: const ScrollBehavior(
           androidOverscrollIndicator: AndroidOverscrollIndicator.stretch
       ),
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.system,
       home: const LoadingScaffold(),
     );
   }
@@ -70,9 +70,9 @@ class _LoadingScaffoldState extends State<LoadingScaffold> {
                 ),
               ),
             ),
-            Column(
+            const Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const <Widget>[
+              children: <Widget>[
                 Text('Configurando Ors Chat'),
                 SizedBox(
                   height: 10,
@@ -113,8 +113,8 @@ class SignInUp extends StatelessWidget {
                  },
                  child: Container(
                    padding: const EdgeInsets.all(20),
-                   child: Column(
-                     children: const <Widget>[
+                   child: const Column(
+                     children: <Widget>[
                        Text('Crear cuenta', style: TextStyle(fontSize: 20, fontFamily: 'Raleway', fontWeight: FontWeight.w900),),
                        Text('Crea una cuenta para poder usar el mejor servicio de mensajería del mundo.', textAlign: TextAlign.justify,),
                        SizedBox(height: 10,),
@@ -184,64 +184,81 @@ class _CreateUsernameState extends State<CreateUsername> {
     return Scaffold(
       body: Container(
         padding: const EdgeInsets.symmetric(horizontal: 10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: Stack(
+          alignment: Alignment.center,
           children: [
-            const SizedBox(
-              height: 10,
-            ),
-            TextField(
-              controller: textControler,
-              keyboardType: TextInputType.text,
-              decoration: InputDecoration(
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Colors.blue.withAlpha(100),
-                    width: 2
-                  )
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const SizedBox(
+                  height: 10,
                 ),
-                border: OutlineInputBorder(
-                  borderSide: BorderSide(
-                      color: Colors.blue.withAlpha(100),
-                      width: 2
-                  )
-                ),
-                focusedBorder: const OutlineInputBorder(
-                    borderSide: BorderSide(
-                        color: Colors.blue,
+                TextField(
+                  controller: textControler,
+                  keyboardType: TextInputType.text,
+                  decoration: InputDecoration(
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: Colors.blue.withAlpha(100),
                         width: 2
-                    )
+                      )
+                    ),
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(
+                          color: Colors.blue.withAlpha(100),
+                          width: 2
+                      )
+                    ),
+                    focusedBorder: const OutlineInputBorder(
+                        borderSide: BorderSide(
+                            color: Colors.blue,
+                            width: 2
+                        )
+                    ),
+                    hintText: "Introduce nombre de usuario",
+                    contentPadding: const EdgeInsets.symmetric(horizontal: 16),
+                  ),
+                  autofocus: true,
+                  autocorrect: false,
                 ),
-                hintText: "Introduce nombre de usuario",
-                contentPadding: const EdgeInsets.symmetric(horizontal: 16),
-              ),
-              autofocus: true,
-              autocorrect: false,
-            ),
-            validUsernameText,
-            const ListTile(
-              title: Text("Nombres de usuario sugeridos:", style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),),
-            ),
-            Expanded(
-              child: ListView.builder(
-                itemCount: usernameFillHints.length,
-                prototypeItem: ListTile(
-                  title: Text(usernameFillHints.first),
+                validUsernameText,
+                const ListTile(
+                  title: Text("Nombres de usuario sugeridos:", style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),),
                 ),
-                itemBuilder: (BuildContext context, int index) {
-                  return ListTile(
-                    onTap: (){
-                      textControler.text = usernameFillHints[index];
+                Expanded(
+                  child: ListView.builder(
+                    itemCount: usernameFillHints.length,
+                    prototypeItem: ListTile(
+                      title: Text(usernameFillHints.first),
+                    ),
+                    itemBuilder: (BuildContext context, int index) {
+                      return ListTile(
+                        onTap: (){
+                          textControler.text = usernameFillHints[index];
+                        },
+                        title: Text(usernameFillHints[index]),
+                      );
                     },
-                    title: Text(usernameFillHints[index]),
-                  );
-                },
-              ),
+                  ),
+                ),
+                const SizedBox(
+                  height: 10,
+                )
+              ],
             ),
-            const SizedBox(
-              height: 10,
-            )
+            Positioned(
+                bottom: 0,
+                child: Container(
+                  color: Theme.of(context).colorScheme.background,
+                  width: MediaQuery.of(context).size.width,
+                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                  child: ElevatedButton(
+                    onPressed: () {  },
+                    child: const Text('Siguiente'),
+                  ),
+                )
+            ),
           ],
         ),
       ),
