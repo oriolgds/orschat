@@ -70,9 +70,9 @@ class _LoadingScaffoldState extends State<LoadingScaffold> {
                 ),
               ),
             ),
-            const Column(
+            Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
+              children: const <Widget>[
                 Text('Configurando Ors Chat'),
                 SizedBox(
                   height: 10,
@@ -113,8 +113,8 @@ class SignInUp extends StatelessWidget {
                  },
                  child: Container(
                    padding: const EdgeInsets.all(20),
-                   child: const Column(
-                     children: <Widget>[
+                   child: Column(
+                     children: const <Widget>[
                        Text('Crear cuenta', style: TextStyle(fontSize: 20, fontFamily: 'Raleway', fontWeight: FontWeight.w900),),
                        Text('Crea una cuenta para poder usar el mejor servicio de mensajería del mundo.', textAlign: TextAlign.justify,),
                        SizedBox(height: 10,),
