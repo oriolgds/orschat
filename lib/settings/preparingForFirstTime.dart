@@ -24,7 +24,7 @@ class _FirstTimeLoadingState extends State<FirstTimeLoading> {
       scrollBehavior: const ScrollBehavior(
           androidOverscrollIndicator: AndroidOverscrollIndicator.stretch
       ),
-      themeMode: ThemeMode.system,
+      themeMode: ThemeMode.light,
       home: const LoadingScaffold(),
     );
   }
@@ -139,7 +139,7 @@ class CreateUsername extends StatefulWidget {
 }
 class _CreateUsernameState extends State<CreateUsername> {
   final textControler = TextEditingController();
-  Widget validUsernameText = const ListTile(title: Text("Nombre de usuario invalido", style: TextStyle(color: Colors.red),));
+  Widget validUsernameText = const ListTile(title: Text("El nombre tiene que tener una longitud mayor a 3", style: TextStyle(color: Colors.red),));
   List<String> usernameFillHints = [];
   @override
   void dispose() {
@@ -151,20 +151,27 @@ class _CreateUsernameState extends State<CreateUsername> {
   void initState() {
     super.initState();
     textControler.addListener(() {
-      database.userExists(textControler.text).then((value){
-        debugPrint(value.toString());
-        if(value){
-          setState(() {
-            validUsernameText = const ListTile(title: Text("Ya esta escogido", style: TextStyle(color: Colors.red),));
+      if(textControler.text.length < 3){
+        setState(() {
+          validUsernameText = const ListTile(title: Text("El nombre tiene que tener una longitud mayor a 3 y menor a 30", style: TextStyle(color: Colors.red),));
+        });
+      }
+      else {
+        database.userExists(textControler.text).then((value){
+          debugPrint(value.toString());
+          if(value){
+            setState(() {
+              validUsernameText = const ListTile(title: Text("Ya esta escogido", style: TextStyle(color: Colors.red),));
 
-          });
-        }
-        else {
-          setState(() {
-            validUsernameText = const ListTile(title: Text("Disponible", style: TextStyle(color: Colors.green),));
-          });
-        }
-      });
+            });
+          }
+          else {
+            setState(() {
+              validUsernameText = const ListTile(title: Text("Disponible", style: TextStyle(color: Colors.green),));
+            });
+          }
+        });
+      }
     });
     for(int i = 0; i < 30; i++){
       final username = UsernameGen().generate();
