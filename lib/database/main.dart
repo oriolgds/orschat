@@ -4,7 +4,6 @@ import 'package:http/http.dart' as http;
 import 'package:async/async.dart';
 import 'package:flutter/material.dart';
 void main() async {
-  testConnection();
 }
 String host = "http://localhost/android_ors_chat/";
 Future<bool> testConnection() async {

@@ -7,7 +7,7 @@ import '../themeData/data.dart';
 import 'package:universal_io/io.dart';
 import 'package:io/io.dart' show Platform;
 import 'package:username_gen/username_gen.dart';
-import 'package:flutter_typeahead/flutter_typeahead.dart';
+import '../database/main.dart' as database;
 class FirstTimeLoading extends StatefulWidget {
   const FirstTimeLoading({Key? key}) : super(key: key);
   @override
@@ -24,7 +24,7 @@ class _FirstTimeLoadingState extends State<FirstTimeLoading> {
       scrollBehavior: const ScrollBehavior(
           androidOverscrollIndicator: AndroidOverscrollIndicator.stretch
       ),
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.system,
       home: const LoadingScaffold(),
     );
   }
@@ -139,6 +139,7 @@ class CreateUsername extends StatefulWidget {
 }
 class _CreateUsernameState extends State<CreateUsername> {
   final textControler = TextEditingController();
+  Widget validUsernameText = const ListTile(title: Text("Nombre de usuario invalido", style: TextStyle(color: Colors.red),));
   List<String> usernameFillHints = [];
   @override
   void dispose() {
@@ -149,6 +150,22 @@ class _CreateUsernameState extends State<CreateUsername> {
   @override
   void initState() {
     super.initState();
+    textControler.addListener(() {
+      database.userExists(textControler.text).then((value){
+        debugPrint(value.toString());
+        if(value){
+          setState(() {
+            validUsernameText = const ListTile(title: Text("Ya esta escogido", style: TextStyle(color: Colors.red),));
+
+          });
+        }
+        else {
+          setState(() {
+            validUsernameText = const ListTile(title: Text("Disponible", style: TextStyle(color: Colors.green),));
+          });
+        }
+      });
+    });
     for(int i = 0; i < 30; i++){
       final username = UsernameGen().generate();
       debugPrint(username);
@@ -170,19 +187,32 @@ class _CreateUsernameState extends State<CreateUsername> {
             TextField(
               controller: textControler,
               keyboardType: TextInputType.text,
-              decoration: const InputDecoration(
-                border: OutlineInputBorder(),
-                hintText: "Introduce nombre de usuario",
-                contentPadding: EdgeInsets.symmetric(horizontal: 16),
+              decoration: InputDecoration(
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
-                    color: Colors.blue,
+                    color: Colors.blue.withAlpha(100),
+                    width: 2
                   )
-                )
+                ),
+                border: OutlineInputBorder(
+                  borderSide: BorderSide(
+                      color: Colors.blue.withAlpha(100),
+                      width: 2
+                  )
+                ),
+                focusedBorder: const OutlineInputBorder(
+                    borderSide: BorderSide(
+                        color: Colors.blue,
+                        width: 2
+                    )
+                ),
+                hintText: "Introduce nombre de usuario",
+                contentPadding: const EdgeInsets.symmetric(horizontal: 16),
               ),
               autofocus: true,
               autocorrect: false,
             ),
+            validUsernameText,
             const ListTile(
               title: Text("Nombres de usuario sugeridos:", style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),),
             ),
@@ -202,7 +232,7 @@ class _CreateUsernameState extends State<CreateUsername> {
                 },
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             )
           ],

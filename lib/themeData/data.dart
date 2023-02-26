@@ -54,6 +54,23 @@ ThemeData themeDataDark(){
       tabBarTheme: const TabBarTheme(
         indicatorColor: Colors.blue,
         labelColor: Colors.blue,
+      ),
+      colorScheme: const ColorScheme(
+        brightness: Brightness.dark,
+        primary: Colors.blue,
+        onPrimary: Colors.blue,
+        secondary: Colors.blueAccent,
+        onSecondary: Colors.black38,
+        primaryContainer: Color.fromRGBO(213, 236, 255, 1.0),
+        secondaryContainer: Color.fromRGBO(250, 250, 255, 1.0),
+        error: Colors.black,
+        onError: Colors.black,
+        background: Colors.black38,
+        onBackground: Colors.black38,
+        surface: Colors.transparent,
+        onSurface: Colors.white,
+        onSurfaceVariant: Colors.black38,
       )
+
   );
 }
