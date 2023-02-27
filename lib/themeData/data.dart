@@ -31,7 +31,7 @@ ThemeData themeDataLight(){
         onPrimary: Colors.blue,
         secondary: Colors.blueAccent,
         onSecondary: Colors.white,
-        primaryContainer: Color.fromRGBO(213, 236, 255, 1.0),
+        primaryContainer: Colors.white,
         secondaryContainer: Color.fromRGBO(250, 250, 255, 1.0),
         error: Colors.white,
         onError: Colors.white,

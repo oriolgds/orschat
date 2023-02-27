@@ -8,6 +8,7 @@ import 'package:universal_io/io.dart';
 import 'package:io/io.dart' show Platform;
 import 'package:username_gen/username_gen.dart';
 import '../database/main.dart' as database;
+import '../main.dart' as Main;
 class FirstTimeLoading extends StatefulWidget {
   const FirstTimeLoading({Key? key}) : super(key: key);
   @override
@@ -24,7 +25,7 @@ class _FirstTimeLoadingState extends State<FirstTimeLoading> {
       scrollBehavior: const ScrollBehavior(
           androidOverscrollIndicator: AndroidOverscrollIndicator.stretch
       ),
-      themeMode: ThemeMode.system,
+      themeMode: ThemeMode.light,
       home: const LoadingScaffold(),
     );
   }
@@ -151,7 +152,7 @@ class _CreateUsernameState extends State<CreateUsername> {
   void initState() {
     super.initState();
     textControler.addListener(() {
-      if(textControler.text.length < 3){
+      if(textControler.text.length < 3 || textControler.text.length > 30){
         setState(() {
           validUsernameText = const ListTile(title: Text("El nombre tiene que tener una longitud mayor a 3 y menor a 30", style: TextStyle(color: Colors.red),));
         });
@@ -250,11 +251,26 @@ class _CreateUsernameState extends State<CreateUsername> {
             Positioned(
                 bottom: 0,
                 child: Container(
-                  color: Theme.of(context).colorScheme.background,
+                  color: Theme.of(context).colorScheme.primaryContainer,
                   width: MediaQuery.of(context).size.width,
                   padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                   child: ElevatedButton(
-                    onPressed: () {  },
+                    onPressed: () {
+                      database.createUser(textControler.text).then((value) async {                        
+                        if(value['status'] == '0'){
+                          debugPrint("Created");
+                          final prefs = await SharedPreferences.getInstance();
+                          prefs.setString('password', value['password']);
+                          runApp(const Main.HomePage());
+                        }
+                        else {
+                          debugPrint("Cannot create:\n ${value['description']}");
+                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            content: Text(value['description'], style: const TextStyle(color: Colors.white),),
+                          ));
+                        }
+                      });
+                    },
                     child: const Text('Siguiente'),
                   ),
                 )

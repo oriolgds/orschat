@@ -25,12 +25,10 @@ Future<bool> userExists(String username) async {
   });
   return result;
 }
-Future<bool> createUser(String username) async {
-  bool result = false;
+Future<Map<String, dynamic>> createUser(String username) async {
+  Map<String, dynamic> result = {};
   await http.get(Uri.parse('${host}users/createUser.php?username=$username')).then((value){
-    if(value.body == "0" && value.statusCode == 200){
-      result = true;
-    }
+    result = jsonDecode(value.body);
   });
   return result;
 }
