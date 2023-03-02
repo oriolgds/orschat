@@ -9,6 +9,7 @@ import 'settings/preparingForFirstTime.dart' as first_time;
 import 'dart:async';
 import 'database/main.dart' as database;
 import 'package:shared_preferences/shared_preferences.dart';
+import 'utilities/changeTextOpacity.dart';
 void main() async {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
@@ -19,18 +20,38 @@ void main() async {
   bool? firstTime = prefs.getBool('firstTime');
   if(firstTime == false || firstTime == null){
     first_time.main();
-    prefs.clear();
   }
   else {
-    runApp(const HomePage());
+    runApp(HomePage(prefs, 0));
   }
 }
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  const HomePage(this.prefs, this.itemCountChat, {super.key});
+  final int itemCountChat;
+  final SharedPreferences prefs;
   @override
   State<HomePage> createState() => _HomePageState();
 }
 class _HomePageState extends State<HomePage> {
+  Widget chatItemList = Container();
+  @override
+  void initState() {
+    // TODO: implement initState
+    /*ListView.builder(
+      padding: EdgeInsets.zero,
+      scrollDirection: Axis.vertical,
+      itemCount: widget.itemCountChat,
+      itemBuilder: (BuildContext context, int index) {
+      },
+    ),*/
+    chatItemList = Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Text('Aún no has creado chats', style: Theme.of(context).textTheme.bodySmall),
+      ],
+    );
+  }
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -104,28 +125,10 @@ class _HomePageState extends State<HomePage> {
               },
               body: TabBarView(
                 children: <Widget>[
+                  chatItemList,
                   ListView(
-                    padding: EdgeInsets.zero,
-                    scrollDirection: Axis.vertical,
-                    children: const <Widget>[
-                      ChatContactListItem("Luk", "lib/assets/withoutProfilePhoto.png", "¡Hola! ¿Qué tal?", "Ayer"),
-                      ChatContactListItem("Biel", "lib/assets/withoutProfilePhoto.png", "¡Hola! ¿Qué tal?", "Ayer"),
-                      ChatContactListItem("Alex", "lib/assets/withoutProfilePhoto.png", "¡Hola! ¿Qué tal?", "Ayer"),
-                      ChatContactListItem("Cálvaro", "lib/assets/withoutProfilePhoto.png", "¡Hola! ¿Qué tal?", "Ayer"),
-                      ChatContactListItem("Luk", "lib/assets/withoutProfilePhoto.png", "¡Hola! ¿Qué tal?", "Ayer"),
-                      ChatContactListItem("Biel", "lib/assets/withoutProfilePhoto.png", "¡Hola! ¿Qué tal?", "Ayer"),
-                      ChatContactListItem("Alex", "lib/assets/withoutProfilePhoto.png", "¡Hola! ¿Qué tal?", "Ayer"),
-                      ChatContactListItem("Cálvaro", "lib/assets/withoutProfilePhoto.png", "¡Hola! ¿Qué tal?", "Ayer"),ChatContactListItem("Luk", "lib/assets/withoutProfilePhoto.png", "¡Hola! ¿Qué tal?", "Ayer"),
-                      ChatContactListItem("Biel", "lib/assets/withoutProfilePhoto.png", "¡Hola! ¿Qué tal?", "Ayer"),
-                      ChatContactListItem("Alex", "lib/assets/withoutProfilePhoto.png", "¡Hola! ¿Qué tal?", "Ayer"),
-                      ChatContactListItem("Cálvaro", "lib/assets/withoutProfilePhoto.png", "¡Hola! ¿Qué tal?", "Ayer"),
-                    ],
-                  ),
-                  ListView(
-                    scrollDirection: Axis.vertical,
-                    children: const <Widget>[
-                    ],
-                  ),
+                    children: [],
+                  )
                 ],
               ),
             )

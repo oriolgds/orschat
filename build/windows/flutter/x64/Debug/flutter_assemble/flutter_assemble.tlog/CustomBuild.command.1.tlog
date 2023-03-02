@@ -1,0 +1,28 @@
+^C:\USERS\ORI\ANDROIDSTUDIOPROJECTS\ORSCHAT\BUILD\WINDOWS\CMAKEFILES\AB5CF2BE1379E3F4C78D3AFFF7FBA136\FLUTTER_WINDOWS.DLL.RULE
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E env FLUTTER_ROOT=C:\tools\flutter PROJECT_DIR=C:\Users\Ori\AndroidStudioProjects\orschat FLUTTER_ROOT=C:\tools\flutter FLUTTER_EPHEMERAL_DIR=C:\Users\Ori\AndroidStudioProjects\orschat\windows\flutter\ephemeral PROJECT_DIR=C:\Users\Ori\AndroidStudioProjects\orschat FLUTTER_TARGET=C:\Users\Ori\AndroidStudioProjects\orschat\lib\main.dart DART_DEFINES=Zmx1dHRlci5pbnNwZWN0b3Iuc3RydWN0dXJlZEVycm9ycz10cnVl,RkxVVFRFUl9XRUJfQVVUT19ERVRFQ1Q9dHJ1ZQ== DART_OBFUSCATION=false TRACK_WIDGET_CREATION=true TREE_SHAKE_ICONS=false PACKAGE_CONFIG=C:\Users\Ori\AndroidStudioProjects\orschat\.dart_tool\package_config.json C:/tools/flutter/packages/flutter_tools/bin/tool_backend.bat windows-x64 Debug
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\ORI\ANDROIDSTUDIOPROJECTS\ORSCHAT\BUILD\WINDOWS\CMAKEFILES\A8576732AE774CF368EF06CEC64DFC83\FLUTTER_ASSEMBLE.RULE
+setlocal
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\ORI\ANDROIDSTUDIOPROJECTS\ORSCHAT\WINDOWS\FLUTTER\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/Ori/AndroidStudioProjects/orschat/windows -BC:/Users/Ori/AndroidStudioProjects/orschat/build/windows --check-stamp-file C:/Users/Ori/AndroidStudioProjects/orschat/build/windows/flutter/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

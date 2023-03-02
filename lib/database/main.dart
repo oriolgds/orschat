@@ -5,7 +5,7 @@ import 'package:async/async.dart';
 import 'package:flutter/material.dart';
 void main() async {
 }
-String host = "http://127.0.0.1:82/backend_ors_chat/";
+String host = "http://localhost/android_ors_chat/";
 Future<bool> testConnection() async {
   debugPrint("Testing connection...");
   bool result = false;

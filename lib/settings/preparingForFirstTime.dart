@@ -71,9 +71,9 @@ class _LoadingScaffoldState extends State<LoadingScaffold> {
                 ),
               ),
             ),
-            Column(
+            const Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const <Widget>[
+              children: <Widget>[
                 Text('Configurando Ors Chat'),
                 SizedBox(
                   height: 10,
@@ -114,8 +114,8 @@ class SignInUp extends StatelessWidget {
                  },
                  child: Container(
                    padding: const EdgeInsets.all(20),
-                   child: Column(
-                     children: const <Widget>[
+                   child: const Column(
+                     children: <Widget>[
                        Text('Crear cuenta', style: TextStyle(fontSize: 20, fontFamily: 'Raleway', fontWeight: FontWeight.w900),),
                        Text('Crea una cuenta para poder usar el mejor servicio de mensajería del mundo.', textAlign: TextAlign.justify,),
                        SizedBox(height: 10,),
@@ -262,7 +262,7 @@ class _CreateUsernameState extends State<CreateUsername> {
                           debugPrint("Created");
                           final prefs = await SharedPreferences.getInstance();
                           prefs.setString('password', value['password']);
-                          runApp(const Main.HomePage());
+                          runApp(Main.HomePage(prefs, 0));
                         }
                         else {
                           debugPrint("Cannot create:\n ${value['description']}");

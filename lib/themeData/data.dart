@@ -25,6 +25,9 @@ ThemeData themeDataLight(){
               )
           )
       ),
+      textTheme: TextTheme(
+        bodySmall: TextStyle(color: Colors.white.withOpacity(0.5))
+      ),
       colorScheme: const ColorScheme(
         brightness: Brightness.light,
         primary: Colors.blue,
@@ -40,6 +43,7 @@ ThemeData themeDataLight(){
         surface: Colors.transparent,
         onSurface: Colors.black,
         onSurfaceVariant: Colors.white,
+
       )
   );
 }
@@ -54,6 +58,9 @@ ThemeData themeDataDark(){
       tabBarTheme: const TabBarTheme(
         indicatorColor: Colors.blue,
         labelColor: Colors.blue,
+      ),
+      textTheme: TextTheme(
+          bodySmall: TextStyle(color: Colors.white.withOpacity(0.5))
       ),
       scaffoldBackgroundColor: const Color(0xFF202020),
       colorScheme: const ColorScheme(
