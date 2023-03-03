@@ -20,20 +20,26 @@ class _ChatWallpaperScaffoldState extends State<ChatWallpaperScaffold> {
         ),
         title: const Text("Fondos"),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: <Widget>[
-            Wrap(
-              children: <Widget>[
-                InkWell(
-                  onTap: (){
+      body: GridView.builder(
+        gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+          maxCrossAxisExtent: 400,
 
-                  },
-                )
-              ],
-            )
-          ],
+          childAspectRatio: 2 / 5,
+          crossAxisSpacing: 20,
+          mainAxisSpacing: 20
         ),
+        itemCount: 25,
+        itemBuilder: (BuildContext ctx, int index){
+          return InkWell(
+            onTap: () async {
+
+            },
+            child: Container(
+              padding: const EdgeInsets.all(10),
+              child: Image.asset('lib/assets/wallpapers/webp/Wallpaper $index.webp', fit: BoxFit.fitHeight,)
+            ),
+          );
+        }
       ),
     );
   }

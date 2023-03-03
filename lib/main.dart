@@ -6,10 +6,10 @@ import 'homePageWidgets.dart';
 import 'themeData/data.dart';
 import 'settings/settingsScaffold.dart' as settings_scaffold;
 import 'settings/preparingForFirstTime.dart' as first_time;
+import 'chat.dart' as chat;
 import 'dart:async';
 import 'database/main.dart' as database;
 import 'package:shared_preferences/shared_preferences.dart';
-import 'utilities/changeTextOpacity.dart';
 void main() async {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
@@ -24,6 +24,7 @@ void main() async {
   else {
     runApp(HomePage(prefs, 0));
   }
+  chat.main();
 }
 class HomePage extends StatefulWidget {
   const HomePage(this.prefs, this.itemCountChat, {super.key});
@@ -121,13 +122,17 @@ class _HomePageState extends State<HomePage> {
                 children: <Widget>[
                   chatItemList,
                   ListView(
-                    children: const [],
+                    children: const [
+                      ChatContactListItem('Luk', 'lib/assets/withoutProfilePhoto.png', '¡Hola!', '02/10/22')
+                    ],
                   )
                 ],
               ),
             ),
           floatingActionButton: FloatingActionButton(
-            onPressed: () {  },
+            onPressed: () {
+
+            },
             child: const Icon(Icons.person_add_alt_1_sharp),
           ),
         ),

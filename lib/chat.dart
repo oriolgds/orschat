@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:emoji_dialog_picker/emoji_dialog_picker.dart';
+import 'package:flutter/scheduler.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 class Chatting extends StatefulWidget {
   const Chatting(this.name, this.pathToImg, {Key? key}) : super(key: key);
   final String name;
@@ -7,8 +9,37 @@ class Chatting extends StatefulWidget {
   @override
   State<Chatting> createState() => _ChattingState();
 }
-
+String pathToBackgroundLight = "";
+String pathToBackgroundDark = "";
+void main() async {
+  final prefs = await SharedPreferences.getInstance();
+  // Get the img number
+  int? chatLight = prefs.getInt('chatBackgroundLight');
+  int? chatDark = prefs.getInt('chatBackgroundDark');
+  // Check if is the first time
+  if(chatLight == null || chatLight < 0){
+    prefs.setInt('chatBackgroundLight', 1);
+  }
+  else {
+    pathToBackgroundLight = "lib/assets/wallpapers/webp/Wallpaper 1.webp";
+  }
+  if(chatDark == null || chatDark < 0){
+    prefs.setInt('chatBackgroundDark', 0);
+  }
+  else {
+    pathToBackgroundDark = "lib/assets/wallpapers/webp/Wallpaper $chatDark.webp";
+  }
+}
 class _ChattingState extends State<Chatting> {
+  String pathToBackgroundImage = pathToBackgroundLight;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    // Get dark mode
+    var brightness = SchedulerBinding.instance.window.platformBrightness;
+    if(brightness == Brightness.dark){ pathToBackgroundImage = pathToBackgroundDark; }
+  }
   final TextEditingController messageTextController = TextEditingController();
   @override
   Widget build(BuildContext context) {
@@ -17,7 +48,7 @@ class _ChattingState extends State<Chatting> {
       child: Stack(
         children: [
           Image.asset(
-            "lib/assets/wallpapers/webp/Wallpaper 19.webp",
+            pathToBackgroundImage,
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
             fit: BoxFit.cover,
