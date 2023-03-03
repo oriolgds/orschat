@@ -25,8 +25,11 @@ ThemeData themeDataLight(){
               )
           )
       ),
-      textTheme: TextTheme(
-        bodySmall: TextStyle(color: Colors.white.withOpacity(0.5))
+      textTheme: const TextTheme(
+        labelMedium: TextStyle(color: Colors.white, fontSize: 14)
+      ),
+      snackBarTheme: const SnackBarThemeData(
+        backgroundColor: Colors.black
       ),
       colorScheme: const ColorScheme(
         brightness: Brightness.light,
@@ -59,8 +62,11 @@ ThemeData themeDataDark(){
         indicatorColor: Colors.blue,
         labelColor: Colors.blue,
       ),
-      textTheme: TextTheme(
-          bodySmall: TextStyle(color: Colors.white.withOpacity(0.5))
+      textTheme: const TextTheme(
+          labelMedium: TextStyle(color: Colors.white, fontSize: 14)
+      ),
+      snackBarTheme: const SnackBarThemeData(
+          backgroundColor: Colors.black
       ),
       scaffoldBackgroundColor: const Color(0xFF202020),
       colorScheme: const ColorScheme(

@@ -37,18 +37,12 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     // TODO: implement initState
-    /*ListView.builder(
-      padding: EdgeInsets.zero,
-      scrollDirection: Axis.vertical,
-      itemCount: widget.itemCountChat,
-      itemBuilder: (BuildContext context, int index) {
-      },
-    ),*/
-    chatItemList = Column(
+    super.initState();
+    chatItemList = const Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Text('Aún no has creado chats', style: Theme.of(context).textTheme.bodySmall),
+        Text('Aún no has creado chats', style: TextStyle(color: Colors.blue)),
       ],
     );
   }
@@ -127,11 +121,15 @@ class _HomePageState extends State<HomePage> {
                 children: <Widget>[
                   chatItemList,
                   ListView(
-                    children: [],
+                    children: const [],
                   )
                 ],
               ),
-            )
+            ),
+          floatingActionButton: FloatingActionButton(
+            onPressed: () {  },
+            child: const Icon(Icons.person_add_alt_1_sharp),
+          ),
         ),
       ),
     );

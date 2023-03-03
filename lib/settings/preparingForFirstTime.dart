@@ -25,7 +25,7 @@ class _FirstTimeLoadingState extends State<FirstTimeLoading> {
       scrollBehavior: const ScrollBehavior(
           androidOverscrollIndicator: AndroidOverscrollIndicator.stretch
       ),
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.system,
       home: const LoadingScaffold(),
     );
   }
@@ -267,7 +267,7 @@ class _CreateUsernameState extends State<CreateUsername> {
                         else {
                           debugPrint("Cannot create:\n ${value['description']}");
                           ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                            content: Text(value['description'], style: const TextStyle(color: Colors.white),),
+                            content: Text(value['description'], style: Theme.of(context).textTheme.labelMedium,),
                           ));
                         }
                       });
