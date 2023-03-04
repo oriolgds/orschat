@@ -139,6 +139,28 @@ class CreateUsername extends StatefulWidget {
   State<CreateUsername> createState() => _CreateUsernameState();
 }
 class _CreateUsernameState extends State<CreateUsername> {
+  void createUsername() {
+    String username = textControler.text;
+    database.createUser(username).then((value) async {
+      debugPrint(value.toString());
+      if (value['status'] == '0') {
+        debugPrint("Created");
+        final prefs = await SharedPreferences.getInstance();
+        prefs.setString('username', username);
+        prefs.setString('password', value['password']);
+        runApp(Main.HomePage(prefs, 0));
+      }
+      else {
+        debugPrint("Cannot create:\n ${value['description']}");
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          content: Text(value['description'], style: Theme
+              .of(context)
+              .textTheme
+              .labelMedium,),
+        ));
+      }
+    });
+  }
   final textControler = TextEditingController();
   Widget validUsernameText = const ListTile(title: Text("El nombre tiene que tener una longitud mayor a 3", style: TextStyle(color: Colors.red),));
   List<String> usernameFillHints = [];
@@ -196,6 +218,10 @@ class _CreateUsernameState extends State<CreateUsername> {
                   height: 10,
                 ),
                 TextField(
+                  onSubmitted: (String value){
+                    createUsername();
+                  },
+                  onEditingComplete: createUsername,
                   controller: textControler,
                   keyboardType: TextInputType.text,
                   decoration: InputDecoration(
@@ -255,23 +281,7 @@ class _CreateUsernameState extends State<CreateUsername> {
                   width: MediaQuery.of(context).size.width,
                   padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
                   child: ElevatedButton(
-                    onPressed: () {
-                      database.createUser(textControler.text).then((value) async {
-                        debugPrint(value.toString());
-                        if(value['status'] == '0'){
-                          debugPrint("Created");
-                          final prefs = await SharedPreferences.getInstance();
-                          prefs.setString('password', value['password']);
-                          runApp(Main.HomePage(prefs, 0));
-                        }
-                        else {
-                          debugPrint("Cannot create:\n ${value['description']}");
-                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                            content: Text(value['description'], style: Theme.of(context).textTheme.labelMedium,),
-                          ));
-                        }
-                      });
-                    },
+                    onPressed: createUsername,
                     child: const Text('Siguiente'),
                   ),
                 )

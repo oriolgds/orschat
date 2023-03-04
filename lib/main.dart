@@ -17,8 +17,9 @@ void main() async {
   ));
   WidgetsFlutterBinding.ensureInitialized();
   final prefs = await SharedPreferences.getInstance();
-  bool? firstTime = prefs.getBool('firstTime');
-  if(firstTime == false || firstTime == null){
+  debugPrint("Username: ${prefs.getString('username')}");
+  debugPrint("Password: ${prefs.getString('password')}");
+  if(prefs.getString('username') == null || prefs.getString('password') == null){
     first_time.main();
   }
   else {
@@ -70,23 +71,23 @@ class _HomePageState extends State<HomePage> {
                       IconButton(
                         onPressed: () {
                           ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                              content: Text('Conectando con el servidor'),
+                            SnackBar(
+                              content: Text('Conectando con el servidor', style: Theme.of(context).textTheme.labelMedium,),
                             )
                           );
                           database.testConnection().then((value){
                             ScaffoldMessenger.of(context).hideCurrentSnackBar();
                             if(value) {
                               ScaffoldMessenger.of(context).showSnackBar(
-                                  const SnackBar(
-                                      content: Text('Conectado correctamente al servidor')
+                                  SnackBar(
+                                      content: Text('Conectado correctamente al servidor', style: Theme.of(context).textTheme.labelMedium,)
                                   )
                               );
                             }
                             else {
                               ScaffoldMessenger.of(context).showSnackBar(
-                                  const SnackBar(
-                                      content: Text('Imposible conectar con el servidor')
+                                  SnackBar(
+                                      content: Text('Imposible conectar con el servidor', style: Theme.of(context).textTheme.labelMedium,)
                                   )
                               );
                             }
