@@ -24,12 +24,11 @@ class _ChatWallpaperScaffoldState extends State<ChatWallpaperScaffold> {
         padding: const EdgeInsets.symmetric(vertical: 10),
         gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 400,
-
           childAspectRatio: 2 / 5,
           crossAxisSpacing: 20,
           mainAxisSpacing: 20
         ),
-        itemCount: 25,
+        itemCount: 26,
         itemBuilder: (BuildContext ctx, int index){
           return InkWell(
             onTap: () async {
