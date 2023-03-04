@@ -21,6 +21,7 @@ class _ChatWallpaperScaffoldState extends State<ChatWallpaperScaffold> {
         title: const Text("Fondos"),
       ),
       body: GridView.builder(
+        padding: const EdgeInsets.symmetric(vertical: 10),
         gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 400,
 
