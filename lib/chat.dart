@@ -21,7 +21,7 @@ void main() async {
     prefs.setInt('chatBackgroundLight', 1);
   }
   else {
-    pathToBackgroundLight = "lib/assets/wallpapers/webp/Wallpaper 1.webp";
+    pathToBackgroundLight = "lib/assets/wallpapers/webp/Wallpaper $chatLight.webp";
   }
   if(chatDark == null || chatDark < 0){
     prefs.setInt('chatBackgroundDark', 0);

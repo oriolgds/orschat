@@ -62,6 +62,7 @@ class _ChatWallpaperScaffoldState extends State<ChatWallpaperScaffold> {
                         InkWell(
                           onTap: (){
                             setChatWallpaper(index, 0);
+                            Navigator.pop(context);
                           },
                           borderRadius: BorderRadius.circular(10),
                           child: const Padding(
@@ -84,6 +85,7 @@ class _ChatWallpaperScaffoldState extends State<ChatWallpaperScaffold> {
                         InkWell(
                           onTap: (){
                             setChatWallpaper(index, 1);
+                            Navigator.pop(context);
                           },
                           borderRadius: BorderRadius.circular(10),
                           child: const Padding(
@@ -106,6 +108,7 @@ class _ChatWallpaperScaffoldState extends State<ChatWallpaperScaffold> {
                         InkWell(
                           onTap: (){
                             setChatWallpaper(index, 2);
+                            Navigator.pop(context);
                           },
                           borderRadius: BorderRadius.circular(10),
                           child: const Padding(

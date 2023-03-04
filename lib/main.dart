@@ -26,6 +26,8 @@ void main() async {
     runApp(HomePage(prefs, 0));
   }
   chat.main();
+  debugPrint("Light background: ${prefs.getInt('chatBackgroundLight')}");
+  debugPrint("Dark background: ${prefs.getInt('chatBackgroundDark')}");
 }
 class HomePage extends StatefulWidget {
   const HomePage(this.prefs, this.itemCountChat, {super.key});
