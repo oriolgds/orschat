@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import '../chat.dart' as chat;
 class ChatWallpaperScaffold extends StatefulWidget {
   const ChatWallpaperScaffold({Key? key}) : super(key: key);
 
@@ -7,6 +9,22 @@ class ChatWallpaperScaffold extends StatefulWidget {
 }
 
 class _ChatWallpaperScaffoldState extends State<ChatWallpaperScaffold> {
+  Future<void> setChatWallpaper(int index, int target) async {
+    final prefs = await SharedPreferences.getInstance();
+    // Target = 0: apply on light mode
+    // Target = 1: apply on dark mode
+    // Target = 2: both
+    if(target == 0) {
+      prefs.setInt('chatBackgroundLight', index);
+    } else if(target == 1) {
+      prefs.setInt('chatBackgroundDark', index);
+    } else if (target == 2) {
+      prefs.setInt('chatBackgroundLight', index);
+      prefs.setInt('chatBackgroundDark', index);
+    }
+    // Refresh chat
+    chat.main();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +39,7 @@ class _ChatWallpaperScaffoldState extends State<ChatWallpaperScaffold> {
         title: const Text("Fondos"),
       ),
       body: GridView.builder(
-        padding: const EdgeInsets.symmetric(vertical: 10),
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
         gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
           maxCrossAxisExtent: 400,
           childAspectRatio: 2 / 5,
@@ -32,13 +50,89 @@ class _ChatWallpaperScaffoldState extends State<ChatWallpaperScaffold> {
         itemBuilder: (BuildContext ctx, int index){
           return InkWell(
             onTap: () async {
-
+              showModalBottomSheet<void>(
+                context: context,
+                builder: (BuildContext context){
+                  return SizedBox(
+                    height: 200,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        InkWell(
+                          onTap: (){
+                            setChatWallpaper(index, 0);
+                          },
+                          borderRadius: BorderRadius.circular(10),
+                          child: const Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Wrap(
+                              alignment: WrapAlignment.center,
+                              children: [
+                                Icon(Icons.light_mode_outlined),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text('Aplicar a modo claro'),
+                              ],
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 2,
+                        ),
+                        InkWell(
+                          onTap: (){
+                            setChatWallpaper(index, 1);
+                          },
+                          borderRadius: BorderRadius.circular(10),
+                          child: const Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Wrap(
+                              alignment: WrapAlignment.center,
+                              children: [
+                                Icon(Icons.dark_mode_outlined),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text('Aplicar a modo oscuro'),
+                              ],
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 2,
+                        ),
+                        InkWell(
+                          onTap: (){
+                            setChatWallpaper(index, 2);
+                          },
+                          borderRadius: BorderRadius.circular(10),
+                          child: const Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Wrap(
+                              alignment: WrapAlignment.center,
+                              children: [
+                                Icon(Icons.settings_brightness_outlined),
+                                SizedBox(
+                                  width: 10,
+                                ),
+                                Text('Aplicar a ambos'),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                }
+              );
             },
             borderRadius: BorderRadius.circular(20),
             child: Container(
-              padding: const EdgeInsets.all(10),
+              padding: const EdgeInsets.all(5),
               child: ClipRRect(
-                borderRadius: BorderRadius.circular(10),
+                borderRadius: BorderRadius.circular(20),
                 child: Image.asset('lib/assets/wallpapers/webp/Wallpaper $index.webp', fit: BoxFit.fitHeight,)
               )
             ),

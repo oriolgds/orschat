@@ -75,8 +75,8 @@ class _ChattingState extends State<Chatting> {
                       crossAxisAlignment: WrapCrossAlignment.center,
                       children: <Widget>[
                         Container(
-                          margin: const EdgeInsets.only(right: 5),
-                          child: Image.asset(widget.pathToImg, width: 40, height: 40,)
+                            margin: const EdgeInsets.only(right: 5),
+                            child: Image.asset(widget.pathToImg, width: 40, height: 40,)
                         ),
                         Text(widget.name, maxLines: 1, overflow: TextOverflow.ellipsis, textAlign: TextAlign.start,)
                       ],
@@ -109,9 +109,9 @@ class _ChattingState extends State<Chatting> {
                     const PopupMenuItem(
                       child: Text('Ver contacto'),
                     ),
-                      const PopupMenuItem(
-                        child: Text('Silenciar notificaciones'),
-                      ),
+                    const PopupMenuItem(
+                      child: Text('Silenciar notificaciones'),
+                    ),
                     const PopupMenuItem(
                       child: Text('Fondo de pantalla'),
                     ),
@@ -141,11 +141,11 @@ class _ChattingState extends State<Chatting> {
                       width: MediaQuery.of(context).size.width - 20,
                       padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
                       decoration: BoxDecoration(
-                        color: Theme.of(context).colorScheme.secondaryContainer,
-                        borderRadius: BorderRadius.circular(30)
+                          color: Theme.of(context).colorScheme.secondaryContainer,
+                          borderRadius: BorderRadius.circular(30)
                       ),
                       constraints: const BoxConstraints(
-                        maxHeight: 150
+                          maxHeight: 150
                       ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -165,15 +165,15 @@ class _ChattingState extends State<Chatting> {
                             width: 40,
                             child: InkWell(
                               child: EmojiButton(
-                                padding: EdgeInsets.zero,
-                                emojiPickerView: EmojiPickerView(
-                                  hintText: "Busca emojis",
-                                  onEmojiSelected: (String emoji){
-                                    messageTextController.text += emoji;
-                                    debugPrint('Emoji Selected: $emoji');
-                                  },
-                                ),
-                                child: const Icon(Icons.emoji_emotions)
+                                  padding: EdgeInsets.zero,
+                                  emojiPickerView: EmojiPickerView(
+                                    hintText: "Busca emojis",
+                                    onEmojiSelected: (String emoji){
+                                      messageTextController.text += emoji;
+                                      debugPrint('Emoji Selected: $emoji');
+                                    },
+                                  ),
+                                  child: const Icon(Icons.emoji_emotions)
                               ),
                             ),
                           ),
@@ -187,16 +187,16 @@ class _ChattingState extends State<Chatting> {
                               autocorrect: true,
                               controller: messageTextController,
                               decoration: InputDecoration(
-                                border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(30),
-                                ),
-                                focusedBorder: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(30),
-                                  borderSide: const BorderSide(color: Colors.blue, width: 2)
-                                ),
-                                filled: false,
-                                hintText: "Mensaje",
-                                contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 4.5)
+                                  border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(30),
+                                  ),
+                                  focusedBorder: OutlineInputBorder(
+                                      borderRadius: BorderRadius.circular(30),
+                                      borderSide: const BorderSide(color: Colors.blue, width: 2)
+                                  ),
+                                  filled: false,
+                                  hintText: "Mensaje",
+                                  contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 4.5)
                               ),
                             ),
                           ),
