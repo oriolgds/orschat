@@ -37,6 +37,44 @@ class _ChatWallpaperScaffoldState extends State<ChatWallpaperScaffold> {
           tooltip: "Atrás",
         ),
         title: const Text("Fondos"),
+        actions: <Widget>[
+          IconButton(
+            onPressed: (){
+              showDialog(
+                context: context,
+                builder: (BuildContext context){
+                  return AlertDialog(
+                    content: const Text('¿Estas seguro de que quieres restablecer los fondos de chat a sus valores predeterminados?'),
+                    actions: <Widget>[
+                      TextButton(
+                        onPressed: (){
+                          Navigator.pop(context);
+                        },
+                        child: const Text('Cancelar', style: TextStyle(color: Colors.green),)
+                      ),
+                      TextButton(
+                        onPressed: () async {
+                          Navigator.pop(context);
+                          final prefs = await SharedPreferences.getInstance();
+                          prefs.setInt('chatBackgroundLight', 1);
+                          prefs.setInt('chatBackgroundDark', 0);
+                          // Refresh chat vars
+                          chat.main();
+                        },
+                        child: const Text('Aceptar', style: TextStyle(color: Colors.red),)
+                      )
+                    ],
+                  );
+                }
+              );
+            },
+            icon: const Icon(Icons.restore),
+            tooltip: "Restablecer valores predeterminados",
+          ),
+          const SizedBox(
+            width: 5,
+          ),
+        ],
       ),
       body: GridView.builder(
         padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
@@ -46,6 +84,7 @@ class _ChatWallpaperScaffoldState extends State<ChatWallpaperScaffold> {
           crossAxisSpacing: 20,
           mainAxisSpacing: 20
         ),
+        cacheExtent: 100,
         itemCount: 26,
         itemBuilder: (BuildContext ctx, int index){
           return InkWell(

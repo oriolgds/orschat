@@ -9,8 +9,8 @@ class Chatting extends StatefulWidget {
   @override
   State<Chatting> createState() => _ChattingState();
 }
-String pathToBackgroundLight = "";
-String pathToBackgroundDark = "";
+String pathToBackgroundLight = "lib/assets/wallpapers/webp/Wallpaper 1.webp";
+String pathToBackgroundDark = "lib/assets/wallpapers/webp/Wallpaper 0.webp";
 void main() async {
   final prefs = await SharedPreferences.getInstance();
   // Get the img number
