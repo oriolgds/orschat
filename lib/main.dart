@@ -9,6 +9,7 @@ import 'settings/preparingForFirstTime.dart' as first_time;
 import 'chat.dart' as chat;
 import 'dart:async';
 import 'database/main.dart' as database;
+import 'database/contactsManager.dart' as contacts;
 import 'package:shared_preferences/shared_preferences.dart';
 void main() async {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
@@ -28,6 +29,7 @@ void main() async {
   chat.main();
   debugPrint("Light background: ${prefs.getInt('chatBackgroundLight')}");
   debugPrint("Dark background: ${prefs.getInt('chatBackgroundDark')}");
+  contacts.main();
 }
 class HomePage extends StatefulWidget {
   const HomePage(this.prefs, this.itemCountChat, {super.key});
