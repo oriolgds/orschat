@@ -51,39 +51,42 @@ class _LoadingScaffoldState extends State<LoadingScaffold> {
   }
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SizedBox(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            Positioned(
-              top: 0,
-              right: 0,
-              child: AnimatedContainer(
-                width: MediaQuery.of(context).size.width,
-                height: Platform.isAndroid ? 22 : 10,
-                duration: const Duration(milliseconds: 400),
-                child: LinearProgressIndicator(
-                  backgroundColor: Colors.blue.shade100,
-                  color: Colors.amber,
+    return WillPopScope(
+      onWillPop: () async => false,
+      child: Scaffold(
+        body: SizedBox(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              Positioned(
+                top: 0,
+                right: 0,
+                child: AnimatedContainer(
+                  width: MediaQuery.of(context).size.width,
+                  height: Platform.isAndroid ? 22 : 10,
+                  duration: const Duration(milliseconds: 400),
+                  child: LinearProgressIndicator(
+                    backgroundColor: Colors.blue.shade100,
+                    color: Colors.amber,
+                  ),
                 ),
               ),
-            ),
-            const Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text('Configurando Ors Chat'),
-                SizedBox(
-                  height: 10,
-                ),
-                CircularProgressIndicator(
-                  color: Colors.blue,
-                )
-              ],
-            ),
-          ],
+              const Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Text('Configurando Ors Chat'),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  CircularProgressIndicator(
+                    color: Colors.blue,
+                  )
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -93,40 +96,43 @@ class SignInUp extends StatelessWidget {
   const SignInUp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SizedBox(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            SizedBox(
-              height: 240,
-              width: 170,
-              child: Card(
-               child: InkWell(
-                 customBorder: RoundedRectangleBorder(
-                     borderRadius: BorderRadius.circular(10)
-                 ),
-                 onTap: (){
-                   Navigator.push(context, scaffoldTransition(const CreateUsername(), const Offset(0.0, 0.0)));
-                 },
-                 child: Container(
-                   padding: const EdgeInsets.all(20),
-                   child: const Column(
-                     children: <Widget>[
-                       Text('Crear cuenta', style: TextStyle(fontSize: 20, fontFamily: 'Raleway', fontWeight: FontWeight.w900),),
-                       Text('Crea una cuenta para poder usar el mejor servicio de mensajería del mundo.', textAlign: TextAlign.justify,),
-                       SizedBox(height: 10,),
-                       Icon(Icons.account_circle_rounded, size: 50,)
-                     ],
+    return WillPopScope(
+      onWillPop: () async => false,
+      child: Scaffold(
+        body: SizedBox(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              SizedBox(
+                height: 240,
+                width: 170,
+                child: Card(
+                 child: InkWell(
+                   customBorder: RoundedRectangleBorder(
+                       borderRadius: BorderRadius.circular(10)
+                   ),
+                   onTap: (){
+                     Navigator.push(context, scaffoldTransition(const CreateUsername(), const Offset(0.0, 0.0)));
+                   },
+                   child: Container(
+                     padding: const EdgeInsets.all(20),
+                     child: const Column(
+                       children: <Widget>[
+                         Text('Crear cuenta', style: TextStyle(fontSize: 20, fontFamily: 'Raleway', fontWeight: FontWeight.w900),),
+                         Text('Crea una cuenta para poder usar el mejor servicio de mensajería del mundo.', textAlign: TextAlign.justify,),
+                         SizedBox(height: 10,),
+                         Icon(Icons.account_circle_rounded, size: 50,)
+                       ],
+                     ),
                    ),
                  ),
-               ),
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -204,89 +210,92 @@ class _CreateUsernameState extends State<CreateUsername> {
   }
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const SizedBox(
-                  height: 10,
-                ),
-                TextField(
-                  onSubmitted: (String value){
-                    createUsername();
-                  },
-                  onEditingComplete: createUsername,
-                  controller: textControler,
-                  keyboardType: TextInputType.text,
-                  decoration: InputDecoration(
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: Colors.blue.withAlpha(100),
-                        width: 2
-                      )
-                    ),
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide(
+    return WillPopScope(
+      onWillPop: () async => false,
+      child: Scaffold(
+        body: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  TextField(
+                    onSubmitted: (String value){
+                      createUsername();
+                    },
+                    onEditingComplete: createUsername,
+                    controller: textControler,
+                    keyboardType: TextInputType.text,
+                    decoration: InputDecoration(
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
                           color: Colors.blue.withAlpha(100),
                           width: 2
-                      )
-                    ),
-                    focusedBorder: const OutlineInputBorder(
+                        )
+                      ),
+                      border: OutlineInputBorder(
                         borderSide: BorderSide(
-                            color: Colors.blue,
+                            color: Colors.blue.withAlpha(100),
                             width: 2
                         )
+                      ),
+                      focusedBorder: const OutlineInputBorder(
+                          borderSide: BorderSide(
+                              color: Colors.blue,
+                              width: 2
+                          )
+                      ),
+                      hintText: "Introduce nombre de usuario",
+                      contentPadding: const EdgeInsets.symmetric(horizontal: 16),
                     ),
-                    hintText: "Introduce nombre de usuario",
-                    contentPadding: const EdgeInsets.symmetric(horizontal: 16),
+                    autofocus: true,
+                    autocorrect: false,
                   ),
-                  autofocus: true,
-                  autocorrect: false,
-                ),
-                validUsernameText,
-                const ListTile(
-                  title: Text("Nombres de usuario sugeridos:", style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),),
-                ),
-                Expanded(
-                  child: ListView.builder(
-                    itemCount: usernameFillHints.length,
-                    prototypeItem: ListTile(
-                      title: Text(usernameFillHints.first),
+                  validUsernameText,
+                  const ListTile(
+                    title: Text("Nombres de usuario sugeridos:", style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),),
+                  ),
+                  Expanded(
+                    child: ListView.builder(
+                      itemCount: usernameFillHints.length,
+                      prototypeItem: ListTile(
+                        title: Text(usernameFillHints.first),
+                      ),
+                      itemBuilder: (BuildContext context, int index) {
+                        return ListTile(
+                          onTap: (){
+                            textControler.text = usernameFillHints[index];
+                          },
+                          title: Text(usernameFillHints[index]),
+                        );
+                      },
                     ),
-                    itemBuilder: (BuildContext context, int index) {
-                      return ListTile(
-                        onTap: (){
-                          textControler.text = usernameFillHints[index];
-                        },
-                        title: Text(usernameFillHints[index]),
-                      );
-                    },
                   ),
-                ),
-                const SizedBox(
-                  height: 10,
-                )
-              ],
-            ),
-            Positioned(
-                bottom: 0,
-                child: Container(
-                  color: Theme.of(context).colorScheme.primaryContainer,
-                  width: MediaQuery.of(context).size.width,
-                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                  child: ElevatedButton(
-                    onPressed: createUsername,
-                    child: const Text('Siguiente'),
-                  ),
-                )
-            ),
-          ],
+                  const SizedBox(
+                    height: 10,
+                  )
+                ],
+              ),
+              Positioned(
+                  bottom: 0,
+                  child: Container(
+                    color: Theme.of(context).colorScheme.primaryContainer,
+                    width: MediaQuery.of(context).size.width,
+                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+                    child: ElevatedButton(
+                      onPressed: createUsername,
+                      child: const Text('Siguiente'),
+                    ),
+                  )
+              ),
+            ],
+          ),
         ),
       ),
     );
