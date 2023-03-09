@@ -288,9 +288,23 @@ class _CreateUsernameState extends State<CreateUsername> {
                     color: Theme.of(context).colorScheme.primaryContainer,
                     width: MediaQuery.of(context).size.width,
                     padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                    child: ElevatedButton(
-                      onPressed: createUsername,
-                      child: const Text('Siguiente'),
+                    child: Row(
+                      children: [
+                        ElevatedButton(
+                          onPressed: () async {
+                            Navigator.of(context).push(scaffoldTransition(const SignInUp(), const Offset(1.0, 0.0)));
+
+                          },
+                          child: const Text('Anterior'),
+                        ),
+                        const SizedBox(width: 10,),
+                        Expanded(
+                          child: ElevatedButton(
+                            onPressed: createUsername,
+                            child: const Text('Siguiente'),
+                          ),
+                        ),
+                      ],
                     ),
                   )
               ),
