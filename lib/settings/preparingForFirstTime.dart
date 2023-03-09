@@ -278,7 +278,7 @@ class _CreateUsernameState extends State<CreateUsername> {
                     ),
                   ),
                   const SizedBox(
-                    height: 10,
+                    height: 55,
                   )
                 ],
               ),
