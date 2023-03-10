@@ -146,6 +146,9 @@ class CreateUsername extends StatefulWidget {
 }
 class _CreateUsernameState extends State<CreateUsername> {
   void createUsername() {
+    setState(() {
+      siguenteButtonText = "Cargando...";
+    });
     String username = textControler.text;
     database.createUser(username).then((value) async {
       debugPrint(value.toString());
@@ -165,6 +168,9 @@ class _CreateUsernameState extends State<CreateUsername> {
               .labelMedium,),
         ));
       }
+      setState(() {
+        siguenteButtonText = "Siguiente";
+      });
     });
   }
   final textControler = TextEditingController();
@@ -208,6 +214,7 @@ class _CreateUsernameState extends State<CreateUsername> {
       usernameFillHints.add(username);
     }
   }
+  String siguenteButtonText = "Siguiente";
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -292,8 +299,8 @@ class _CreateUsernameState extends State<CreateUsername> {
                       children: [
                         ElevatedButton(
                           onPressed: () async {
+                            Focus.of(context).unfocus();
                             Navigator.of(context).push(scaffoldTransition(const SignInUp(), const Offset(1.0, 0.0)));
-
                           },
                           child: const Text('Anterior'),
                         ),
@@ -301,7 +308,7 @@ class _CreateUsernameState extends State<CreateUsername> {
                         Expanded(
                           child: ElevatedButton(
                             onPressed: createUsername,
-                            child: const Text('Siguiente'),
+                            child: Text(siguenteButtonText),
                           ),
                         ),
                       ],
