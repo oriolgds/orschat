@@ -1640,102 +1640,6 @@ androidx.viewpager.widget.ViewPager$SavedState
 androidx.viewpager.widget.ViewPager$SimpleOnPageChangeListener
 androidx.viewpager.widget.ViewPager$ViewPositionComparator
 androidx.viewpager.widget.ViewPager
-com.tekartik.sqflite.BuildConfig
-com.tekartik.sqflite.Constant:
-    static final java.lang.String CMD_GET
-    static final java.lang.String ERROR_BAD_PARAM
-    static final java.lang.String ERROR_DATABASE_CLOSED
-    static final java.lang.String ERROR_OPEN_FAILED
-    static final java.lang.String MEMORY_DATABASE_PATH
-    public static final java.lang.String METHOD_ANDROID_SET_LOCALE
-    public static final java.lang.String METHOD_BATCH
-    public static final java.lang.String METHOD_CLOSE_DATABASE
-    public static final java.lang.String METHOD_DATABASE_EXISTS
-    public static final java.lang.String METHOD_DEBUG
-    public static final java.lang.String METHOD_DEBUG_MODE
-    public static final java.lang.String METHOD_DELETE_DATABASE
-    public static final java.lang.String METHOD_EXECUTE
-    public static final java.lang.String METHOD_GET_DATABASES_PATH
-    public static final java.lang.String METHOD_GET_PLATFORM_VERSION
-    public static final java.lang.String METHOD_INSERT
-    public static final java.lang.String METHOD_OPEN_DATABASE
-    public static final java.lang.String METHOD_OPTIONS
-    public static final java.lang.String METHOD_QUERY
-    public static final java.lang.String METHOD_QUERY_CURSOR_NEXT
-    public static final java.lang.String METHOD_UPDATE
-    public static final java.lang.String PARAM_CANCEL
-    static final java.lang.String PARAM_CMD
-    public static final java.lang.String PARAM_COLUMNS
-    public static final java.lang.String PARAM_CONTINUE_OR_ERROR
-    public static final java.lang.String PARAM_CURSOR_ID
-    public static final java.lang.String PARAM_CURSOR_PAGE_SIZE
-    public static final java.lang.String PARAM_ERROR
-    public static final java.lang.String PARAM_ERROR_CODE
-    public static final java.lang.String PARAM_ERROR_DATA
-    public static final java.lang.String PARAM_ERROR_MESSAGE
-    static final java.lang.String PARAM_ID
-    public static final java.lang.String PARAM_IN_TRANSACTION_CHANGE
-    static final java.lang.String PARAM_LOCALE
-    static final java.lang.String PARAM_LOG_LEVEL
-    public static final java.lang.String PARAM_METHOD
-    public static final java.lang.String PARAM_NO_RESULT
-    static final java.lang.String PARAM_OPERATIONS
-    static final java.lang.String PARAM_PATH
-    static final java.lang.String PARAM_READ_ONLY
-    public static final java.lang.String PARAM_RECOVERED
-    public static final java.lang.String PARAM_RECOVERED_IN_TRANSACTION
-    public static final java.lang.String PARAM_RESULT
-    public static final java.lang.String PARAM_ROWS
-    static final java.lang.String PARAM_SINGLE_INSTANCE
-    public static final java.lang.String PARAM_SQL
-    public static final java.lang.String PARAM_SQL_ARGUMENTS
-    static final java.lang.String PARAM_THREAD_COUNT
-    static final java.lang.String PARAM_THREAD_PRIORITY
-    public static final java.lang.String PARAM_TRANSACTION_ID
-    public static final java.lang.String PLUGIN_KEY
-    static final java.lang.String SQLITE_ERROR
-    public static final java.lang.String TAG
-    public static final int TRANSACTION_ID_FORCE
-    public void <init>()
-com.tekartik.sqflite.Database:
-    static final boolean WAL_ENABLED_BY_DEFAULT
-    private static final java.lang.String WAL_ENABLED_META_NAME
-    public boolean enableWriteAheadLogging()
-com.tekartik.sqflite.LocaleUtils
-com.tekartik.sqflite.LogLevel:
-    static final int none
-    static final int sql
-    static final int verbose
-    public void <init>()
-com.tekartik.sqflite.R$attr
-com.tekartik.sqflite.R$color
-com.tekartik.sqflite.R$dimen
-com.tekartik.sqflite.R$drawable
-com.tekartik.sqflite.R$id
-com.tekartik.sqflite.R$integer
-com.tekartik.sqflite.R$layout
-com.tekartik.sqflite.R$string
-com.tekartik.sqflite.R$style
-com.tekartik.sqflite.R$styleable
-com.tekartik.sqflite.R
-com.tekartik.sqflite.SqflitePlugin:
-    public void <init>(android.content.Context)
-    private static java.util.Map fixMap(java.util.Map)
-    private android.content.Context getContext()
-    public static void registerWith(io.flutter.plugin.common.PluginRegistry$Registrar)
-    private static java.lang.String toString(java.lang.Object)
-com.tekartik.sqflite.Utils:
-    public void <init>()
-com.tekartik.sqflite.dev.Debug:
-    public void <init>()
-    public static void devLog(java.lang.String,java.lang.String)
-com.tekartik.sqflite.operation.BaseReadOperation:
-    protected abstract com.tekartik.sqflite.operation.OperationResult getOperationResult()
-com.tekartik.sqflite.operation.Operation:
-    public abstract boolean getContinueOnError()
-com.tekartik.sqflite.operation.OperationRunnable
-com.tekartik.sqflite.operation.SqlErrorInfo:
-    public void <init>()
 io.flutter.BuildConfig
 io.flutter.FlutterInjector$Builder:
     public io.flutter.FlutterInjector$Builder setDeferredComponentManager(io.flutter.embedding.engine.deferredcomponents.DeferredComponentManager)
@@ -1982,6 +1886,7 @@ io.flutter.embedding.engine.dart.DartExecutor$DartCallback
 io.flutter.embedding.engine.dart.DartExecutor$DefaultBinaryMessenger:
     public void disableBufferingIncomingMessages()
     public void enableBufferingIncomingMessages()
+    public io.flutter.plugin.common.BinaryMessenger$TaskQueue makeBackgroundTaskQueue(io.flutter.plugin.common.BinaryMessenger$TaskQueueOptions)
     public void send(java.lang.String,java.nio.ByteBuffer)
 io.flutter.embedding.engine.dart.DartExecutor:
     private static final java.lang.String TAG
@@ -1991,13 +1896,23 @@ io.flutter.embedding.engine.dart.DartExecutor:
     public void executeDartEntrypoint(io.flutter.embedding.engine.dart.DartExecutor$DartEntrypoint)
     public io.flutter.plugin.common.BinaryMessenger getBinaryMessenger()
     public int getPendingChannelResponseCount()
+    public io.flutter.plugin.common.BinaryMessenger$TaskQueue makeBackgroundTaskQueue(io.flutter.plugin.common.BinaryMessenger$TaskQueueOptions)
     public void send(java.lang.String,java.nio.ByteBuffer)
     public void setIsolateServiceIdListener(io.flutter.embedding.engine.dart.DartExecutor$IsolateServiceIdListener)
+io.flutter.embedding.engine.dart.DartMessenger$1
+io.flutter.embedding.engine.dart.DartMessenger$ConcurrentTaskQueue
+io.flutter.embedding.engine.dart.DartMessenger$DefaultTaskQueueFactory:
+    public io.flutter.embedding.engine.dart.DartMessenger$DartMessengerTaskQueue makeBackgroundTaskQueue(io.flutter.plugin.common.BinaryMessenger$TaskQueueOptions)
+io.flutter.embedding.engine.dart.DartMessenger$SerialTaskQueue
+io.flutter.embedding.engine.dart.DartMessenger$TaskQueueFactory:
+    public abstract io.flutter.embedding.engine.dart.DartMessenger$DartMessengerTaskQueue makeBackgroundTaskQueue(io.flutter.plugin.common.BinaryMessenger$TaskQueueOptions)
+io.flutter.embedding.engine.dart.DartMessenger$TaskQueueToken
 io.flutter.embedding.engine.dart.DartMessenger:
     private static final java.lang.String TAG
     public void disableBufferingIncomingMessages()
     public void enableBufferingIncomingMessages()
     public int getPendingChannelResponseCount()
+    public io.flutter.plugin.common.BinaryMessenger$TaskQueue makeBackgroundTaskQueue(io.flutter.plugin.common.BinaryMessenger$TaskQueueOptions)
     public void send(java.lang.String,java.nio.ByteBuffer)
 io.flutter.embedding.engine.deferredcomponents.DeferredComponentManager:
     public abstract void loadAssets(int,java.lang.String)
@@ -2188,11 +2103,14 @@ io.flutter.plugin.common.BasicMessageChannel:
     public void resizeChannelBuffer(int)
     static void resizeChannelBuffer(io.flutter.plugin.common.BinaryMessenger,java.lang.String,int)
 io.flutter.plugin.common.BinaryCodec
-io.flutter.plugin.common.BinaryMessenger$TaskQueueOptions:
-    public io.flutter.plugin.common.BinaryMessenger$TaskQueueOptions setIsSerial(boolean)
+io.flutter.plugin.common.BinaryMessenger$-CC:
+    public static io.flutter.plugin.common.BinaryMessenger$TaskQueue $default$makeBackgroundTaskQueue(io.flutter.plugin.common.BinaryMessenger)
+io.flutter.plugin.common.BinaryMessenger$TaskQueueOptions
 io.flutter.plugin.common.BinaryMessenger:
     public void disableBufferingIncomingMessages()
     public void enableBufferingIncomingMessages()
+    public io.flutter.plugin.common.BinaryMessenger$TaskQueue makeBackgroundTaskQueue()
+    public io.flutter.plugin.common.BinaryMessenger$TaskQueue makeBackgroundTaskQueue(io.flutter.plugin.common.BinaryMessenger$TaskQueueOptions)
     public abstract void send(java.lang.String,java.nio.ByteBuffer)
 io.flutter.plugin.common.ErrorLogResult
 io.flutter.plugin.common.EventChannel$1
@@ -2206,6 +2124,8 @@ io.flutter.plugin.common.FlutterException:
 io.flutter.plugin.common.JSONUtil:
     private void <init>()
     public static java.lang.Object unwrap(java.lang.Object)
+io.flutter.plugin.common.MethodCall:
+    public boolean hasArgument(java.lang.String)
 io.flutter.plugin.common.MethodChannel:
     private static final java.lang.String TAG
     public void resizeChannelBuffer(int)
@@ -8740,9 +8660,7 @@ io.flutter.embedding.engine.FlutterEngineConnectionRegistry:
     private io.flutter.embedding.engine.FlutterEngineConnectionRegistry$FlutterEngineServicePluginBinding servicePluginBinding
 io.flutter.embedding.engine.loader.ResourceExtractor:
     void waitForCompletion()
-io.flutter.plugin.common.BinaryMessenger$-CC:
-    public static io.flutter.plugin.common.BinaryMessenger$TaskQueue $default$makeBackgroundTaskQueue(io.flutter.plugin.common.BinaryMessenger,io.flutter.plugin.common.BinaryMessenger$TaskQueueOptions)
-    public static void $default$setMessageHandler(io.flutter.plugin.common.BinaryMessenger,java.lang.String,io.flutter.plugin.common.BinaryMessenger$BinaryMessageHandler,io.flutter.plugin.common.BinaryMessenger$TaskQueue)
+io.flutter.plugin.common.BinaryMessenger$-CC
 io.flutter.plugin.platform.PlatformView$-CC
 io.flutter.plugin.platform.VirtualDisplayController:
     private static java.lang.String TAG

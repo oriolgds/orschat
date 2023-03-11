@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:orschat/animations/animations.dart';
 import 'package:orschat/scaffoldTransition.dart';
 import 'homePageWidgets.dart';
 import 'themeData/data.dart';
 import 'settings/settingsScaffold.dart' as settings_scaffold;
 import 'settings/preparingForFirstTime.dart' as first_time;
 import 'chat.dart' as chat;
-import 'dart:async';
 import 'database/main.dart' as database;
 import 'database/contactsManager.dart' as contacts;
 import 'package:shared_preferences/shared_preferences.dart';
@@ -29,7 +27,8 @@ void main() async {
   chat.main();
   debugPrint("Light background: ${prefs.getInt('chatBackgroundLight')}");
   debugPrint("Dark background: ${prefs.getInt('chatBackgroundDark')}");
-  contacts.main();
+  debugPrint(await contacts.getContacts());
+
 }
 class HomePage extends StatefulWidget {
   const HomePage(this.prefs, this.itemCountChat, {super.key});

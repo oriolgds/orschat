@@ -8,5 +8,5 @@ net.jonhanson.flutter_native_splash-rs-6 C:\Users\Ori\AndroidStudioProjects\orsc
 net.jonhanson.flutter_native_splash-mergeReleaseResources-7 C:\Users\Ori\AndroidStudioProjects\orschat\build\flutter_native_splash\intermediates\incremental\release\mergeReleaseResources\merged.dir
 net.jonhanson.flutter_native_splash-mergeReleaseResources-8 C:\Users\Ori\AndroidStudioProjects\orschat\build\flutter_native_splash\intermediates\incremental\release\mergeReleaseResources\stripped.dir
 net.jonhanson.flutter_native_splash-merged_res-9 C:\Users\Ori\AndroidStudioProjects\orschat\build\flutter_native_splash\intermediates\merged_res\release
-net.jonhanson.flutter_native_splash-main-10 C:\Users\Ori\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_native_splash-2.2.18\android\src\main\res
-net.jonhanson.flutter_native_splash-release-11 C:\Users\Ori\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_native_splash-2.2.18\android\src\release\res
+net.jonhanson.flutter_native_splash-main-10 C:\Users\Ori\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_native_splash-2.2.19\android\src\main\res
+net.jonhanson.flutter_native_splash-release-11 C:\Users\Ori\AppData\Local\Pub\Cache\hosted\pub.dev\flutter_native_splash-2.2.19\android\src\release\res

@@ -17,19 +17,6 @@
       externalAnnotations="annotations.zip"
       proguardRules="proguard.txt"/>
   <library
-      name="C:\Users\Ori\AndroidStudioProjects\orschat\android@@:sqflite::release"
-      jars="C:\Users\Ori\AndroidStudioProjects\orschat\build\sqflite\.transforms\eaec42b02a5cf2090c8792c7790d4287\transformed\out\jars\classes.jar;C:\Users\Ori\AndroidStudioProjects\orschat\build\sqflite\.transforms\eaec42b02a5cf2090c8792c7790d4287\transformed\out\jars\libs\R.jar"
-      resolved="com.tekartik.sqflite:sqflite:unspecified"
-      folder="C:\Users\Ori\AndroidStudioProjects\orschat\build\sqflite\.transforms\eaec42b02a5cf2090c8792c7790d4287\transformed\out"
-      manifest="AndroidManifest.xml"
-      resFolder="res"
-      assetsFolder="assets"
-      lintJar="lint.jar"
-      publicResources="public.txt"
-      symbolFile="R.txt"
-      externalAnnotations="annotations.zip"
-      proguardRules="proguard.txt"/>
-  <library
       name="C:\Users\Ori\AndroidStudioProjects\orschat\android@@:flutter_native_splash::release"
       jars="C:\Users\Ori\AndroidStudioProjects\orschat\build\flutter_native_splash\.transforms\284ae7bf05ffb05ababe164db18299c9\transformed\out\jars\classes.jar;C:\Users\Ori\AndroidStudioProjects\orschat\build\flutter_native_splash\.transforms\284ae7bf05ffb05ababe164db18299c9\transformed\out\jars\libs\R.jar"
       resolved="net.jonhanson.flutter_native_splash:flutter_native_splash:unspecified"
