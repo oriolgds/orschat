@@ -32,3 +32,15 @@ Future<Map<String, dynamic>> createUser(String username) async {
   });
   return result;
 }
+Future<Map<String, Map<String, dynamic>>> fetchUsersSearch() async {
+  return {
+    'Oriol': {
+      'username': 'oriolgds',
+      'photo': 'lib/assets/withoutProfilePhoto.png'
+    },
+    'Eva': {
+      'username': 'evadiaz',
+      'photo': 'lib/assets/withoutProfilePhoto.png'
+    },
+  };
+}
