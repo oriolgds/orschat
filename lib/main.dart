@@ -63,7 +63,7 @@ class _HomePageState extends State<HomePage> {
       ),
       themeMode: ThemeMode.system,
       home: DefaultTabController(
-        length: 2,
+        length: 3,
         child: Scaffold(
             body: NestedScrollView(
               headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
@@ -117,6 +117,7 @@ class _HomePageState extends State<HomePage> {
                       tabs: [
                         Tab(child: Text('Chats')),
                         Tab(child: Text('Llamadas')),
+                        Tab(child: Text('Contactos')),
                       ],
                     ),
                   ),
@@ -125,6 +126,11 @@ class _HomePageState extends State<HomePage> {
               body: TabBarView(
                 children: <Widget>[
                   chatItemList,
+                  ListView(
+                    children: const [
+                      ChatContactListItem('Luk', 'lib/assets/withoutProfilePhoto.png', '¡Hola!', '02/10/22')
+                    ],
+                  ),
                   ListView(
                     children: const [
                       ChatContactListItem('Luk', 'lib/assets/withoutProfilePhoto.png', '¡Hola!', '02/10/22')
