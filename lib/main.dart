@@ -9,6 +9,7 @@ import 'chat.dart' as chat;
 import 'database/main.dart' as database;
 import 'database/contactsManager.dart' as contacts;
 import 'package:shared_preferences/shared_preferences.dart';
+import 'contacts/newContact.dart' as new_contact;
 void main() async {
   SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
@@ -139,14 +140,17 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-          floatingActionButton: FloatingActionButton(
-            onPressed: () {
-
-            },
-            child: const Icon(Icons.person_add_alt_1_sharp),
+          floatingActionButton: Builder(
+            builder: (context){
+              return FloatingActionButton(
+                onPressed: () {
+                  Navigator.push(context, scaffoldTransition(const new_contact.NewContactScaffold(), const Offset(0.0, 0.5)));
+                },
+                child: const Icon(Icons.person_add_alt_1_sharp));
+              }
+            ),
           ),
         ),
-      ),
     );
   }
 }

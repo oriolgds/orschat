@@ -49,15 +49,14 @@ class _ChatContactListItemState extends State<ChatContactListItem> {
                         width: 60,
                         height: 60,
                         child: TextButton(
-                            style: ButtonStyle(
-                                shape: MaterialStateProperty.all(
-                                    RoundedRectangleBorder(borderRadius: BorderRadius.circular(50))
-                                )
+                            style: TextButton.styleFrom(
+                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
+                              padding: const EdgeInsets.all(5)
                             ),
                             onPressed: (){
                               showProfilePhotoModal(context, "lib/assets/withoutProfilePhoto.png", widget.name);
                             },
-                            child: Image.asset(widget.pathToImg, width: 50, height: 50,)
+                            child: Image.asset(widget.pathToImg, width: 55, height: 55,)
                         ),
                       )
                   ),
